@@ -7,18 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4AC5BE62281FE58C006CA43F /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5BE61281FE58C006CA43F /* MainMapView.swift */; };
+		4AC5BE64281FE598006CA43F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5BE63281FE598006CA43F /* MainView.swift */; };
 		82C93535281AD618009791EA /* GollababApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C93534281AD618009791EA /* GollababApp.swift */; };
 		82C93537281AD618009791EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C93536281AD618009791EA /* ContentView.swift */; };
 		82C93539281AD61D009791EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C93538281AD61D009791EA /* Assets.xcassets */; };
 		82C9353C281AD61D009791EA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C9353B281AD61D009791EA /* Preview Assets.xcassets */; };
+		9670E12ABC20A3E76961223B /* Pods_Gollabab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA6D7365351DB80F8B59A0F /* Pods_Gollabab.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4AC5BE61281FE58C006CA43F /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
+		4AC5BE63281FE598006CA43F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		4AC5BE65281FEE07006CA43F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		82C93531281AD618009791EA /* Gollabab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gollabab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82C93534281AD618009791EA /* GollababApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GollababApp.swift; sourceTree = "<group>"; };
 		82C93536281AD618009791EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		82C93538281AD61D009791EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82C9353B281AD61D009791EA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BBA6D7365351DB80F8B59A0F /* Pods_Gollabab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gollabab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBAA88EA16F8253DEE08113D /* Pods-Gollabab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gollabab.debug.xcconfig"; path = "Target Support Files/Pods-Gollabab/Pods-Gollabab.debug.xcconfig"; sourceTree = "<group>"; };
+		F20F779AAA9E7BDFCC55E091 /* Pods-Gollabab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gollabab.release.xcconfig"; path = "Target Support Files/Pods-Gollabab/Pods-Gollabab.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +35,51 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9670E12ABC20A3E76961223B /* Pods_Gollabab.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2CC9E25289E4511B4ED09AD2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BBA6D7365351DB80F8B59A0F /* Pods_Gollabab.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4AC5BE5E281FE575006CA43F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4AC5BE5F281FE579006CA43F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4AC5BE61281FE58C006CA43F /* MainMapView.swift */,
+				4AC5BE63281FE598006CA43F /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4AC5BE60281FE57D006CA43F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		82C93528281AD618009791EA = {
 			isa = PBXGroup;
 			children = (
 				82C93533281AD618009791EA /* Gollabab */,
 				82C93532281AD618009791EA /* Products */,
+				A03E4EAD86D5072ED2E4F81B /* Pods */,
+				2CC9E25289E4511B4ED09AD2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,6 +94,10 @@
 		82C93533281AD618009791EA /* Gollabab */ = {
 			isa = PBXGroup;
 			children = (
+				4AC5BE65281FEE07006CA43F /* Info.plist */,
+				4AC5BE60281FE57D006CA43F /* Model */,
+				4AC5BE5F281FE579006CA43F /* View */,
+				4AC5BE5E281FE575006CA43F /* ViewModel */,
 				82C93534281AD618009791EA /* GollababApp.swift */,
 				82C93536281AD618009791EA /* ContentView.swift */,
 				82C93538281AD61D009791EA /* Assets.xcassets */,
@@ -67,6 +114,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		A03E4EAD86D5072ED2E4F81B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EBAA88EA16F8253DEE08113D /* Pods-Gollabab.debug.xcconfig */,
+				F20F779AAA9E7BDFCC55E091 /* Pods-Gollabab.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +130,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 82C9353F281AD61D009791EA /* Build configuration list for PBXNativeTarget "Gollabab" */;
 			buildPhases = (
+				CA03CD5BF640BD8AE7874E82 /* [CP] Check Pods Manifest.lock */,
 				82C9352D281AD618009791EA /* Sources */,
 				82C9352E281AD618009791EA /* Frameworks */,
 				82C9352F281AD618009791EA /* Resources */,
+				A86B252925CFA3E5BE26A3CC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,11 +190,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A86B252925CFA3E5BE26A3CC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gollabab/Pods-Gollabab-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gollabab/Pods-Gollabab-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gollabab/Pods-Gollabab-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA03CD5BF640BD8AE7874E82 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gollabab-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		82C9352D281AD618009791EA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AC5BE62281FE58C006CA43F /* MainMapView.swift in Sources */,
+				4AC5BE64281FE598006CA43F /* MainView.swift in Sources */,
 				82C93537281AD618009791EA /* ContentView.swift in Sources */,
 				82C93535281AD618009791EA /* GollababApp.swift in Sources */,
 			);
@@ -261,6 +363,7 @@
 		};
 		82C93540281AD61D009791EA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBAA88EA16F8253DEE08113D /* Pods-Gollabab.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -270,6 +373,7 @@
 				DEVELOPMENT_TEAM = D64MDUWZ72;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Gollabab/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -292,6 +396,7 @@
 		};
 		82C93541281AD61D009791EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F20F779AAA9E7BDFCC55E091 /* Pods-Gollabab.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -301,6 +406,7 @@
 				DEVELOPMENT_TEAM = D64MDUWZ72;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Gollabab/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
