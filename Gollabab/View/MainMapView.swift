@@ -6,19 +6,17 @@
 //
 
 import SwiftUI
-import NMapsMap
 
 struct MainMapView: UIViewRepresentable {
-    func makeUIView(context: Context) -> NMFNaverMapView {
-        let view = NMFNaverMapView()
-        view.showZoomControls = false
-        view.mapView.positionMode = .direction
-        view.mapView.zoomLevel = 17
+    func makeUIView(context: Context) -> MTMapView {
+        let view = MTMapView()
+        
+        view.baseMapType = .standard
         
         return view
     }
     
-    func updateUIView(_ uiView: NMFNaverMapView, context: Context) {
+    func updateUIView(_ uiView: MTMapView, context: Context) {
         
     }
 }
