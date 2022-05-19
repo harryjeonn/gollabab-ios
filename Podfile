@@ -6,5 +6,7 @@ target 'Gollabab' do
   use_frameworks!
 
   # Pods for Gollabab
+  pod 'RxAlamofire'
+  pod 'SwiftyJSON', '~> 4.0'
 
 end
