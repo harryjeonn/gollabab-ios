@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		05BC2BC4E9051A20F97564F0 /* Pods_Gollabab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13C6646410AC450429410C6B /* Pods_Gollabab.framework */; };
+		4A136375283F8BC20070EA54 /* PlaceCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A136374283F8BC20070EA54 /* PlaceCardView.swift */; };
+		4A346CB52836407000C574A5 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A346CB42836407000C574A5 /* PlaceModel.swift */; };
+		4A346CB8283644FD00C574A5 /* KakaoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A346CB7283644FD00C574A5 /* KakaoRepository.swift */; };
+		4A346CBB2836462300C574A5 /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A346CBA2836462300C574A5 /* MainService.swift */; };
+		4A346CBD2836463100C574A5 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A346CBC2836463100C574A5 /* MainViewModel.swift */; };
 		4AAEBE2B2832635500AA3E65 /* net.daum.MobileMap.docset in Resources */ = {isa = PBXBuildFile; fileRef = 4AAEBD0C2832635500AA3E65 /* net.daum.MobileMap.docset */; };
 		4AAEBE2C2832635500AA3E65 /* setupDocsetDocument.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4AAEBD0D2832635500AA3E65 /* setupDocsetDocument.rb */; };
 		4AAEBE2D2832635500AA3E65 /* OpenSourceNotice.md in Resources */ = {isa = PBXBuildFile; fileRef = 4AAEBD0E2832635500AA3E65 /* OpenSourceNotice.md */; };
@@ -298,6 +303,11 @@
 
 /* Begin PBXFileReference section */
 		13C6646410AC450429410C6B /* Pods_Gollabab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gollabab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A136374283F8BC20070EA54 /* PlaceCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCardView.swift; sourceTree = "<group>"; };
+		4A346CB42836407000C574A5 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
+		4A346CB7283644FD00C574A5 /* KakaoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoRepository.swift; sourceTree = "<group>"; };
+		4A346CBA2836462300C574A5 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
+		4A346CBC2836463100C574A5 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		4A75A79E2833BBA1003F5F70 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		4AAEBD0C2832635500AA3E65 /* net.daum.MobileMap.docset */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = net.daum.MobileMap.docset; sourceTree = "<group>"; };
 		4AAEBD0D2832635500AA3E65 /* setupDocsetDocument.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = setupDocsetDocument.rb; sourceTree = "<group>"; };
@@ -633,6 +643,22 @@
 				13C6646410AC450429410C6B /* Pods_Gollabab.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4A346CB6283644EB00C574A5 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				4A346CB7283644FD00C574A5 /* KakaoRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		4A346CB9283645D300C574A5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				4A346CBA2836462300C574A5 /* MainService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		4A75A79C2833BB64003F5F70 /* KakaoMap */ = {
@@ -998,6 +1024,7 @@
 		4AC5BE5E281FE575006CA43F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4A346CBC2836463100C574A5 /* MainViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1007,6 +1034,7 @@
 			children = (
 				4AC5BE61281FE58C006CA43F /* MainMapView.swift */,
 				4AC5BE63281FE598006CA43F /* MainView.swift */,
+				4A136374283F8BC20070EA54 /* PlaceCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1014,6 +1042,7 @@
 		4AC5BE60281FE57D006CA43F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4A346CB42836407000C574A5 /* PlaceModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1040,13 +1069,15 @@
 			isa = PBXGroup;
 			children = (
 				4A75A79C2833BB64003F5F70 /* KakaoMap */,
-				4AC5BE65281FEE07006CA43F /* Info.plist */,
+				4A346CB6283644EB00C574A5 /* Repository */,
 				4AC5BE60281FE57D006CA43F /* Model */,
-				4AC5BE5F281FE579006CA43F /* View */,
+				4A346CB9283645D300C574A5 /* Service */,
 				4AC5BE5E281FE575006CA43F /* ViewModel */,
+				4AC5BE5F281FE579006CA43F /* View */,
 				82C93534281AD618009791EA /* GollababApp.swift */,
 				82C93536281AD618009791EA /* ContentView.swift */,
 				82C93538281AD61D009791EA /* Assets.xcassets */,
+				4AC5BE65281FEE07006CA43F /* Info.plist */,
 				82C9353A281AD61D009791EA /* Preview Content */,
 			);
 			path = Gollabab;
@@ -1080,6 +1111,7 @@
 				82C9352D281AD618009791EA /* Sources */,
 				82C9352E281AD618009791EA /* Frameworks */,
 				82C9352F281AD618009791EA /* Resources */,
+				4582C6474DF5A7BE5706BA53 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1408,6 +1440,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4582C6474DF5A7BE5706BA53 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gollabab/Pods-Gollabab-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gollabab/Pods-Gollabab-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gollabab/Pods-Gollabab-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E2C4015B47A8D5148EFB9A2F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1437,10 +1486,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A346CBB2836462300C574A5 /* MainService.swift in Sources */,
 				4AC5BE62281FE58C006CA43F /* MainMapView.swift in Sources */,
+				4A346CB8283644FD00C574A5 /* KakaoRepository.swift in Sources */,
 				4AC5BE64281FE598006CA43F /* MainView.swift in Sources */,
+				4A346CB52836407000C574A5 /* PlaceModel.swift in Sources */,
+				4A136375283F8BC20070EA54 /* PlaceCardView.swift in Sources */,
 				82C93537281AD618009791EA /* ContentView.swift in Sources */,
 				82C93535281AD618009791EA /* GollababApp.swift in Sources */,
+				4A346CBD2836463100C574A5 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
