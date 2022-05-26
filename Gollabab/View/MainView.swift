@@ -13,10 +13,10 @@ struct MainView: View {
     
     var body: some View {
         ZStack {
-            MainMapView()
+            MainMapView(viewModel: viewModel)
                 .edgesIgnoringSafeArea(.all)
                 .onAppear {
-                    viewModel.fetchPlace()
+                    viewModel.checkPermisson()
                 }
             
             VStack {

@@ -8,11 +8,12 @@
 import RxSwift
 
 class MainService {
-    private let repository = KakaoRepository()
+    private let kakaoRepository = KakaoRepository()
+    private let locationRepository = LocationRepository()
     
     func fetchPlace() -> Observable<[PlaceModel]?> {
         // repo랑 통신 후 모델을 만들어서 배열로 넘긴다.
-        return repository.fetchPlace(mandatoryParam: "식당", lat: "37.38231400000", lon: "127.11961300000", type: .keyword)
+        return kakaoRepository.fetchPlace(mandatoryParam: "식당", lat: "\(locationRepository.getLocation().lat!)", lon: "\(locationRepository.getLocation().lon!)", type: .keyword)
             .map({ (items) -> [PlaceModel] in
                 var place = [PlaceModel]()
                 if let sortedItems = items?.sorted(by: { $0.distance < $1.distance }) {
@@ -20,5 +21,27 @@ class MainService {
                 }
                 return place
             })
+    }
+    
+    func setupLocation() {
+        locationRepository.setupLocation()
+    }
+    
+    func getLocation() -> MyLocationModel {
+        return locationRepository.getLocation()
+    }
+    
+    func checkPermission() -> Observable<Bool> {
+        return locationRepository.authorization
+            .map { status in
+                switch status {
+                case .authorizedAlways , .authorizedWhenInUse:
+                    return true
+                case .notDetermined , .denied , .restricted:
+                    return false
+                default:
+                    return false
+                }
+            }
     }
 }

@@ -11,6 +11,18 @@ class MainViewModel: ObservableObject {
     private let service = MainService()
     private var disposeBag = DisposeBag()
     @Published var places: [PlaceModel] = []
+    var mtMapPoint = PublishSubject<MTMapPoint>()
+    
+    func checkPermisson() {
+        service.checkPermission()
+            .filter { $0 == true }
+            .subscribe(onNext: { [weak self] _ in
+                self?.setupLocation()
+                self?.fetchPlace()
+                self?.getMapPoint()
+            })
+            .disposed(by: disposeBag)
+    }
     
     func fetchPlace() {
         places.removeAll()
@@ -26,5 +38,15 @@ class MainViewModel: ObservableObject {
     
     func getWidth() -> CGFloat {
         return UIScreen.main.bounds.width * 0.8
+    }
+    
+    func setupLocation() {
+        service.setupLocation()
+    }
+
+    func getMapPoint() {
+        let myLocation = service.getLocation()
+        let geoCoord = MTMapPointGeo(latitude: myLocation.lat!, longitude: myLocation.lon!)
+        mtMapPoint.onNext(MTMapPoint(geoCoord: geoCoord))
     }
 }
