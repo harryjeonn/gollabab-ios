@@ -4,7 +4,7 @@
 <dict>
 	<key>KAKAO_APP_KEY</key>
 	<string>979cb0bba2889a15a107952c8d5a1286</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>주변 정보를 얻어오기 위해 지도 권한을 허용해주세요.</string>
 </dict>
 </plist>

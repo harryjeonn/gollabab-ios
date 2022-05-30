@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct MainView: View {
+    @ObservedObject private var viewModel = MainViewModel()
     @State private var keyword: String = ""
     
     var body: some View {
         ZStack {
-            MainMapView()
+            MainMapView(viewModel: viewModel)
                 .edgesIgnoringSafeArea(.all)
+                .onAppear {
+                    viewModel.checkPermisson()
+                }
+            
             VStack {
                 ZStack {
                     TextField("검색해주세요.", text: $keyword)
@@ -32,29 +37,29 @@ struct MainView: View {
                     }
                 }
                 
-                ScrollView(.horizontal, showsIndicators: false, content: {
-                    HStack(spacing: 0) {
-                        
-                        ForEach(0..<10) { i in
-                            PlaceRow(title: "\(i)")
-                                .frame(width: 50, height: 30)
-                                .background(Color.white)
-                                .cornerRadius(5)
-                                .shadow(color: .black.opacity(0.5), radius: 1, x: 1, y: 1)
-                                .padding(10)
-                        }
-                    }
-                    .padding(.leading, 20)
-                })
+//                ScrollView(.horizontal, showsIndicators: false, content: {
+//                    HStack(spacing: 0) {
+//
+//                        ForEach(0..<10) { i in
+//                            PlaceRow(title: "\(i)")
+//                                .frame(width: 50, height: 30)
+//                                .background(Color.white)
+//                                .cornerRadius(5)
+//                                .shadow(color: .black.opacity(0.5), radius: 1, x: 1, y: 1)
+//                                .padding(10)
+//                        }
+//                    }
+//                    .padding(.leading, 20)
+//                })
                     
                 Spacer()
                 ScrollView(.horizontal, showsIndicators: false, content: {
                     HStack(spacing: 0) {
-                        
-                        ForEach(0..<10) { i in
-                            PlaceRow(title: "\(i)")
-                                .frame(width: 150, height: 100)
+                        ForEach(viewModel.places, id: \.placeName) { place in
+                            viewModel.createPlaceCard(place)
+                                .frame(width: viewModel.getWidth(), height: 100)
                                 .background(Color.white)
+                                .foregroundColor(.black)
                                 .cornerRadius(10)
                                 .shadow(color: .black.opacity(0.5), radius: 1, x: 1, y: 1)
                                 .padding(10)
@@ -65,14 +70,6 @@ struct MainView: View {
                 Spacer().frame(height: 40)
             }
         }
-    }
-}
-
-struct PlaceRow: View {
-    var title: String
-    
-    var body: some View {
-        Text(title)
     }
 }
 
