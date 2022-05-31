@@ -22,13 +22,15 @@ struct MainMapView: UIViewRepresentable {
         view.currentLocationTrackingMode = .onWithoutHeading
         
         viewModel.mtMapPoint
-            .subscribe(onNext: { view.setMapCenter($0, animated: true)})
+            .subscribe(onNext: { view.setMapCenter($0, zoomLevel: .zero, animated: true)})
             .disposed(by: disposeBag)
         
         return view
     }
     
     func updateUIView(_ uiView: MTMapView, context: Context) {
-        
+        if uiView.poiItems.isEmpty {
+            uiView.addPOIItems(viewModel.createPoiItems())
+        }
     }
 }
