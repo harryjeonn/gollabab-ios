@@ -49,4 +49,21 @@ class MainViewModel: ObservableObject {
         let geoCoord = MTMapPointGeo(latitude: myLocation.lat!, longitude: myLocation.lon!)
         mtMapPoint.onNext(MTMapPoint(geoCoord: geoCoord))
     }
+    
+    func createPoiItems() -> [MTMapPOIItem] {
+        var items = [MTMapPOIItem]()
+        
+        for place in places {
+            let pin = MTMapPOIItem()
+            pin.itemName = place.placeName
+            let coord = MTMapPointGeo(latitude: Double(place.latY)!, longitude: Double(place.lonX)!)
+            pin.mapPoint = MTMapPoint(geoCoord: coord)
+            pin.markerType = .yellowPin
+            pin.showAnimationType = .springFromGround
+            
+            items.append(pin)
+        }
+        
+        return items
+    }
 }
