@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     @ObservedObject private var viewModel = MainViewModel()
     @State private var keyword: String = ""
+    @State var currentIndex: Int = 0
     
     var body: some View {
         ZStack {
@@ -36,12 +37,13 @@ struct MainView: View {
                         Spacer().frame(width: 30)
                     }
                 }
+                .frame(height: 40)
                 
 //                ScrollView(.horizontal, showsIndicators: false, content: {
 //                    HStack(spacing: 0) {
 //
 //                        ForEach(0..<10) { i in
-//                            PlaceRow(title: "\(i)")
+//                            Text("\(i)")
 //                                .frame(width: 50, height: 30)
 //                                .background(Color.white)
 //                                .cornerRadius(5)
@@ -53,21 +55,8 @@ struct MainView: View {
 //                })
                     
                 Spacer()
-                ScrollView(.horizontal, showsIndicators: false, content: {
-                    HStack(spacing: 0) {
-                        ForEach(viewModel.places, id: \.placeName) { place in
-                            viewModel.createPlaceCard(place)
-                                .frame(width: viewModel.getWidth(), height: 100)
-                                .background(Color.white)
-                                .foregroundColor(.black)
-                                .cornerRadius(10)
-                                .shadow(color: .black.opacity(0.5), radius: 1, x: 1, y: 1)
-                                .padding(10)
-                        }
-                    }
-                    .padding(.leading, 20)
-                })
-                Spacer().frame(height: 40)
+                PlaceCardView(viewModel: viewModel, index: $currentIndex)
+                    .frame(height: 103)
             }
         }
     }

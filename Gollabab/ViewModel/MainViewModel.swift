@@ -11,6 +11,7 @@ class MainViewModel: ObservableObject {
     private let service = MainService()
     private var disposeBag = DisposeBag()
     @Published var places: [PlaceModel] = []
+    @Published var currentIndex: Int = 0
     var mtMapPoint = PublishSubject<MTMapPoint>()
     
     func checkPermisson() {
@@ -32,8 +33,12 @@ class MainViewModel: ObservableObject {
             .disposed(by: disposeBag)
     }
     
-    func createPlaceCard(_ place: PlaceModel) -> PlaceCardView {
-        return PlaceCardView(placeModel: place)
+    func createPlaceCard(place: PlaceModel, index: Int) -> CardContentView {
+        return CardContentView(viewModel: self, placeModel: place, index: index)
+    }
+    
+    func isSelectedCard(_ index: Int) -> Bool {
+        return currentIndex == index
     }
     
     func getWidth() -> CGFloat {
@@ -65,5 +70,15 @@ class MainViewModel: ObservableObject {
         }
         
         return items
+    }
+    
+    func convertCategory(_ category: String) -> String {
+        var splitedStr = category.split(separator: ">")
+        splitedStr.removeFirst()
+        
+        return splitedStr
+            .map { $0.components(separatedBy: .whitespaces).joined() }
+            .map { "#\($0) " }
+            .joined()
     }
 }

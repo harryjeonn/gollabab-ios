@@ -16,14 +16,8 @@ struct MainMapView: UIViewRepresentable {
     func makeUIView(context: Context) -> MTMapView {
         viewModel.setupLocation()
         let view = MTMapView()
-        
-        view.baseMapType = .standard
-        view.showCurrentLocationMarker = true
-        view.currentLocationTrackingMode = .onWithoutHeading
-        
-        viewModel.mtMapPoint
-            .subscribe(onNext: { view.setMapCenter($0, zoomLevel: .zero, animated: true)})
-            .disposed(by: disposeBag)
+        setupMapView(view)
+        moveMapMyLocation(view)
         
         return view
     }
@@ -32,5 +26,27 @@ struct MainMapView: UIViewRepresentable {
         if uiView.poiItems.isEmpty {
             uiView.addPOIItems(viewModel.createPoiItems())
         }
+        
+        moveMapPlace(uiView)
+    }
+    
+    func setupMapView(_ view: MTMapView) {
+        view.baseMapType = .standard
+        view.showCurrentLocationMarker = true
+        view.currentLocationTrackingMode = .onWithoutHeading
+    }
+    
+    func moveMapPlace(_ view: MTMapView) {
+        if view.poiItems.isEmpty == false {
+            guard let poiItem = view.poiItems[viewModel.currentIndex] as? MTMapPOIItem else { return }
+            view.select(poiItem, animated: true)
+            view.setMapCenter(poiItem.mapPoint, animated: true)
+        }
+    }
+    
+    func moveMapMyLocation(_ view: MTMapView) {
+        viewModel.mtMapPoint
+            .subscribe(onNext: { view.setMapCenter($0, zoomLevel: .zero, animated: true) })
+            .disposed(by: disposeBag)
     }
 }
