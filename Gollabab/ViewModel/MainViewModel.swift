@@ -81,4 +81,11 @@ class MainViewModel: ObservableObject {
             .map { "#\($0) " }
             .joined()
     }
+    
+    func callToPlace() {
+        let telephone = "tel://"
+        let formattedString = telephone + places[currentIndex].phone
+        guard let url = URL(string: formattedString) else { return }
+        UIApplication.shared.open(url)
+    }
 }
