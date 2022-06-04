@@ -68,6 +68,9 @@ struct CardContentView: View {
                 .background(Color.red)
                 .cornerRadius(30)
                 .padding(.leading, 12)
+                .onTapGesture {
+                    viewModel.callToPlace()
+                }
                 Spacer()
             }
             Spacer().frame(height: 12)
