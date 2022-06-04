@@ -88,4 +88,8 @@ class MainViewModel: ObservableObject {
         guard let url = URL(string: formattedString) else { return }
         UIApplication.shared.open(url)
     }
+    
+    func slideCard(_ idx: Int) {
+        currentIndex = idx
+    }
 }
