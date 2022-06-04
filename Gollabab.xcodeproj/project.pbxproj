@@ -15,6 +15,8 @@
 		4A346CB8283644FD00C574A5 /* KakaoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A346CB7283644FD00C574A5 /* KakaoRepository.swift */; };
 		4A346CBB2836462300C574A5 /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A346CBA2836462300C574A5 /* MainService.swift */; };
 		4A346CBD2836463100C574A5 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A346CBC2836463100C574A5 /* MainViewModel.swift */; };
+		4A7906242848403400B2830A /* CardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7906232848403400B2830A /* CardContentView.swift */; };
+		4A7906272848BD6F00B2830A /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7906262848BD6F00B2830A /* ColorExtension.swift */; };
 		4AAEBE2B2832635500AA3E65 /* net.daum.MobileMap.docset in Resources */ = {isa = PBXBuildFile; fileRef = 4AAEBD0C2832635500AA3E65 /* net.daum.MobileMap.docset */; };
 		4AAEBE2C2832635500AA3E65 /* setupDocsetDocument.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4AAEBD0D2832635500AA3E65 /* setupDocsetDocument.rb */; };
 		4AAEBE2D2832635500AA3E65 /* OpenSourceNotice.md in Resources */ = {isa = PBXBuildFile; fileRef = 4AAEBD0E2832635500AA3E65 /* OpenSourceNotice.md */; };
@@ -313,6 +315,8 @@
 		4A346CBA2836462300C574A5 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
 		4A346CBC2836463100C574A5 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		4A75A79E2833BBA1003F5F70 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		4A7906232848403400B2830A /* CardContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContentView.swift; sourceTree = "<group>"; };
+		4A7906262848BD6F00B2830A /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		4AAEBD0C2832635500AA3E65 /* net.daum.MobileMap.docset */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = net.daum.MobileMap.docset; sourceTree = "<group>"; };
 		4AAEBD0D2832635500AA3E65 /* setupDocsetDocument.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = setupDocsetDocument.rb; sourceTree = "<group>"; };
 		4AAEBD0E2832635500AA3E65 /* OpenSourceNotice.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = OpenSourceNotice.md; sourceTree = "<group>"; };
@@ -682,6 +686,14 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		4A7906252848BD6800B2830A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4A7906262848BD6F00B2830A /* ColorExtension.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		4AAEBD0A2832635500AA3E65 /* IOS_DaumMap_SDK_1.4.0 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1040,6 +1052,7 @@
 				4AC5BE61281FE58C006CA43F /* MainMapView.swift */,
 				4AC5BE63281FE598006CA43F /* MainView.swift */,
 				4A136374283F8BC20070EA54 /* PlaceCardView.swift */,
+				4A7906232848403400B2830A /* CardContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1074,6 +1087,7 @@
 		82C93533281AD618009791EA /* Gollabab */ = {
 			isa = PBXGroup;
 			children = (
+				4A7906252848BD6800B2830A /* Utils */,
 				4A75A79C2833BB64003F5F70 /* KakaoMap */,
 				4A346CB6283644EB00C574A5 /* Repository */,
 				4AC5BE60281FE57D006CA43F /* Model */,
@@ -1496,6 +1510,7 @@
 				4AC5BE62281FE58C006CA43F /* MainMapView.swift in Sources */,
 				4A136379283F94160070EA54 /* LocationRepository.swift in Sources */,
 				4A136377283F93270070EA54 /* MyLocationModel.swift in Sources */,
+				4A7906242848403400B2830A /* CardContentView.swift in Sources */,
 				4A346CB8283644FD00C574A5 /* KakaoRepository.swift in Sources */,
 				4AC5BE64281FE598006CA43F /* MainView.swift in Sources */,
 				4A346CB52836407000C574A5 /* PlaceModel.swift in Sources */,
@@ -1503,6 +1518,7 @@
 				82C93537281AD618009791EA /* ContentView.swift in Sources */,
 				82C93535281AD618009791EA /* GollababApp.swift in Sources */,
 				4A346CBD2836463100C574A5 /* MainViewModel.swift in Sources */,
+				4A7906272848BD6F00B2830A /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
