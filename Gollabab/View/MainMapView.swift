@@ -33,7 +33,7 @@ struct MainMapView: UIViewRepresentable {
     func setupMapView(_ view: MTMapView) {
         view.baseMapType = .standard
         view.showCurrentLocationMarker = true
-        view.currentLocationTrackingMode = .onWithoutHeading
+        view.currentLocationTrackingMode = .onWithoutHeadingWithoutMapMoving
     }
     
     func moveMapPlace(_ view: MTMapView) {
