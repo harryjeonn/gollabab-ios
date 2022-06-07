@@ -37,6 +37,7 @@ struct PlaceCardView: View {
                         }
                         .fullScreenCover(isPresented: $showSafari, content: {
                             SafariView(url: URL(string: place.placeUrl)!)
+                                .edgesIgnoringSafeArea(.all)
                         })
                 }
             }

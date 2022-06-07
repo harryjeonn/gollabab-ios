@@ -58,16 +58,17 @@ class MainViewModel: ObservableObject {
     func createPoiItems() -> [MTMapPOIItem] {
         var items = [MTMapPOIItem]()
         
-        for place in places {
+        places.enumerated().forEach({ index, place in
             let pin = MTMapPOIItem()
             pin.itemName = place.placeName
             let coord = MTMapPointGeo(latitude: Double(place.latY)!, longitude: Double(place.lonX)!)
             pin.mapPoint = MTMapPoint(geoCoord: coord)
             pin.markerType = .yellowPin
             pin.showAnimationType = .springFromGround
+            pin.tag = index
             
             items.append(pin)
-        }
+        })
         
         return items
     }
