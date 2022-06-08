@@ -77,7 +77,7 @@ struct MainMapView: UIViewRepresentable {
         // 말풍선 터치했을 때
         func mapView(_ mapView: MTMapView!, touchedCalloutBalloonOf poiItem: MTMapPOIItem!) {
             print(viewModel.places[poiItem.tag].placeUrl)
-            
+            viewModel.showSafari.toggle()
         }
     }
 }

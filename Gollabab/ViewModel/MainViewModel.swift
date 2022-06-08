@@ -12,6 +12,7 @@ class MainViewModel: ObservableObject {
     private var disposeBag = DisposeBag()
     @Published var places: [PlaceModel] = []
     @Published var currentIndex: Int = 0
+    @Published var showSafari: Bool = false
     var mtMapPoint = PublishSubject<MTMapPoint>()
     
     func checkPermisson() {

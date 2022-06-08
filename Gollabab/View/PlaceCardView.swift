@@ -10,7 +10,6 @@ import SwiftUI
 struct PlaceCardView: View {
     @ObservedObject var viewModel: MainViewModel
     @Binding var index: Int
-    @State private var showSafari: Bool = false
     
     init(viewModel: MainViewModel, index: Binding<Int>) {
         self.viewModel = viewModel
@@ -33,9 +32,9 @@ struct PlaceCardView: View {
                         .cornerRadius(16)
                         .shadow(color: .cardShadowColor, radius: 3, x: 0, y: 2)
                         .onTapGesture {
-                            viewModel.isSelectedCard(idx) ? showSafari.toggle() : withAnimation { viewModel.slideCard(idx) }
+                            viewModel.isSelectedCard(idx) ? viewModel.showSafari.toggle() : withAnimation { viewModel.slideCard(idx) }
                         }
-                        .fullScreenCover(isPresented: $showSafari, content: {
+                        .fullScreenCover(isPresented: $viewModel.showSafari, content: {
                             SafariView(url: URL(string: place.placeUrl)!)
                                 .edgesIgnoringSafeArea(.all)
                         })
