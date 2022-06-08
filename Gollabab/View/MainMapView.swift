@@ -18,7 +18,7 @@ struct MainMapView: UIViewRepresentable {
         let view = MTMapView()
         setupMapView(view)
         moveMapMyLocation(view)
-        
+        view.delegate = context.coordinator
         return view
     }
     
@@ -48,5 +48,36 @@ struct MainMapView: UIViewRepresentable {
         viewModel.mtMapPoint
             .subscribe(onNext: { view.setMapCenter($0, zoomLevel: .zero, animated: true) })
             .disposed(by: disposeBag)
+    }
+    
+    // MARK: - Coordinator
+    
+    func makeCoordinator() -> Coordinator {
+        return Coordinator(viewModel: viewModel)
+    }
+    
+    class Coordinator: NSObject, MTMapViewDelegate {
+        let viewModel: MainViewModel
+
+        init(viewModel: MainViewModel) {
+            self.viewModel = viewModel
+        }
+        
+        // 마커 선택됐을 때
+        func mapView(_ mapView: MTMapView!, selectedPOIItem poiItem: MTMapPOIItem!) -> Bool {
+            // 조건처리안하면 계속 viewModel.currentIndex를 바꾸어서 화면이 나오지 않음
+            withAnimation {
+                if viewModel.currentIndex != poiItem.tag {
+                    viewModel.slideCard(poiItem.tag)
+                }
+            }
+            return true
+        }
+        
+        // 말풍선 터치했을 때
+        func mapView(_ mapView: MTMapView!, touchedCalloutBalloonOf poiItem: MTMapPOIItem!) {
+            print(viewModel.places[poiItem.tag].placeUrl)
+            viewModel.showSafari.toggle()
+        }
     }
 }
