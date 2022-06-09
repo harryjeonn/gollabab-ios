@@ -79,5 +79,11 @@ struct MainMapView: UIViewRepresentable {
             print(viewModel.places[poiItem.tag].placeUrl)
             viewModel.showSafari.toggle()
         }
+        
+        // 지도 터치했을 때
+        func mapView(_ mapView: MTMapView!, singleTapOn mapPoint: MTMapPoint!) {
+            // TODO: - 키보드 내리기
+            
+        }
     }
 }

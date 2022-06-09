@@ -13,6 +13,7 @@ class MainViewModel: ObservableObject {
     @Published var places: [PlaceModel] = []
     @Published var currentIndex: Int = 0
     @Published var showSafari: Bool = false
+    @Published var isList: Bool = false
     var mtMapPoint = PublishSubject<MTMapPoint>()
     
     func checkPermisson() {
@@ -36,6 +37,10 @@ class MainViewModel: ObservableObject {
     
     func createPlaceCard(place: PlaceModel, index: Int) -> CardContentView {
         return CardContentView(viewModel: self, placeModel: place, index: index)
+    }
+    
+    func createPlaceList(place: PlaceModel, index: Int) -> ListContentView {
+        return ListContentView(viewModel: self, placeModel: place, index: index)
     }
     
     func isSelectedCard(_ index: Int) -> Bool {
@@ -84,9 +89,9 @@ class MainViewModel: ObservableObject {
             .joined()
     }
     
-    func callToPlace() {
+    func callToPlace(_ phone: String) {
         let telephone = "tel://"
-        let formattedString = telephone + places[currentIndex].phone
+        let formattedString = telephone + phone
         guard let url = URL(string: formattedString) else { return }
         UIApplication.shared.open(url)
     }

@@ -15,4 +15,6 @@ extension Color {
     static let textGrayColor = Color(red: 116/255, green: 116/255, blue: 116/255)
     
     static let cardShadowColor = Color(red: 68/255, green: 68/255, blue: 68/255, opacity: 0.3)
+    
+    static let dividerColor = Color(red: 245/255, green: 245/255, blue: 245/255)
 }
