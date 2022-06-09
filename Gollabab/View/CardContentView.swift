@@ -69,7 +69,7 @@ struct CardContentView: View {
                 .cornerRadius(30)
                 .padding(.leading, 12)
                 .onTapGesture {
-                    viewModel.callToPlace()
+                    viewModel.callToPlace(placeModel.phone)
                 }
                 Spacer()
             }

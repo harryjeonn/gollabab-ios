@@ -12,6 +12,8 @@ struct MainView: View {
     @State private var keyword: String = ""
     @State var currentIndex: Int = 0
     
+    var testItems = ["한식", "중식", "일식", "양식", "분식", "아시안음식", "카페", "간식", "패스트푸드"]
+    
     var body: some View {
         ZStack {
             MainMapView(viewModel: viewModel)
@@ -20,44 +22,68 @@ struct MainView: View {
                     viewModel.checkPermisson()
                 }
             
-            VStack {
-                ZStack {
-                    TextField("검색해주세요.", text: $keyword)
-                        .padding(15)
-                        .background(Color.white)
-                        .cornerRadius(10)
-                        .shadow(color: .black.opacity(0.5), radius: 1, x: 1, y: 1)
-                        .padding(.leading, 20)
-                        .padding(.trailing, 20)
-                    
+            VStack(spacing: 0) {
+                VStack {
                     HStack {
+                        Spacer().frame(width: 20)
+                        
+                        TextField("검색해주세요.", text: $keyword)
+                            .padding(.leading, 12)
+                            .frame(height: 40)
+                            .background(Color.selectedTextColor)
+                            .cornerRadius(12)
+                        
                         Spacer()
-                        Image(systemName: "magnifyingglass")
-                            .font(.system(size: 17))
-                        Spacer().frame(width: 30)
+                        
+                        VStack {
+                            Image(systemName: "list.dash")
+                                .font(.system(size: 17))
+                                .frame(width: 24, height: 24)
+                            
+                            Text("목록")
+                                .font(.system(size: 10))
+                        }
+                        .padding(.leading, 20)
+                        .onTapGesture {
+                            viewModel.isList.toggle()
+                        }
+                        
+                        Spacer().frame(width: 20)
                     }
-                }
-                .frame(height: 40)
-                
-//                ScrollView(.horizontal, showsIndicators: false, content: {
-//                    HStack(spacing: 0) {
-//
-//                        ForEach(0..<10) { i in
-//                            Text("\(i)")
-//                                .frame(width: 50, height: 30)
-//                                .background(Color.white)
-//                                .cornerRadius(5)
-//                                .shadow(color: .black.opacity(0.5), radius: 1, x: 1, y: 1)
-//                                .padding(10)
-//                        }
-//                    }
-//                    .padding(.leading, 20)
-//                })
                     
-                Spacer()
-                PlaceCardView(viewModel: viewModel, index: $currentIndex)
-                    .frame(height: 103)
+                    ScrollView(.horizontal, showsIndicators: false, content: {
+                        HStack(spacing: 0) {
+                            
+                            ForEach(0..<testItems.count) { item in
+                                HStack {
+                                    Image(systemName: "xmark")
+                                    
+                                    Text("\(testItems[item])")
+                                }
+                                .frame(height: 30)
+                                .padding(12)
+                                .background(Color.white)
+                                .cornerRadius(5)
+                            }
+                        }
+                        .padding(.leading, 20)
+                    })
+                }
+                .padding(.top, 52)
+                .background(Color.white)
+                
+                if viewModel.isList {
+                    PlaceListView(viewModel: viewModel)
+                        .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)
+                        .background(Color.white)
+                } else {
+                    Spacer()
+                    PlaceCardView(viewModel: viewModel, index: $currentIndex)
+                        .frame(height: 103)
+                        .padding(.bottom, 24)
+                }
             }
+            .edgesIgnoringSafeArea(.all)
         }
     }
 }
