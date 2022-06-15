@@ -2,6 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>EliceDigitalBaeumOTF_Bold.otf</string>
+		<string>EliceDigitalBaeumOTF_Regular.otf</string>
+	</array>
 	<key>KAKAO_APP_KEY</key>
 	<string>979cb0bba2889a15a107952c8d5a1286</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
