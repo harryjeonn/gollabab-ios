@@ -19,6 +19,7 @@ struct PlaceListView: View {
         VStack {
             HStack {
                 Text("총 \(viewModel.places.count)개")
+                    .font(.eliceP3())
                     .padding(.leading, 22)
                 Spacer()
             }
