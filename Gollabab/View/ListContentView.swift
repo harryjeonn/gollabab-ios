@@ -36,8 +36,8 @@ struct ListContentView: View {
             Spacer().frame(height: 10)
             
             HStack {
-                Image(systemName: "pin")
-                    .frame(width: 9, height: 11)
+                Image("pin_card")
+                    .frame(width: 12, height: 12)
                     .foregroundColor(.red)
                 
                 Text("\(placeModel.distance)m")
@@ -45,7 +45,7 @@ struct ListContentView: View {
                     .foregroundColor(.textGrayColor)
                     .frame(height: 20)
                 
-                Image(systemName: "phone.fill")
+                Image("phone")
                     .frame(width: 12, height: 12)
                     .foregroundColor(.red)
                     .padding(.leading, 8)

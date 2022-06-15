@@ -41,8 +41,8 @@ struct CardContentView: View {
             
             HStack(spacing: 0) {
                 Spacer().frame(width: 60)
-                Image(systemName: "pin")
-                    .frame(width: 9, height: 11)
+                Image("pin_card")
+                    .frame(width: 10, height: 10)
                     .foregroundColor(.red)
                 
                 Text("\(placeModel.distance)m")
@@ -52,11 +52,11 @@ struct CardContentView: View {
                     .padding(.leading, 8)
                 
                 HStack {
-                    Image(systemName: "phone.fill")
+                    Image("phone")
                         .frame(width: 12, height: 12)
                         .foregroundColor(.white)
                         .padding(.leading, 8)
-                    
+                     
                     Spacer().frame(width: 4)
                     
                     Text("전화걸기")

@@ -37,8 +37,7 @@ struct MainView: View {
                         Spacer()
                         
                         VStack {
-                            Image(systemName: "list.dash")
-                                .font(.system(size: 17))
+                            Image("list_outline")
                                 .frame(width: 24, height: 24)
                             
                             Text("목록")
