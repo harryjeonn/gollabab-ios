@@ -302,6 +302,9 @@
 		4AB39DD7284B49E30014DE41 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB39DD6284B49E30014DE41 /* SafariView.swift */; };
 		4AC5BE62281FE58C006CA43F /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5BE61281FE58C006CA43F /* MainMapView.swift */; };
 		4AC5BE64281FE598006CA43F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5BE63281FE598006CA43F /* MainView.swift */; };
+		4AE41A0D2859EF00009130A6 /* EliceDigitalBaeumOTF_Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4AE41A0B2859EF00009130A6 /* EliceDigitalBaeumOTF_Bold.otf */; };
+		4AE41A0E2859EF00009130A6 /* EliceDigitalBaeumOTF_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4AE41A0C2859EF00009130A6 /* EliceDigitalBaeumOTF_Regular.otf */; };
+		4AE41A102859EF90009130A6 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE41A0F2859EF90009130A6 /* FontExtension.swift */; };
 		82C93535281AD618009791EA /* GollababApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C93534281AD618009791EA /* GollababApp.swift */; };
 		82C93537281AD618009791EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C93536281AD618009791EA /* ContentView.swift */; };
 		82C93539281AD61D009791EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C93538281AD61D009791EA /* Assets.xcassets */; };
@@ -614,6 +617,9 @@
 		4AC5BE61281FE58C006CA43F /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
 		4AC5BE63281FE598006CA43F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4AC5BE65281FEE07006CA43F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4AE41A0B2859EF00009130A6 /* EliceDigitalBaeumOTF_Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EliceDigitalBaeumOTF_Bold.otf; sourceTree = "<group>"; };
+		4AE41A0C2859EF00009130A6 /* EliceDigitalBaeumOTF_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EliceDigitalBaeumOTF_Regular.otf; sourceTree = "<group>"; };
+		4AE41A0F2859EF90009130A6 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		82C93531281AD618009791EA /* Gollabab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gollabab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82C93534281AD618009791EA /* GollababApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GollababApp.swift; sourceTree = "<group>"; };
 		82C93536281AD618009791EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -695,7 +701,9 @@
 		4A7906252848BD6800B2830A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4AE41A0A2859EEEC009130A6 /* Font */,
 				4A7906262848BD6F00B2830A /* ColorExtension.swift */,
+				4AE41A0F2859EF90009130A6 /* FontExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1075,6 +1083,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		4AE41A0A2859EEEC009130A6 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				4AE41A0B2859EF00009130A6 /* EliceDigitalBaeumOTF_Bold.otf */,
+				4AE41A0C2859EF00009130A6 /* EliceDigitalBaeumOTF_Regular.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		82C93528281AD618009791EA = {
 			isa = PBXGroup;
 			children = (
@@ -1291,6 +1308,7 @@
 				4AAEBEE52832635500AA3E65 /* all_0.js in Resources */,
 				4AAEBE392832635500AA3E65 /* map_pin_red@3x.png in Resources */,
 				4AAEBF282832635500AA3E65 /* menu.js in Resources */,
+				4AE41A0E2859EF00009130A6 /* EliceDigitalBaeumOTF_Regular.otf in Resources */,
 				4AAEBE482832635500AA3E65 /* daum_th_line.png in Resources */,
 				4AAEBEB82832635500AA3E65 /* all_2.html in Resources */,
 				4AAEBEE82832635500AA3E65 /* all_6.html in Resources */,
@@ -1455,6 +1473,7 @@
 				4AAEBE5A2832635500AA3E65 /* interface_m_t_map_reverse_geo_coder.html in Resources */,
 				4AAEBF082832635500AA3E65 /* _m_t_map_polyline_8h_source.html in Resources */,
 				4AAEBF222832635500AA3E65 /* protocol_m_t_map_view_delegate_01-p.js in Resources */,
+				4AE41A0D2859EF00009130A6 /* EliceDigitalBaeumOTF_Bold.otf in Resources */,
 				4AAEBE6B2832635500AA3E65 /* struct_m_t_map_point_geo.js in Resources */,
 				4AAEBE452832635500AA3E65 /* map_present.png in Resources */,
 				4AAEBF042832635500AA3E65 /* properties_9.js in Resources */,
@@ -1528,6 +1547,7 @@
 				4A136375283F8BC20070EA54 /* PlaceCardView.swift in Sources */,
 				82C93537281AD618009791EA /* ContentView.swift in Sources */,
 				82C93535281AD618009791EA /* GollababApp.swift in Sources */,
+				4AE41A102859EF90009130A6 /* FontExtension.swift in Sources */,
 				4A5856D32850BAA200659013 /* PlaceListView.swift in Sources */,
 				4A346CBD2836463100C574A5 /* MainViewModel.swift in Sources */,
 				4A7906272848BD6F00B2830A /* ColorExtension.swift in Sources */,

@@ -22,7 +22,7 @@ struct CardContentView: View {
                 VStack(alignment: .leading, spacing: 4) {
                     Text(placeModel.placeName)
                         .fontWeight(.bold)
-                        .font(.system(size: 15))
+                        .font(.eliceP2())
                         .foregroundColor(viewModel.isSelectedCard(index) ? .selectedTextColor : .textBlackColor)
                         .frame(height: 23)
                         .minimumScaleFactor(0.1)
@@ -30,7 +30,7 @@ struct CardContentView: View {
                     Text(viewModel.convertCategory(placeModel.categoryName))
                         .foregroundColor(viewModel.isSelectedCard(index) ? .selectedTextColor : .textGrayColor)
                         .frame(height: 20)
-                        .font(.system(size: 12))
+                        .font(.eliceCaption())
                         .minimumScaleFactor(0.1)
                 }
                 Spacer()
@@ -48,7 +48,7 @@ struct CardContentView: View {
                 Text("\(placeModel.distance)m")
                     .foregroundColor(viewModel.isSelectedCard(index) ? .selectedTextColor : .textGrayColor)
                     .frame(height: 20)
-                    .font(.system(size: 12))
+                    .font(.eliceCaption())
                     .padding(.leading, 8)
                 
                 HStack {
@@ -62,7 +62,7 @@ struct CardContentView: View {
                     Text("전화걸기")
                         .foregroundColor(.white)
                         .padding(.trailing, 8)
-                        .font(.system(size: 12))
+                        .font(.eliceCaption())
                 }
                 .frame(height: 24)
                 .background(Color.red)

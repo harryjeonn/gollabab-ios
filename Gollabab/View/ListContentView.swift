@@ -17,8 +17,7 @@ struct ListContentView: View {
             Spacer().frame(height: 12)
             
             Text(placeModel.placeName)
-                .fontWeight(.bold)
-                .font(.system(size: 15))
+                .font(.eliceP2())
                 .frame(height: 23)
                 .padding(.leading, 22)
             
@@ -26,8 +25,8 @@ struct ListContentView: View {
             
             HStack {
                 Text(viewModel.convertCategory(placeModel.categoryName))
+                    .font(.eliceCaption())
                     .foregroundColor(.textGrayColor)
-                    .font(.system(size: 12))
                     .frame(height: 20)
                 
                 Spacer()
@@ -42,8 +41,8 @@ struct ListContentView: View {
                     .foregroundColor(.red)
                 
                 Text("\(placeModel.distance)m")
+                    .font(.eliceCaption())
                     .foregroundColor(.textGrayColor)
-                    .font(.system(size: 12))
                     .frame(height: 20)
                 
                 Image(systemName: "phone.fill")
@@ -52,8 +51,8 @@ struct ListContentView: View {
                     .padding(.leading, 8)
                 
                 Text(placeModel.phone)
+                    .font(.eliceCaption())
                     .foregroundColor(.textGrayColor)
-                    .font(.system(size: 12))
                     .underline()
                     .frame(height: 20)
                     .onTapGesture {

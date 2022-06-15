@@ -12,7 +12,7 @@ struct MainView: View {
     @State private var keyword: String = ""
     @State var currentIndex: Int = 0
     
-    var testItems = ["한식", "중식", "일식", "양식", "분식", "아시안음식", "카페", "간식", "패스트푸드"]
+    var testItems = ["전체", "🍚 한식", "🍜 중식", "🍣 일식", "🍝 양식", "🍤 분식", "🍔 패스트푸드", "🌮 아시안음식", "☕️ 카페", "🍰 간식"]
     
     var body: some View {
         ZStack {
@@ -27,7 +27,8 @@ struct MainView: View {
                     HStack {
                         Spacer().frame(width: 20)
                         
-                        TextField("검색해주세요.", text: $keyword)
+                        TextField("오늘은 어떤밥?", text: $keyword)
+                            .font(.eliceP3())
                             .padding(.leading, 12)
                             .frame(height: 40)
                             .background(Color.selectedTextColor)
@@ -41,7 +42,7 @@ struct MainView: View {
                                 .frame(width: 24, height: 24)
                             
                             Text("목록")
-                                .font(.system(size: 10))
+                                .font(.eliceCaptionSmall())
                         }
                         .padding(.leading, 20)
                         .onTapGesture {
@@ -55,15 +56,12 @@ struct MainView: View {
                         HStack(spacing: 0) {
                             
                             ForEach(0..<testItems.count) { item in
-                                HStack {
-                                    Image(systemName: "xmark")
-                                    
-                                    Text("\(testItems[item])")
-                                }
-                                .frame(height: 30)
-                                .padding(12)
-                                .background(Color.white)
-                                .cornerRadius(5)
+                                Text("\(testItems[item])")
+                                    .font(.eliceP4())
+                                    .frame(height: 30)
+                                    .padding(12)
+                                    .background(Color.white)
+                                    .cornerRadius(5)
                             }
                         }
                         .padding(.leading, 20)
