@@ -31,7 +31,7 @@ struct MainView: View {
                             .font(.eliceP3())
                             .padding(.leading, 12)
                             .frame(height: 40)
-                            .background(Color.selectedTextColor)
+                            .background(Color.gray800)
                             .cornerRadius(12)
                         
                         Spacer()
@@ -42,6 +42,7 @@ struct MainView: View {
                             
                             Text("목록")
                                 .font(.eliceCaptionSmall())
+                                .foregroundColor(.primaryRed)
                         }
                         .padding(.leading, 20)
                         .onTapGesture {
@@ -57,6 +58,7 @@ struct MainView: View {
                             ForEach(0..<testItems.count) { item in
                                 Text("\(testItems[item])")
                                     .font(.eliceP4())
+                                    .foregroundColor(.text300)
                                     .frame(height: 30)
                                     .padding(12)
                                     .background(Color.white)

@@ -23,12 +23,12 @@ struct CardContentView: View {
                     Text(placeModel.placeName)
                         .fontWeight(.bold)
                         .font(.eliceP2())
-                        .foregroundColor(viewModel.isSelectedCard(index) ? .selectedTextColor : .textBlackColor)
+                        .foregroundColor(.text200)
                         .frame(height: 23)
                         .minimumScaleFactor(0.1)
                     
                     Text(viewModel.convertCategory(placeModel.categoryName))
-                        .foregroundColor(viewModel.isSelectedCard(index) ? .selectedTextColor : .textGrayColor)
+                        .foregroundColor(.gray500)
                         .frame(height: 20)
                         .font(.eliceCaption())
                         .minimumScaleFactor(0.1)
@@ -46,7 +46,7 @@ struct CardContentView: View {
                     .foregroundColor(.red)
                 
                 Text("\(placeModel.distance)m")
-                    .foregroundColor(viewModel.isSelectedCard(index) ? .selectedTextColor : .textGrayColor)
+                    .foregroundColor(.gray500)
                     .frame(height: 20)
                     .font(.eliceCaption())
                     .padding(.leading, 8)
@@ -54,18 +54,17 @@ struct CardContentView: View {
                 HStack {
                     Image("phone")
                         .frame(width: 12, height: 12)
-                        .foregroundColor(.white)
                         .padding(.leading, 8)
                      
                     Spacer().frame(width: 4)
                     
                     Text("전화걸기")
-                        .foregroundColor(.white)
-                        .padding(.trailing, 8)
+                        .foregroundColor(.primaryRed)
                         .font(.eliceCaption())
+                        .underline()
+                        .padding(.trailing, 8)
                 }
                 .frame(height: 24)
-                .background(Color.red)
                 .cornerRadius(30)
                 .padding(.leading, 12)
                 .onTapGesture {

@@ -18,6 +18,7 @@ struct ListContentView: View {
             
             Text(placeModel.placeName)
                 .font(.eliceP2())
+                .foregroundColor(.text300)
                 .frame(height: 23)
                 .padding(.leading, 22)
             
@@ -26,7 +27,7 @@ struct ListContentView: View {
             HStack {
                 Text(viewModel.convertCategory(placeModel.categoryName))
                     .font(.eliceCaption())
-                    .foregroundColor(.textGrayColor)
+                    .foregroundColor(.gray500)
                     .frame(height: 20)
                 
                 Spacer()
@@ -42,7 +43,7 @@ struct ListContentView: View {
                 
                 Text("\(placeModel.distance)m")
                     .font(.eliceCaption())
-                    .foregroundColor(.textGrayColor)
+                    .foregroundColor(.gray500)
                     .frame(height: 20)
                 
                 Image("phone")
@@ -50,9 +51,9 @@ struct ListContentView: View {
                     .foregroundColor(.red)
                     .padding(.leading, 8)
                 
-                Text(placeModel.phone)
+                Text("전화걸기")
                     .font(.eliceCaption())
-                    .foregroundColor(.textGrayColor)
+                    .foregroundColor(.primaryRed)
                     .underline()
                     .frame(height: 20)
                     .onTapGesture {
@@ -64,7 +65,7 @@ struct ListContentView: View {
             Spacer().frame(height: 18)
             
             Rectangle()
-                .fill(Color.dividerColor)
+                .fill(Color.gray800)
                 .frame(height: 1)
                 .edgesIgnoringSafeArea(.horizontal)
         }
