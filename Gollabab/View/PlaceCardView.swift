@@ -27,10 +27,14 @@ struct PlaceCardView: View {
                 ForEach(Array(viewModel.places.enumerated()), id: \.0) { idx, place in
                     viewModel.createPlaceCard(place: place, index: idx)
                         .frame(width: UIScreen.main.bounds.width * 0.7, height: 103)
-                        .background(viewModel.isSelectedCard(idx) ? Color.black : Color.white)
+                        .background(Color.white)
                         .foregroundColor(.black)
                         .cornerRadius(16)
                         .shadow(color: .cardShadowColor, radius: 3, x: 0, y: 2)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 16)
+                                .stroke(Color.primaryRed, lineWidth: viewModel.isSelectedCard(idx) ? 2 : 0)
+                        )
                         .onTapGesture {
                             viewModel.isSelectedCard(idx) ? viewModel.showSafari.toggle() : withAnimation { viewModel.slideCard(idx) }
                         }
