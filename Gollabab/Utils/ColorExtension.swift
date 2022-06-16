@@ -8,13 +8,34 @@
 import SwiftUI
 
 extension Color {
-    static let selectedTextColor = Color(red: 253/255, green: 246/255, blue: 229/255)
-    static let selectedTagColor = Color(red: 254/255, green: 176/255, blue: 1/255)
+    init(hex: String) {
+        let scanner = Scanner(string: hex)
+        _ = scanner.scanString("#")
+        
+        var rgb: UInt64 = 0
+        scanner.scanHexInt64(&rgb)
+        
+        let r = Double((rgb >> 16) & 0xFF) / 255.0
+        let g = Double((rgb >>  8) & 0xFF) / 255.0
+        let b = Double((rgb >>  0) & 0xFF) / 255.0
+        self.init(red: r, green: g, blue: b)
+    }
     
-    static let textBlackColor = Color(red: 40/255, green: 40/255, blue: 40/255)
-    static let textGrayColor = Color(red: 116/255, green: 116/255, blue: 116/255)
     
-    static let cardShadowColor = Color(red: 68/255, green: 68/255, blue: 68/255, opacity: 0.3)
+    static let text200 = Color(hex: "282828")
+    static let text300 = Color(hex: "282828")
     
-    static let dividerColor = Color(red: 245/255, green: 245/255, blue: 245/255)
+    static let primaryBeige = Color(hex: "FDF6E5")
+    
+    static let primaryRed = Color(hex: "D8412B")
+    static let secondaryRed = Color(hex: "EC674E")
+    static let secondaryPink = Color(hex: "FEB0A2")
+    
+    static let gray100 = Color(hex: "121212")
+    static let gray500 = Color(hex: "747474")
+    static let gray600 = Color(hex: "959595")
+    static let gray700 = Color(hex: "BDBDBD")
+    static let gray800 = Color(hex: "F5F5F5")
+    
+    static let cardShadowColor = Color(hex: "444444").opacity(0.3)
 }
