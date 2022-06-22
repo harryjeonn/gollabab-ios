@@ -6,12 +6,10 @@
 //
 
 import SwiftUI
-import RxSwift
+import Combine
 
 struct MainMapView: UIViewRepresentable {
     @ObservedObject var viewModel: MainViewModel
-    
-    var disposeBag = DisposeBag()
     
     func makeUIView(context: Context) -> MTMapView {
         viewModel.setupLocation()
@@ -46,8 +44,8 @@ struct MainMapView: UIViewRepresentable {
     
     func moveMapMyLocation(_ view: MTMapView) {
         viewModel.mtMapPoint
-            .subscribe(onNext: { view.setMapCenter($0, zoomLevel: .zero, animated: true) })
-            .disposed(by: disposeBag)
+            .sink(receiveValue: { view.setMapCenter($0, zoomLevel: .zero, animated: true) })
+            .store(in: &viewModel.cancelBag)
     }
     
     // MARK: - Coordinator

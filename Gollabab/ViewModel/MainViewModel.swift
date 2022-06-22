@@ -11,13 +11,13 @@ import Combine
 class MainViewModel: ObservableObject {
     private let service = MainService()
     private var disposeBag = DisposeBag()
-    private var cancelBag = Set<AnyCancellable>()
+    var cancelBag = Set<AnyCancellable>()
     
     @Published var places: [PlaceModel] = []
     @Published var currentIndex: Int = 0
     @Published var showSafari: Bool = false
     @Published var isList: Bool = false
-    var mtMapPoint = PublishSubject<MTMapPoint>()
+    var mtMapPoint = PassthroughSubject<MTMapPoint, Never>()
     
     func checkPermisson() {
         service.checkPermission()
@@ -60,7 +60,7 @@ class MainViewModel: ObservableObject {
     func getMapPoint() {
         let myLocation = service.getLocation()
         let geoCoord = MTMapPointGeo(latitude: myLocation.lat!, longitude: myLocation.lon!)
-        mtMapPoint.onNext(MTMapPoint(geoCoord: geoCoord))
+        mtMapPoint.send(MTMapPoint(geoCoord: geoCoord))
     }
     
     func createPoiItems() -> [MTMapPOIItem] {
