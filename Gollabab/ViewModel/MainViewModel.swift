@@ -6,10 +6,13 @@
 //
 
 import RxSwift
+import Combine
 
 class MainViewModel: ObservableObject {
     private let service = MainService()
     private var disposeBag = DisposeBag()
+    private var cancelBag = Set<AnyCancellable>()
+    
     @Published var places: [PlaceModel] = []
     @Published var currentIndex: Int = 0
     @Published var showSafari: Bool = false
@@ -21,18 +24,17 @@ class MainViewModel: ObservableObject {
             .filter { $0 == true }
             .subscribe(onNext: { [weak self] _ in
                 self?.setupLocation()
-                self?.fetchPlace()
+                self?.fetchAroundPlace()
                 self?.getMapPoint()
             })
             .disposed(by: disposeBag)
     }
     
-    func fetchPlace() {
-        places.removeAll()
-        service.fetchPlace()
-            .filter { $0 != nil }
-            .subscribe(onNext: { self.places = $0! })
-            .disposed(by: disposeBag)
+    func fetchAroundPlace() {
+        service.fetchAroundPlace()
+            .sink(receiveCompletion: { print("completion \n \($0)") },
+                  receiveValue: { print("value \n \($0)") })
+            .store(in: &cancelBag)
     }
     
     func createPlaceCard(place: PlaceModel, index: Int) -> CardContentView {

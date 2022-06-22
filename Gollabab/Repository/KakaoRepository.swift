@@ -5,10 +5,8 @@
 //  Created by Harry on 2022/05/19.
 //
 
-import RxSwift
+import Combine
 import Alamofire
-import RxAlamofire
-import SwiftyJSON
 
 enum SearchType {
     case keyword
@@ -35,48 +33,46 @@ enum SearchType {
 
 class KakaoRepository {
     // 주변 식당 정보 가져오기
-    private let header: HTTPHeaders = [
+    private let headers: HTTPHeaders = [
         "Authorization" : "KakaoAK 7a6540ca6236f8c3485109a284cd0e9c"
     ]
     
-    func fetchPlace(mandatoryParam: String, lat: String, lon: String, type: SearchType) -> Observable<[PlaceModel]?> {
-        let url = type.url()
-        var range = UserDefaults.standard.float(forKey: "searchRange")
-        if range == 0 {
-            range = 300
-        }
-        
-        let param: [String : Any] = [
+    func fetchAroundPlace(mandatoryParam: String, lat: String, lon: String, type: SearchType) -> AnyPublisher<KakaoResponse, Error> {
+        let param: [String : String] = [
             type.mandatoryParam() : mandatoryParam,
             "x" : lon,
             "y" : lat,
-            "radius" : range
+            "radius" : "1000"
         ]
         
-        return RxAlamofire
-            .requestJSON(.get, url, parameters: param, headers: header)
-            .debug()
-            .map { resp, json -> [PlaceModel]? in
-                switch resp.statusCode {
-                case 200..<300:
-                    var places = [PlaceModel]()
-                    if let documents = JSON(json)["documents"].array {
-                        for item in documents {
-                            let placeName = item["place_name"].string ?? ""
-                            let addressName = item["address_name"].string ?? ""
-                            let latY = item["y"].string ?? ""
-                            let lonX = item["x"].string ?? ""
-                            let distance = item["distance"].string ?? ""
-                            let phone = item["phone"].string ?? ""
-                            let placeUrl = item["place_url"].string ?? ""
-                            let categoryName = item["category_name"].string ?? ""
-                            places.append(PlaceModel(placeName: placeName, addressName: addressName, latY: latY, lonX: lonX, distance: distance, phone: phone, placeUrl: placeUrl, categoryName: categoryName))
-                        }
-                    }
-                    return places
-                default:
-                    return nil
-                }
-            }
+        return AF.request(type.url(), method: .get, parameters: param, headers: headers)
+            .publishDecodable(type: KakaoResponse.self)
+            .value()
+            .mapError({ (afError: AFError) in
+                return afError as Error
+            })
+            .eraseToAnyPublisher()
+        
+        // URLSession
+//        var urlComponents = URLComponents(string: type.url())!
+//
+//        urlComponents.queryItems = param.map { URLQueryItem(name: $0.key, value: $0.value) }
+//
+//        print("parameters = \(urlComponents.queryItems)")
+//
+//        let url = urlComponents.url!
+//
+//        var urlRequest = URLRequest(url: url)
+//        urlRequest.httpMethod = "GET"
+//        urlRequest.headers = headers
+//
+//        print("URLRequest = \(urlRequest)")
+//        print("URLRequest.headers = \(urlRequest.headers)")
+//
+//
+//        return URLSession.shared.dataTaskPublisher(for: urlRequest)
+//            .map(\.data)
+//            .decode(type: TestPlace.self, decoder: JSONDecoder())
+//            .eraseToAnyPublisher()
     }
 }

@@ -6,21 +6,17 @@
 //
 
 import RxSwift
+import Combine
+import Foundation
+import SwiftyJSON
 
 class MainService {
     private let kakaoRepository = KakaoRepository()
     private let locationRepository = LocationRepository()
     
-    func fetchPlace() -> Observable<[PlaceModel]?> {
-        // repo랑 통신 후 모델을 만들어서 배열로 넘긴다.
-        return kakaoRepository.fetchPlace(mandatoryParam: "식당", lat: "\(locationRepository.getLocation().lat!)", lon: "\(locationRepository.getLocation().lon!)", type: .keyword)
-            .map({ (items) -> [PlaceModel] in
-                var place = [PlaceModel]()
-                if let sortedItems = items?.sorted(by: { $0.distance < $1.distance }) {
-                    place = sortedItems
-                }
-                return place
-            })
+    func fetchAroundPlace() -> AnyPublisher<KakaoResponse, Error> {
+        // 원천데이터 가공 후 리턴
+        return kakaoRepository.fetchAroundPlace(mandatoryParam: "식당", lat: "\(locationRepository.getLocation().lat!)", lon: "\(locationRepository.getLocation().lon!)", type: .keyword)
     }
     
     func setupLocation() {
