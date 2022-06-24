@@ -14,9 +14,11 @@ class MainService {
     private let kakaoRepository = KakaoRepository()
     private let locationRepository = LocationRepository()
     
-    func fetchAroundPlace() -> AnyPublisher<KakaoResponse, Error> {
-        // 원천데이터 가공 후 리턴
+    func fetchAroundPlace() -> AnyPublisher<[PlaceModel], Error> {
         return kakaoRepository.fetchAroundPlace(mandatoryParam: "식당", lat: "\(locationRepository.getLocation().lat!)", lon: "\(locationRepository.getLocation().lon!)", type: .keyword)
+            .map { $0.documents }
+            .map { $0.sorted(by: { $0.distance < $1.distance }) }
+            .eraseToAnyPublisher()
     }
     
     func setupLocation() {

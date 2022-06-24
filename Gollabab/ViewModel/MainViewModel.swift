@@ -31,8 +31,8 @@ class MainViewModel: ObservableObject {
     
     func fetchAroundPlace() {
         service.fetchAroundPlace()
-            .sink(receiveCompletion: { print("completion \n \($0)") },
-                  receiveValue: { print("value \n \($0)") })
+            .sink(receiveCompletion: { print("completion: \($0)") },
+                  receiveValue: { self.places = $0 })
             .store(in: &cancelBag)
     }
     
