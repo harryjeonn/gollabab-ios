@@ -6,13 +6,13 @@
 //
 
 import CoreLocation
-import RxSwift
+import Combine
 
 class LocationRepository: NSObject {
     private var locationManager = CLLocationManager()
     private var myLocationModel = MyLocationModel()
     
-    var authorization = PublishSubject<CLAuthorizationStatus>()
+    var authorization = PassthroughSubject<CLAuthorizationStatus, Never>()
     
     func setupLocation() {
         locationManager.delegate = self
@@ -44,6 +44,6 @@ extension LocationRepository: CLLocationManagerDelegate {
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        authorization.onNext(manager.authorizationStatus)
+        authorization.send(manager.authorizationStatus)
     }
 }

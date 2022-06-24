@@ -27,9 +27,9 @@ class MainService {
         return locationRepository.getLocation()
     }
     
-    func checkPermission() -> Observable<Bool> {
+    func checkPermission() -> AnyPublisher<Bool, Never> {
         return locationRepository.authorization
-            .map { status in
+            .map { status -> Bool in
                 switch status {
                 case .authorizedAlways , .authorizedWhenInUse:
                     return true
@@ -39,5 +39,6 @@ class MainService {
                     return false
                 }
             }
+            .eraseToAnyPublisher()
     }
 }
