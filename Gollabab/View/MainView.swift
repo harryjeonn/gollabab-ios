@@ -12,8 +12,6 @@ struct MainView: View {
     @State private var keyword: String = ""
     @State var currentIndex: Int = 0
     
-    var testItems = ["전체", "🍚 한식", "🍜 중식", "🍣 일식", "🍝 양식", "🍤 분식", "🍔 패스트푸드", "🌮 아시안음식", "☕️ 카페", "🍰 간식"]
-    
     var body: some View {
         ZStack {
             MainMapView(viewModel: viewModel)
@@ -23,7 +21,7 @@ struct MainView: View {
                 }
             
             VStack(spacing: 0) {
-                VStack {
+                VStack(spacing: 0) {
                     HStack {
                         Spacer().frame(width: 20)
                         
@@ -53,19 +51,10 @@ struct MainView: View {
                     }
                     
                     ScrollView(.horizontal, showsIndicators: false, content: {
-                        HStack(spacing: 0) {
-                            
-                            ForEach(0..<testItems.count) { item in
-                                Text("\(testItems[item])")
-                                    .font(.eliceP4())
-                                    .foregroundColor(.text300)
-                                    .frame(height: 30)
-                                    .padding(12)
-                                    .background(Color.white)
-                                    .cornerRadius(5)
-                            }
+                        HStack(spacing: 16) {
+                            CategoryView(viewModel: viewModel)
                         }
-                        .padding(.leading, 20)
+                        .padding(EdgeInsets(top: 8, leading: 20, bottom: 8, trailing: 20))
                     })
                 }
                 .padding(.top, 52)

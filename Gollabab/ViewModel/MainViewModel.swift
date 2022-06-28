@@ -6,13 +6,15 @@
 //
 
 import Combine
+import SwiftUI
 
 class MainViewModel: ObservableObject {
     private let service = MainService()
     var cancelBag = Set<AnyCancellable>()
     
     @Published var places: [PlaceModel] = []
-    @Published var currentIndex: Int = 0
+    @Published var cardCurrentIndex: Int = 0
+    @Published var categoryCurrenIndex: Int = 0
     @Published var showSafari: Bool = false
     @Published var isList: Bool = false
     
@@ -23,14 +25,15 @@ class MainViewModel: ObservableObject {
             .filter { $0 == true }
             .sink(receiveValue: { _ in
                 self.setupLocation()
-                self.fetchAroundPlace()
+                self.fetchPlace(.all)
                 self.getMapPoint()
             })
             .store(in: &cancelBag)
     }
     
-    func fetchAroundPlace() {
-        service.fetchAroundPlace()
+    func fetchPlace(_ type: CategoryType) {
+        cardCurrentIndex = 0
+        service.fetchPlace(type)
             .sink(receiveCompletion: { print("completion: \($0)") },
                   receiveValue: { self.places = $0 })
             .store(in: &cancelBag)
@@ -45,7 +48,11 @@ class MainViewModel: ObservableObject {
     }
     
     func isSelectedCard(_ index: Int) -> Bool {
-        return currentIndex == index
+        return cardCurrentIndex == index
+    }
+    
+    func isSelectedCategory(_ index: Int) -> Bool {
+        return categoryCurrenIndex == index
     }
     
     func getWidth() -> CGFloat {
@@ -102,6 +109,6 @@ class MainViewModel: ObservableObject {
     }
     
     func slideCard(_ idx: Int) {
-        currentIndex = idx
+        cardCurrentIndex = idx
     }
 }

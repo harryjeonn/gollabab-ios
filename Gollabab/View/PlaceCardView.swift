@@ -46,7 +46,7 @@ struct PlaceCardView: View {
             }
             .padding(.leading, 22)
             .padding(.bottom, 24)
-            .offset(x: (CGFloat(viewModel.currentIndex) * -width) + offset)
+            .offset(x: (CGFloat(viewModel.cardCurrentIndex) * -width) + offset)
             .gesture(
                 DragGesture()
                     .updating($offset, body: { value, out, _ in
@@ -57,16 +57,16 @@ struct PlaceCardView: View {
                         let progress = -offsetX / width
                         let roundIndex = progress.rounded()
                         
-                        viewModel.currentIndex = max(min(viewModel.currentIndex + Int(roundIndex), viewModel.places.count - 1), 0)
+                        viewModel.cardCurrentIndex = max(min(viewModel.cardCurrentIndex + Int(roundIndex), viewModel.places.count - 1), 0)
                         
-                        viewModel.currentIndex = index
+                        viewModel.cardCurrentIndex = index
                     })
                     .onChanged({ value in
                         let offsetX = value.translation.width
                         let progress = -offsetX / width
                         let roundIndex = progress.rounded()
                         
-                        index = max(min(viewModel.currentIndex + Int(roundIndex), viewModel.places.count - 1), 0)
+                        index = max(min(viewModel.cardCurrentIndex + Int(roundIndex), viewModel.places.count - 1), 0)
                     })
             )
         }

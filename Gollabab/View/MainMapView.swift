@@ -41,7 +41,7 @@ struct MainMapView: UIViewRepresentable {
     
     func moveMapPlace(_ view: MTMapView) {
         if view.poiItems.isEmpty == false {
-            guard let poiItem = view.poiItems[viewModel.currentIndex] as? MTMapPOIItem else { return }
+            guard let poiItem = view.poiItems[viewModel.cardCurrentIndex] as? MTMapPOIItem else { return }
             view.select(poiItem, animated: true)
             view.setMapCenter(poiItem.mapPoint, animated: true)
         }
@@ -70,7 +70,7 @@ struct MainMapView: UIViewRepresentable {
         func mapView(_ mapView: MTMapView!, selectedPOIItem poiItem: MTMapPOIItem!) -> Bool {
             // 조건처리안하면 계속 viewModel.currentIndex를 바꾸어서 화면이 나오지 않음
             withAnimation {
-                if viewModel.currentIndex != poiItem.tag {
+                if viewModel.cardCurrentIndex != poiItem.tag {
                     viewModel.slideCard(poiItem.tag)
                 }
             }
