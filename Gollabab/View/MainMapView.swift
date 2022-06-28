@@ -22,7 +22,12 @@ struct MainMapView: UIViewRepresentable {
     
     func updateUIView(_ uiView: MTMapView, context: Context) {
         if uiView.poiItems.isEmpty {
-            uiView.addPOIItems(viewModel.createPoiItems())
+            let poiItems = viewModel.createPoiItems()
+            poiItems.forEach { item in
+                item.customCalloutBalloonView = UIView()
+            }
+            
+            uiView.addPOIItems(poiItems)
         }
         
         moveMapPlace(uiView)
@@ -80,8 +85,8 @@ struct MainMapView: UIViewRepresentable {
         
         // 지도 터치했을 때
         func mapView(_ mapView: MTMapView!, singleTapOn mapPoint: MTMapPoint!) {
-            // TODO: - 키보드 내리기
-            
+            guard let window = UIApplication.shared.windows.first else { return }
+            window.endEditing(true)
         }
     }
 }
