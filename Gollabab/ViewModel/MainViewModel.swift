@@ -70,8 +70,12 @@ class MainViewModel: ObservableObject {
             pin.itemName = place.placeName
             let coord = MTMapPointGeo(latitude: Double(place.latY)!, longitude: Double(place.lonX)!)
             pin.mapPoint = MTMapPoint(geoCoord: coord)
-            pin.markerType = .yellowPin
             pin.showAnimationType = .springFromGround
+            pin.markerType = .customImage
+            pin.markerSelectedType = .customImage
+            pin.customImageName = "pin_default"
+            pin.customSelectedImageName = "pin_select"
+            
             pin.tag = index
             
             items.append(pin)
