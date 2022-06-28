@@ -5,34 +5,35 @@
 //  Created by Harry on 2022/05/19.
 //
 
-import RxSwift
+import Combine
 
 class MainViewModel: ObservableObject {
     private let service = MainService()
-    private var disposeBag = DisposeBag()
+    var cancelBag = Set<AnyCancellable>()
+    
     @Published var places: [PlaceModel] = []
     @Published var currentIndex: Int = 0
     @Published var showSafari: Bool = false
     @Published var isList: Bool = false
-    var mtMapPoint = PublishSubject<MTMapPoint>()
+    
+    var mtMapPoint = PassthroughSubject<MTMapPoint, Never>()
     
     func checkPermisson() {
         service.checkPermission()
             .filter { $0 == true }
-            .subscribe(onNext: { [weak self] _ in
-                self?.setupLocation()
-                self?.fetchPlace()
-                self?.getMapPoint()
+            .sink(receiveValue: { _ in
+                self.setupLocation()
+                self.fetchAroundPlace()
+                self.getMapPoint()
             })
-            .disposed(by: disposeBag)
+            .store(in: &cancelBag)
     }
     
-    func fetchPlace() {
-        places.removeAll()
-        service.fetchPlace()
-            .filter { $0 != nil }
-            .subscribe(onNext: { self.places = $0! })
-            .disposed(by: disposeBag)
+    func fetchAroundPlace() {
+        service.fetchAroundPlace()
+            .sink(receiveCompletion: { print("completion: \($0)") },
+                  receiveValue: { self.places = $0 })
+            .store(in: &cancelBag)
     }
     
     func createPlaceCard(place: PlaceModel, index: Int) -> CardContentView {
@@ -58,7 +59,7 @@ class MainViewModel: ObservableObject {
     func getMapPoint() {
         let myLocation = service.getLocation()
         let geoCoord = MTMapPointGeo(latitude: myLocation.lat!, longitude: myLocation.lon!)
-        mtMapPoint.onNext(MTMapPoint(geoCoord: geoCoord))
+        mtMapPoint.send(MTMapPoint(geoCoord: geoCoord))
     }
     
     func createPoiItems() -> [MTMapPOIItem] {
