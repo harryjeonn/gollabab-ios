@@ -22,7 +22,12 @@ struct MainMapView: UIViewRepresentable {
     
     func updateUIView(_ uiView: MTMapView, context: Context) {
         if uiView.poiItems.isEmpty {
-            uiView.addPOIItems(viewModel.createPoiItems())
+            let poiItems = viewModel.createPoiItems()
+            poiItems.forEach { item in
+                item.customCalloutBalloonView = UIView()
+            }
+            
+            uiView.addPOIItems(poiItems)
         }
         
         moveMapPlace(uiView)
