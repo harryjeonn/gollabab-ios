@@ -5,10 +5,8 @@
 //  Created by Harry on 2022/05/19.
 //
 
-import RxSwift
 import Combine
 import Foundation
-import SwiftyJSON
 
 class MainService {
     private let kakaoRepository = KakaoRepository()
