@@ -43,6 +43,17 @@ class MainViewModel: ObservableObject {
             .store(in: &cancelBag)
     }
     
+    func searchPlace(_ keyword: String) {
+        cardCurrentIndex = 0
+        service.searchPlace(keyword)
+            .sink(receiveCompletion: { print("completion: \($0)") },
+                  receiveValue: { [weak self] value in
+                self?.places = value
+                self?.createPoiItems()
+            })
+            .store(in: &cancelBag)
+    }
+    
     func createPlaceCard(place: PlaceModel, index: Int) -> CardContentView {
         return CardContentView(viewModel: self, placeModel: place, index: index)
     }

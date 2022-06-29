@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MainView: View {
     @ObservedObject private var viewModel = MainViewModel()
-    @State private var keyword: String = ""
     @State var currentIndex: Int = 0
     
     var body: some View {
@@ -25,12 +24,7 @@ struct MainView: View {
                     HStack {
                         Spacer().frame(width: 20)
                         
-                        TextField("오늘은 어떤밥?", text: $keyword)
-                            .font(.eliceP3())
-                            .padding(.leading, 12)
-                            .frame(height: 40)
-                            .background(Color.gray800)
-                            .cornerRadius(12)
+                        SearchView(viewModel: viewModel)
                         
                         Spacer()
                         
