@@ -39,7 +39,7 @@ struct PlaceCardView: View {
                             viewModel.isSelectedCard(idx) ? viewModel.showSafari.toggle() : withAnimation { viewModel.slideCard(idx) }
                         }
                         .fullScreenCover(isPresented: $viewModel.showSafari, content: {
-                            SafariView(url: URL(string: place.placeUrl)!)
+                            SafariView(url: viewModel.getURL())
                                 .edgesIgnoringSafeArea(.all)
                         })
                 }

@@ -19,14 +19,15 @@ class MainViewModel: ObservableObject {
     @Published var isList: Bool = false
     
     var mtMapPoint = PassthroughSubject<MTMapPoint, Never>()
+    var poiItems = PassthroughSubject<[MTMapPOIItem], Never>()
     
     func checkPermisson() {
         service.checkPermission()
             .filter { $0 == true }
-            .sink(receiveValue: { _ in
-                self.setupLocation()
-                self.fetchPlace(.all)
-                self.getMapPoint()
+            .sink(receiveValue: { [weak self] _ in
+                self?.setupLocation()
+                self?.fetchPlace(.all)
+                self?.getMapPoint()
             })
             .store(in: &cancelBag)
     }
@@ -35,7 +36,10 @@ class MainViewModel: ObservableObject {
         cardCurrentIndex = 0
         service.fetchPlace(type)
             .sink(receiveCompletion: { print("completion: \($0)") },
-                  receiveValue: { self.places = $0 })
+                  receiveValue: { [weak self] value in
+                self?.places = value
+                self?.createPoiItems()
+            })
             .store(in: &cancelBag)
     }
     
@@ -55,6 +59,14 @@ class MainViewModel: ObservableObject {
         return categoryCurrenIndex == index
     }
     
+    func getURL() -> URL {
+        if let url = URL(string: places[cardCurrentIndex].placeUrl) {
+            return url
+        } else {
+            return URL(string: "https://www.daum.net")!
+        }
+    }
+    
     func getWidth() -> CGFloat {
         return UIScreen.main.bounds.width * 0.8
     }
@@ -69,9 +81,8 @@ class MainViewModel: ObservableObject {
         mtMapPoint.send(MTMapPoint(geoCoord: geoCoord))
     }
     
-    func createPoiItems() -> [MTMapPOIItem] {
-        var items = [MTMapPOIItem]()
-        
+    func createPoiItems() {
+        var items: [MTMapPOIItem] = []
         places.enumerated().forEach({ index, place in
             let pin = MTMapPOIItem()
             pin.itemName = place.placeName
@@ -88,7 +99,7 @@ class MainViewModel: ObservableObject {
             items.append(pin)
         })
         
-        return items
+        poiItems.send(items)
     }
     
     func convertCategory(_ category: String) -> String {

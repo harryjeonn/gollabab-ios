@@ -14,6 +14,7 @@ struct MainMapView: UIViewRepresentable {
     func makeUIView(context: Context) -> MTMapView {
         viewModel.setupLocation()
         let view = MTMapView()
+        setupPoiItems(view)
         setupMapView(view)
         moveMapMyLocation(view)
         view.delegate = context.coordinator
@@ -21,16 +22,20 @@ struct MainMapView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: MTMapView, context: Context) {
-        if uiView.poiItems.isEmpty {
-            let poiItems = viewModel.createPoiItems()
-            poiItems.forEach { item in
-                item.customCalloutBalloonView = UIView()
-            }
-            
-            uiView.addPOIItems(poiItems)
-        }
-        
         moveMapPlace(uiView)
+    }
+    
+    func setupPoiItems(_ view: MTMapView) {
+        viewModel.poiItems
+            .sink { items in
+                view.removeAllPOIItems()
+                
+                items.forEach { item in
+                    item.customCalloutBalloonView = UIView()
+                }
+                
+                view.addPOIItems(items)
+            }.store(in: &viewModel.cancelBag)
     }
     
     func setupMapView(_ view: MTMapView) {
@@ -61,7 +66,7 @@ struct MainMapView: UIViewRepresentable {
     
     class Coordinator: NSObject, MTMapViewDelegate {
         let viewModel: MainViewModel
-
+        
         init(viewModel: MainViewModel) {
             self.viewModel = viewModel
         }
