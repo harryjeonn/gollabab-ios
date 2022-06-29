@@ -305,6 +305,8 @@
 		4AE41A0D2859EF00009130A6 /* EliceDigitalBaeumOTF_Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4AE41A0B2859EF00009130A6 /* EliceDigitalBaeumOTF_Bold.otf */; };
 		4AE41A0E2859EF00009130A6 /* EliceDigitalBaeumOTF_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4AE41A0C2859EF00009130A6 /* EliceDigitalBaeumOTF_Regular.otf */; };
 		4AE41A102859EF90009130A6 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE41A0F2859EF90009130A6 /* FontExtension.swift */; };
+		4AF706D6286B0C5A00C83304 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF706D5286B0C5A00C83304 /* CategoryModel.swift */; };
+		4AF706D8286B0E9900C83304 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF706D7286B0E9900C83304 /* CategoryView.swift */; };
 		82C93535281AD618009791EA /* GollababApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C93534281AD618009791EA /* GollababApp.swift */; };
 		82C93537281AD618009791EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C93536281AD618009791EA /* ContentView.swift */; };
 		82C93539281AD61D009791EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C93538281AD61D009791EA /* Assets.xcassets */; };
@@ -620,6 +622,8 @@
 		4AE41A0B2859EF00009130A6 /* EliceDigitalBaeumOTF_Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EliceDigitalBaeumOTF_Bold.otf; sourceTree = "<group>"; };
 		4AE41A0C2859EF00009130A6 /* EliceDigitalBaeumOTF_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EliceDigitalBaeumOTF_Regular.otf; sourceTree = "<group>"; };
 		4AE41A0F2859EF90009130A6 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
+		4AF706D5286B0C5A00C83304 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		4AF706D7286B0E9900C83304 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		82C93531281AD618009791EA /* Gollabab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gollabab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82C93534281AD618009791EA /* GollababApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GollababApp.swift; sourceTree = "<group>"; };
 		82C93536281AD618009791EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -1070,6 +1074,7 @@
 				4A08C24F2852020000123531 /* ListContentView.swift */,
 				4A7906232848403400B2830A /* CardContentView.swift */,
 				4AB39DD6284B49E30014DE41 /* SafariView.swift */,
+				4AF706D7286B0E9900C83304 /* CategoryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1079,6 +1084,7 @@
 			children = (
 				4A346CB42836407000C574A5 /* KakaoResponse.swift */,
 				4A136376283F93270070EA54 /* MyLocationModel.swift */,
+				4AF706D5286B0C5A00C83304 /* CategoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1539,8 +1545,10 @@
 				4A08C2502852020000123531 /* ListContentView.swift in Sources */,
 				4A136379283F94160070EA54 /* LocationRepository.swift in Sources */,
 				4A136377283F93270070EA54 /* MyLocationModel.swift in Sources */,
+				4AF706D8286B0E9900C83304 /* CategoryView.swift in Sources */,
 				4A7906242848403400B2830A /* CardContentView.swift in Sources */,
 				4A346CB8283644FD00C574A5 /* KakaoRepository.swift in Sources */,
+				4AF706D6286B0C5A00C83304 /* CategoryModel.swift in Sources */,
 				4AB39DD7284B49E30014DE41 /* SafariView.swift in Sources */,
 				4AC5BE64281FE598006CA43F /* MainView.swift in Sources */,
 				4A346CB52836407000C574A5 /* KakaoResponse.swift in Sources */,
