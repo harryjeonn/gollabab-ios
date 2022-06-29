@@ -9,30 +9,36 @@ import SwiftUI
 
 struct SearchView: View {
     @ObservedObject var viewModel: MainViewModel
-    @State private var keyword: String = ""
     
     var body: some View {
         HStack(spacing: 8) {
-            Image(isEmptyKeyword() ? "search_outline" : "arrow_ios_back")
+            Image(viewModel.isEditing ? "arrow_ios_back" : "search_outline")
                 .onTapGesture {
-                    keyword = ""
+                    viewModel.keyword = ""
+                    viewModel.dismissRecentSearchView()
                 }
             
-            TextField("오늘은 어떤밥?", text: $keyword, onCommit: {
-                if isEmptyKeyword() == false {
-                    viewModel.searchPlace(keyword)
+            TextField("오늘은 어떤밥?", text: $viewModel.keyword, onEditingChanged: { viewModel.isEditing = $0 }, onCommit: {
+                if viewModel.keyword != "" {
+                    viewModel.searchPlace()
                 }
             })
             .font(.eliceP3())
+            
+            Spacer()
+            
+            if viewModel.keyword != "" {
+                Image("close_circle")
+                    .padding(.trailing, 16)
+                    .onTapGesture {
+                        viewModel.keyword = ""
+                    }
+            }
         }
         .padding(.leading, 12)
         .frame(height: 40)
         .background(Color.gray800)
         .cornerRadius(12)
-    }
-    
-    func isEmptyKeyword() -> Bool {
-        return keyword == "" ? true : false
     }
 }
 

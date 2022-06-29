@@ -308,6 +308,9 @@
 		4AF706D6286B0C5A00C83304 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF706D5286B0C5A00C83304 /* CategoryModel.swift */; };
 		4AF706D8286B0E9900C83304 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF706D7286B0E9900C83304 /* CategoryView.swift */; };
 		4AF706DA286C11AE00C83304 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF706D9286C11AE00C83304 /* SearchView.swift */; };
+		4AF706DC286C2C5300C83304 /* RecentSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF706DB286C2C5300C83304 /* RecentSearchView.swift */; };
+		4AF706E0286C38FD00C83304 /* UserDefaultsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF706DF286C38FD00C83304 /* UserDefaultsRepository.swift */; };
+		4AF706E2286C4AA400C83304 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF706E1286C4AA400C83304 /* UIApplicationExtension.swift */; };
 		82C93535281AD618009791EA /* GollababApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C93534281AD618009791EA /* GollababApp.swift */; };
 		82C93537281AD618009791EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C93536281AD618009791EA /* ContentView.swift */; };
 		82C93539281AD61D009791EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C93538281AD61D009791EA /* Assets.xcassets */; };
@@ -626,6 +629,9 @@
 		4AF706D5286B0C5A00C83304 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		4AF706D7286B0E9900C83304 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		4AF706D9286C11AE00C83304 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		4AF706DB286C2C5300C83304 /* RecentSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchView.swift; sourceTree = "<group>"; };
+		4AF706DF286C38FD00C83304 /* UserDefaultsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsRepository.swift; sourceTree = "<group>"; };
+		4AF706E1286C4AA400C83304 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		82C93531281AD618009791EA /* Gollabab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gollabab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82C93534281AD618009791EA /* GollababApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GollababApp.swift; sourceTree = "<group>"; };
 		82C93536281AD618009791EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -676,6 +682,7 @@
 			children = (
 				4A346CB7283644FD00C574A5 /* KakaoRepository.swift */,
 				4A136378283F94160070EA54 /* LocationRepository.swift */,
+				4AF706DF286C38FD00C83304 /* UserDefaultsRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -710,6 +717,7 @@
 				4AE41A0A2859EEEC009130A6 /* Font */,
 				4A7906262848BD6F00B2830A /* ColorExtension.swift */,
 				4AE41A0F2859EF90009130A6 /* FontExtension.swift */,
+				4AF706E1286C4AA400C83304 /* UIApplicationExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1078,6 +1086,7 @@
 				4AB39DD6284B49E30014DE41 /* SafariView.swift */,
 				4AF706D7286B0E9900C83304 /* CategoryView.swift */,
 				4AF706D9286C11AE00C83304 /* SearchView.swift */,
+				4AF706DB286C2C5300C83304 /* RecentSearchView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1545,6 +1554,7 @@
 			files = (
 				4AF706DA286C11AE00C83304 /* SearchView.swift in Sources */,
 				4A346CBB2836462300C574A5 /* MainService.swift in Sources */,
+				4AF706E2286C4AA400C83304 /* UIApplicationExtension.swift in Sources */,
 				4AC5BE62281FE58C006CA43F /* MainMapView.swift in Sources */,
 				4A08C2502852020000123531 /* ListContentView.swift in Sources */,
 				4A136379283F94160070EA54 /* LocationRepository.swift in Sources */,
@@ -1559,9 +1569,11 @@
 				4A136375283F8BC20070EA54 /* PlaceCardView.swift in Sources */,
 				82C93537281AD618009791EA /* ContentView.swift in Sources */,
 				82C93535281AD618009791EA /* GollababApp.swift in Sources */,
+				4AF706DC286C2C5300C83304 /* RecentSearchView.swift in Sources */,
 				4AE41A102859EF90009130A6 /* FontExtension.swift in Sources */,
 				4A5856D32850BAA200659013 /* PlaceListView.swift in Sources */,
 				4A346CBD2836463100C574A5 /* MainViewModel.swift in Sources */,
+				4AF706E0286C38FD00C83304 /* UserDefaultsRepository.swift in Sources */,
 				4A7906272848BD6F00B2830A /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1707,7 +1719,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1746,7 +1758,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

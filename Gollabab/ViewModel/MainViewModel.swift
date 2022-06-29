@@ -10,6 +10,7 @@ import SwiftUI
 
 class MainViewModel: ObservableObject {
     private let service = MainService()
+    private let userDefaultsRepo = UserDefaultsRepository()
     var cancelBag = Set<AnyCancellable>()
     
     @Published var places: [PlaceModel] = []
@@ -17,6 +18,10 @@ class MainViewModel: ObservableObject {
     @Published var categoryCurrenIndex: Int = 0
     @Published var showSafari: Bool = false
     @Published var isList: Bool = false
+    @Published var isEditing: Bool = false
+    
+    @Published var recentKeyword: [String] = []
+    @Published var keyword: String = ""
     
     var mtMapPoint = PassthroughSubject<MTMapPoint, Never>()
     var poiItems = PassthroughSubject<[MTMapPOIItem], Never>()
@@ -43,15 +48,45 @@ class MainViewModel: ObservableObject {
             .store(in: &cancelBag)
     }
     
-    func searchPlace(_ keyword: String) {
+    func searchPlace() {
         cardCurrentIndex = 0
         service.searchPlace(keyword)
             .sink(receiveCompletion: { print("completion: \($0)") },
                   receiveValue: { [weak self] value in
                 self?.places = value
                 self?.createPoiItems()
+                self?.saveSearchKeyword()
             })
             .store(in: &cancelBag)
+    }
+    
+    func fetchRecentSearch() {
+        recentKeyword = userDefaultsRepo.loadSearchKeyword()
+    }
+    
+    func deleteAll() {
+        userDefaultsRepo.deleteAllKeyword()
+        fetchRecentSearch()
+    }
+    
+    func recentKeywordClicked(_ keyword: String) {
+        self.keyword = keyword
+        searchPlace()
+        dismissRecentSearchView()
+    }
+    
+    func saveSearchKeyword() {
+        userDefaultsRepo.saveSearchKeyword(keyword)
+    }
+    
+    func deleteSearchKeyword(_ indexSet: IndexSet) {
+        recentKeyword.remove(atOffsets: indexSet)
+        userDefaultsRepo.saveRecentKeyword(recentKeyword)
+    }
+    
+    func dismissRecentSearchView() {
+        isEditing.toggle()
+        UIApplication.hideKeyboard()
     }
     
     func createPlaceCard(place: PlaceModel, index: Int) -> CardContentView {

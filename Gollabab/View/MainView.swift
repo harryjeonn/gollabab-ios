@@ -53,16 +53,21 @@ struct MainView: View {
                 }
                 .padding(.top, 52)
                 .background(Color.white)
-                
-                if viewModel.isList {
-                    PlaceListView(viewModel: viewModel)
+                if viewModel.isEditing {
+                    RecentSearchView(viewModel: viewModel)
                         .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)
                         .background(Color.white)
                 } else {
-                    Spacer()
-                    PlaceCardView(viewModel: viewModel, index: $currentIndex)
-                        .frame(height: 103)
-                        .padding(.bottom, 24)
+                    if viewModel.isList {
+                        PlaceListView(viewModel: viewModel)
+                            .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)
+                            .background(Color.white)
+                    } else {
+                        Spacer()
+                        PlaceCardView(viewModel: viewModel, index: $currentIndex)
+                            .frame(height: 103)
+                            .padding(.bottom, 24)
+                    }
                 }
             }
             .edgesIgnoringSafeArea(.all)
