@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MainView: View {
     @ObservedObject private var viewModel = MainViewModel()
-    @State private var keyword: String = ""
     @State var currentIndex: Int = 0
     
     var body: some View {
@@ -25,29 +24,25 @@ struct MainView: View {
                     HStack {
                         Spacer().frame(width: 20)
                         
-                        TextField("오늘은 어떤밥?", text: $keyword)
-                            .font(.eliceP3())
-                            .padding(.leading, 12)
-                            .frame(height: 40)
-                            .background(Color.gray800)
-                            .cornerRadius(12)
+                        SearchView(viewModel: viewModel)
                         
                         Spacer()
                         
-                        VStack {
-                            Image("list_outline")
+                        VStack(spacing: 0) {
+                            Image(viewModel.isList ? "map_fill" : "list_outline")
+                                .resizable()
                                 .frame(width: 24, height: 24)
                             
-                            Text("목록")
+                            Text(viewModel.isList ? "지도" : "목록")
                                 .font(.eliceCaptionSmall())
                                 .foregroundColor(.primaryRed)
                         }
-                        .padding(.leading, 20)
+                        .padding(.leading, 16)
                         .onTapGesture {
                             viewModel.isList.toggle()
                         }
                         
-                        Spacer().frame(width: 20)
+                        Spacer().frame(width: 28)
                     }
                     
                     ScrollView(.horizontal, showsIndicators: false, content: {
@@ -59,16 +54,21 @@ struct MainView: View {
                 }
                 .padding(.top, 52)
                 .background(Color.white)
-                
-                if viewModel.isList {
-                    PlaceListView(viewModel: viewModel)
+                if viewModel.isEditing {
+                    RecentSearchView(viewModel: viewModel)
                         .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)
                         .background(Color.white)
                 } else {
-                    Spacer()
-                    PlaceCardView(viewModel: viewModel, index: $currentIndex)
-                        .frame(height: 103)
-                        .padding(.bottom, 24)
+                    if viewModel.isList {
+                        PlaceListView(viewModel: viewModel)
+                            .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)
+                            .background(Color.white)
+                    } else {
+                        Spacer()
+                        PlaceCardView(viewModel: viewModel, index: $currentIndex)
+                            .frame(height: 103)
+                            .padding(.bottom, 24)
+                    }
                 }
             }
             .edgesIgnoringSafeArea(.all)

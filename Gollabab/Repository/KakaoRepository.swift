@@ -37,7 +37,7 @@ class KakaoRepository {
         "Authorization" : "KakaoAK 7a6540ca6236f8c3485109a284cd0e9c"
     ]
     
-    func fetchAroundPlace(mandatoryParam: String, lat: String, lon: String, type: SearchType) -> AnyPublisher<KakaoResponse, Error> {
+    func fetchPlace(mandatoryParam: String, lat: String, lon: String, type: SearchType) -> AnyPublisher<KakaoResponse, Error> {
         let param: [String : String] = [
             type.mandatoryParam() : mandatoryParam,
             "x" : lon,

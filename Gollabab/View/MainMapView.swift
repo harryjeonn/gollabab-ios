@@ -90,8 +90,7 @@ struct MainMapView: UIViewRepresentable {
         
         // 지도 터치했을 때
         func mapView(_ mapView: MTMapView!, singleTapOn mapPoint: MTMapPoint!) {
-            guard let window = UIApplication.shared.windows.first else { return }
-            window.endEditing(true)
+            UIApplication.hideKeyboard()
         }
     }
 }

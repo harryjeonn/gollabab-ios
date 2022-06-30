@@ -16,7 +16,15 @@ class MainService {
         let param = type == .all ? "FD6" : type.title()
         let searchType: SearchType = type == .all ? .category : .keyword
         
-        return kakaoRepository.fetchAroundPlace(mandatoryParam: param, lat: "\(locationRepository.getLocation().lat!)", lon: "\(locationRepository.getLocation().lon!)", type: searchType)
+        return fetch(param: param, type: searchType)
+    }
+    
+    func searchPlace(_ keyword: String) -> AnyPublisher<[PlaceModel], Error> {
+        return fetch(param: keyword, type: .keyword)
+    }
+    
+    func fetch(param: String, type: SearchType) -> AnyPublisher<[PlaceModel], Error> {
+        return kakaoRepository.fetchPlace(mandatoryParam: param, lat: "\(locationRepository.getLocation().lat!)", lon: "\(locationRepository.getLocation().lon!)", type: type)
             .map { $0.documents }
             .map { $0.sorted(by: { self.stringToInt($0.distance) < self.stringToInt($1.distance) }) }
             .eraseToAnyPublisher()
