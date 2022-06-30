@@ -26,6 +26,7 @@ class MainViewModel: ObservableObject {
     var mtMapPoint = PassthroughSubject<MTMapPoint, Never>()
     var poiItems = PassthroughSubject<[MTMapPOIItem], Never>()
     
+    // MARK: - 권한체크
     func checkPermisson() {
         service.checkPermission()
             .filter { $0 == true }
@@ -37,6 +38,7 @@ class MainViewModel: ObservableObject {
             .store(in: &cancelBag)
     }
     
+    // MARK: - API 호출
     func fetchPlace(_ type: CategoryType) {
         cardCurrentIndex = 0
         service.fetchPlace(type)
@@ -60,49 +62,14 @@ class MainViewModel: ObservableObject {
             .store(in: &cancelBag)
     }
     
-    func fetchRecentSearch() {
-        recentKeyword = userDefaultsRepo.loadSearchKeyword()
-    }
-    
-    func deleteAll() {
-        userDefaultsRepo.deleteAllKeyword()
-        fetchRecentSearch()
-    }
-    
-    func recentKeywordClicked(_ keyword: String) {
-        self.keyword = keyword
-        searchPlace()
-        dismissRecentSearchView()
-    }
-    
-    func saveSearchKeyword() {
-        userDefaultsRepo.saveSearchKeyword(keyword)
-    }
-    
-    func deleteSearchKeyword(_ indexSet: IndexSet) {
-        recentKeyword.remove(atOffsets: indexSet)
-        userDefaultsRepo.saveRecentKeyword(recentKeyword)
-    }
-    
-    func dismissRecentSearchView() {
-        isEditing.toggle()
-        UIApplication.hideKeyboard()
-    }
-    
-    func createPlaceCard(place: PlaceModel, index: Int) -> CardContentView {
-        return CardContentView(viewModel: self, placeModel: place, index: index)
-    }
-    
-    func createPlaceList(place: PlaceModel, index: Int) -> ListContentView {
-        return ListContentView(viewModel: self, placeModel: place, index: index)
-    }
-    
-    func isSelectedCard(_ index: Int) -> Bool {
-        return cardCurrentIndex == index
-    }
-    
-    func isSelectedCategory(_ index: Int) -> Bool {
-        return categoryCurrenIndex == index
+    func convertCategory(_ category: String) -> String {
+        var splitedStr = category.split(separator: ">")
+        splitedStr.removeFirst()
+        
+        return splitedStr
+            .map { $0.components(separatedBy: .whitespaces).joined() }
+            .map { "#\($0) " }
+            .joined()
     }
     
     func getURL() -> URL {
@@ -113,10 +80,7 @@ class MainViewModel: ObservableObject {
         }
     }
     
-    func getWidth() -> CGFloat {
-        return UIScreen.main.bounds.width * 0.8
-    }
-    
+    // MARK: - 지도
     func setupLocation() {
         service.setupLocation()
     }
@@ -148,14 +112,21 @@ class MainViewModel: ObservableObject {
         poiItems.send(items)
     }
     
-    func convertCategory(_ category: String) -> String {
-        var splitedStr = category.split(separator: ">")
-        splitedStr.removeFirst()
-        
-        return splitedStr
-            .map { $0.components(separatedBy: .whitespaces).joined() }
-            .map { "#\($0) " }
-            .joined()
+    // MARK: - 카드, 리스트, 카테고리
+    func createPlaceCard(place: PlaceModel, index: Int) -> CardContentView {
+        return CardContentView(viewModel: self, placeModel: place, index: index)
+    }
+    
+    func createPlaceList(place: PlaceModel, index: Int) -> ListContentView {
+        return ListContentView(viewModel: self, placeModel: place, index: index)
+    }
+    
+    func isSelectedCard(_ index: Int) -> Bool {
+        return cardCurrentIndex == index
+    }
+    
+    func isSelectedCategory(_ index: Int) -> Bool {
+        return categoryCurrenIndex == index
     }
     
     func callToPlace(_ phone: String) {
@@ -167,5 +138,35 @@ class MainViewModel: ObservableObject {
     
     func slideCard(_ idx: Int) {
         cardCurrentIndex = idx
+    }
+    
+    // MARK: - 최근 검색
+    func fetchRecentSearch() {
+        recentKeyword = userDefaultsRepo.loadSearchKeyword()
+    }
+    
+    func deleteAll() {
+        userDefaultsRepo.deleteAllKeyword()
+        fetchRecentSearch()
+    }
+    
+    func recentKeywordClicked(_ keyword: String) {
+        self.keyword = keyword
+        searchPlace()
+        dismissRecentSearchView()
+    }
+    
+    func saveSearchKeyword() {
+        userDefaultsRepo.saveSearchKeyword(keyword)
+    }
+    
+    func deleteSearchKeyword(_ indexSet: IndexSet) {
+        recentKeyword.remove(atOffsets: indexSet)
+        userDefaultsRepo.saveRecentKeyword(recentKeyword)
+    }
+    
+    func dismissRecentSearchView() {
+        isEditing.toggle()
+        UIApplication.hideKeyboard()
     }
 }
