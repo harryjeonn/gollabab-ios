@@ -19,6 +19,7 @@ class MainViewModel: ObservableObject {
     @Published var showSafari: Bool = false
     @Published var isList: Bool = false
     @Published var isEditing: Bool = false
+    @Published var isSelected: Bool = true
     
     @Published var recentKeyword: [String] = []
     @Published var keyword: String = ""
@@ -122,7 +123,7 @@ class MainViewModel: ObservableObject {
     }
     
     func isSelectedCard(_ index: Int) -> Bool {
-        return cardCurrentIndex == index
+        return cardCurrentIndex == index && isSelected
     }
     
     func isSelectedCategory(_ index: Int) -> Bool {
@@ -137,7 +138,10 @@ class MainViewModel: ObservableObject {
     }
     
     func slideCard(_ idx: Int) {
-        cardCurrentIndex = idx
+        withAnimation {
+            cardCurrentIndex = idx
+        }
+        isSelected = true
     }
     
     // MARK: - 최근 검색

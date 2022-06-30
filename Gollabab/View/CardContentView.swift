@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CardContentView: View {
     @ObservedObject var viewModel: MainViewModel
+    @State var isSelected: Bool = false
     var placeModel: PlaceModel
     var index: Int
     
@@ -74,6 +75,22 @@ struct CardContentView: View {
             }
             Spacer().frame(height: 12)
         }
+        .frame(width: UIScreen.main.bounds.width * 0.7, height: 103)
+        .background(Color.white)
+        .foregroundColor(.black)
+        .cornerRadius(16)
+        .shadow(color: .cardShadowColor, radius: 3, x: 0, y: 2)
+        .overlay(
+            RoundedRectangle(cornerRadius: 16)
+                .stroke(Color.primaryRed, lineWidth: viewModel.isSelectedCard(index) ? 2 : 0)
+        )
+        .onTapGesture {
+            viewModel.isSelectedCard(index) ? viewModel.showSafari.toggle() : viewModel.slideCard(index)
+        }
+        .fullScreenCover(isPresented: $viewModel.showSafari, content: {
+            SafariView(url: viewModel.getURL())
+                .edgesIgnoringSafeArea(.all)
+        })
     }
 }
 

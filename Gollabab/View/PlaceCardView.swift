@@ -26,22 +26,6 @@ struct PlaceCardView: View {
             HStack(spacing: 10) {
                 ForEach(Array(viewModel.places.enumerated()), id: \.0) { idx, place in
                     viewModel.createPlaceCard(place: place, index: idx)
-                        .frame(width: UIScreen.main.bounds.width * 0.7, height: 103)
-                        .background(Color.white)
-                        .foregroundColor(.black)
-                        .cornerRadius(16)
-                        .shadow(color: .cardShadowColor, radius: 3, x: 0, y: 2)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 16)
-                                .stroke(Color.primaryRed, lineWidth: viewModel.isSelectedCard(idx) ? 2 : 0)
-                        )
-                        .onTapGesture {
-                            viewModel.isSelectedCard(idx) ? viewModel.showSafari.toggle() : withAnimation { viewModel.slideCard(idx) }
-                        }
-                        .fullScreenCover(isPresented: $viewModel.showSafari, content: {
-                            SafariView(url: viewModel.getURL())
-                                .edgesIgnoringSafeArea(.all)
-                        })
                 }
             }
             .padding(.leading, 22)
