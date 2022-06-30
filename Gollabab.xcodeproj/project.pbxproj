@@ -311,6 +311,7 @@
 		4AF706DC286C2C5300C83304 /* RecentSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF706DB286C2C5300C83304 /* RecentSearchView.swift */; };
 		4AF706E0286C38FD00C83304 /* UserDefaultsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF706DF286C38FD00C83304 /* UserDefaultsRepository.swift */; };
 		4AF706E2286C4AA400C83304 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF706E1286C4AA400C83304 /* UIApplicationExtension.swift */; };
+		4AF706E4286DB1D000C83304 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF706E3286DB1D000C83304 /* EmptyView.swift */; };
 		82C93535281AD618009791EA /* GollababApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C93534281AD618009791EA /* GollababApp.swift */; };
 		82C93537281AD618009791EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C93536281AD618009791EA /* ContentView.swift */; };
 		82C93539281AD61D009791EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C93538281AD61D009791EA /* Assets.xcassets */; };
@@ -632,6 +633,7 @@
 		4AF706DB286C2C5300C83304 /* RecentSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchView.swift; sourceTree = "<group>"; };
 		4AF706DF286C38FD00C83304 /* UserDefaultsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsRepository.swift; sourceTree = "<group>"; };
 		4AF706E1286C4AA400C83304 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
+		4AF706E3286DB1D000C83304 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		82C93531281AD618009791EA /* Gollabab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gollabab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82C93534281AD618009791EA /* GollababApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GollababApp.swift; sourceTree = "<group>"; };
 		82C93536281AD618009791EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -1087,6 +1089,7 @@
 				4AF706D7286B0E9900C83304 /* CategoryView.swift */,
 				4AF706D9286C11AE00C83304 /* SearchView.swift */,
 				4AF706DB286C2C5300C83304 /* RecentSearchView.swift */,
+				4AF706E3286DB1D000C83304 /* EmptyView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1556,6 +1559,7 @@
 				4A346CBB2836462300C574A5 /* MainService.swift in Sources */,
 				4AF706E2286C4AA400C83304 /* UIApplicationExtension.swift in Sources */,
 				4AC5BE62281FE58C006CA43F /* MainMapView.swift in Sources */,
+				4AF706E4286DB1D000C83304 /* EmptyView.swift in Sources */,
 				4A08C2502852020000123531 /* ListContentView.swift in Sources */,
 				4A136379283F94160070EA54 /* LocationRepository.swift in Sources */,
 				4A136377283F93270070EA54 /* MyLocationModel.swift in Sources */,
