@@ -51,14 +51,20 @@ struct ListContentView: View {
                     .foregroundColor(.red)
                     .padding(.leading, 8)
                 
-                Text("전화걸기")
-                    .font(.eliceCaption())
-                    .foregroundColor(.primaryRed)
-                    .underline()
-                    .frame(height: 20)
-                    .onTapGesture {
-                        viewModel.callToPlace(placeModel.phone)
-                    }
+                if placeModel.phone.isEmpty {
+                    Text("전화번호가 없다밥")
+                        .font(.eliceCaption())
+                        .foregroundColor(.gray500)
+                } else {
+                    Text("전화걸기")
+                        .font(.eliceCaption())
+                        .foregroundColor(.primaryRed)
+                        .underline()
+                        .frame(height: 20)
+                        .onTapGesture {
+                            viewModel.callToPlace(placeModel.phone)
+                        }
+                }
             }
             .padding(.leading, 22)
             

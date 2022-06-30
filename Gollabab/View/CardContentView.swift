@@ -59,11 +59,20 @@ struct CardContentView: View {
                      
                     Spacer().frame(width: 4)
                     
-                    Text("전화걸기")
-                        .foregroundColor(.primaryRed)
-                        .font(.eliceCaption())
-                        .underline()
-                        .padding(.trailing, 8)
+                    if placeModel.phone.isEmpty {
+                        Text("전화번호가 없다밥")
+                            .font(.eliceCaption())
+                            .foregroundColor(.gray500)
+                    } else {
+                        Text("전화걸기")
+                            .foregroundColor(.primaryRed)
+                            .font(.eliceCaption())
+                            .underline()
+                            .padding(.trailing, 8)
+                            .onTapGesture {
+                                viewModel.callToPlace(placeModel.phone)
+                            }
+                    }
                 }
                 .frame(height: 24)
                 .cornerRadius(30)
