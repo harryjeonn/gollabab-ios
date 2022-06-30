@@ -16,23 +16,27 @@ struct PlaceListView: View {
     }
     
     var body: some View {
-        VStack {
-            HStack {
-                Text("총 \(viewModel.places.count)개")
-                    .font(.eliceP3())
-                    .padding(.leading, 22)
+        if viewModel.places.isEmpty {
+            EmptyView()
+        } else {
+            VStack {
+                HStack {
+                    Text("총 \(viewModel.places.count)개")
+                        .font(.eliceP3())
+                        .padding(.leading, 22)
+                    Spacer()
+                }
+                
+                ScrollView(.vertical, showsIndicators: false) {
+                    ForEach(Array(viewModel.places.enumerated()), id: \.0) { idx, place in
+                        viewModel.createPlaceList(place: place, index: idx)
+                    }
+                }
+                
                 Spacer()
             }
-            
-            ScrollView(.vertical, showsIndicators: false) {
-                ForEach(Array(viewModel.places.enumerated()), id: \.0) { idx, place in
-                    viewModel.createPlaceList(place: place, index: idx)
-                }
-            }
-            
-            Spacer()
+            .padding(.top, 16)
         }
-        .padding(.top, 16)
     }
 }
 
