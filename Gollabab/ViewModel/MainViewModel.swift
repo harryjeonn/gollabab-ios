@@ -15,7 +15,7 @@ class MainViewModel: ObservableObject {
     
     @Published var places: [PlaceModel] = []
     @Published var cardCurrentIndex: Int = 0
-    @Published var categoryCurrenIndex: Int = 0
+    @Published var categoryCurrentIndex: Int = 0
     @Published var showSafari: Bool = false
     @Published var isList: Bool = false
     @Published var isEditing: Bool = false
@@ -128,7 +128,7 @@ class MainViewModel: ObservableObject {
     }
     
     func isSelectedCategory(_ index: Int) -> Bool {
-        return categoryCurrenIndex == index
+        return categoryCurrentIndex == index
     }
     
     func callToPlace(_ phone: String) {

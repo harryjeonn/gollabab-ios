@@ -21,7 +21,7 @@ struct CategoryView: View {
                 .background(viewModel.isSelectedCategory(index) ? Color.gray100 : Color.white)
                 .cornerRadius(100)
                 .onTapGesture {
-                    viewModel.categoryCurrenIndex = index
+                    viewModel.categoryCurrentIndex = index
                     viewModel.fetchPlace(type)
                 }
         }
