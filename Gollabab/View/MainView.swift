@@ -28,20 +28,21 @@ struct MainView: View {
                         
                         Spacer()
                         
-                        VStack {
-                            Image("list_outline")
+                        VStack(spacing: 0) {
+                            Image(viewModel.isList ? "map_fill" : "list_outline")
+                                .resizable()
                                 .frame(width: 24, height: 24)
                             
-                            Text("목록")
+                            Text(viewModel.isList ? "지도" : "목록")
                                 .font(.eliceCaptionSmall())
                                 .foregroundColor(.primaryRed)
                         }
-                        .padding(.leading, 20)
+                        .padding(.leading, 16)
                         .onTapGesture {
                             viewModel.isList.toggle()
                         }
                         
-                        Spacer().frame(width: 20)
+                        Spacer().frame(width: 28)
                     }
                     
                     ScrollView(.horizontal, showsIndicators: false, content: {
