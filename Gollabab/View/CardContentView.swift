@@ -24,12 +24,12 @@ struct CardContentView: View {
                     Text(placeModel.placeName)
                         .fontWeight(.bold)
                         .font(.eliceP2())
-                        .foregroundColor(.text200)
+                        .foregroundColor(viewModel.isSelectedCard(index) ? .primaryBeige : .text200)
                         .frame(height: 23)
                         .minimumScaleFactor(0.1)
                     
                     Text(viewModel.convertCategory(placeModel.categoryName))
-                        .foregroundColor(.gray500)
+                        .foregroundColor(viewModel.isSelectedCard(index) ? .gray700 : .gray500)
                         .frame(height: 20)
                         .font(.eliceCaption())
                         .minimumScaleFactor(0.1)
@@ -47,7 +47,7 @@ struct CardContentView: View {
                     .foregroundColor(.red)
                 
                 Text("\(placeModel.distance)m")
-                    .foregroundColor(.gray500)
+                    .foregroundColor(viewModel.isSelectedCard(index) ? .gray700 : .gray500)
                     .frame(height: 20)
                     .font(.eliceCaption())
                     .padding(.leading, 8)
@@ -62,10 +62,10 @@ struct CardContentView: View {
                     if placeModel.phone.isEmpty {
                         Text("전화번호가 없다밥")
                             .font(.eliceCaption())
-                            .foregroundColor(.gray500)
+                            .foregroundColor(viewModel.isSelectedCard(index) ? .gray700 : .gray500)
                     } else {
                         Text("전화걸기")
-                            .foregroundColor(.primaryRed)
+                            .foregroundColor(viewModel.isSelectedCard(index) ? .secondaryPink : .primaryRed)
                             .font(.eliceCaption())
                             .underline()
                             .padding(.trailing, 8)
@@ -82,14 +82,9 @@ struct CardContentView: View {
             Spacer().frame(height: 12)
         }
         .frame(width: UIScreen.main.bounds.width * 0.7, height: 103)
-        .background(Color.white)
-        .foregroundColor(.black)
+        .background(viewModel.isSelectedCard(index) ? Color.text300 : Color.white)
         .cornerRadius(16)
         .shadow(color: .cardShadowColor, radius: 3, x: 0, y: 2)
-        .overlay(
-            RoundedRectangle(cornerRadius: 16)
-                .stroke(Color.primaryRed, lineWidth: viewModel.isSelectedCard(index) ? 2 : 0)
-        )
         .onTapGesture {
             viewModel.isSelectedCard(index) ? viewModel.showSafari.toggle() : viewModel.slideCard(index)
         }
