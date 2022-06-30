@@ -22,19 +22,14 @@ struct MainMapView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: MTMapView, context: Context) {
-        moveMapPlace(uiView)
     }
     
     func setupPoiItems(_ view: MTMapView) {
         viewModel.poiItems
             .sink { items in
                 view.removeAllPOIItems()
-                
-                items.forEach { item in
-                    item.customCalloutBalloonView = UIView()
-                }
-                
                 view.addPOIItems(items)
+                self.moveMapPlace(view)
             }.store(in: &viewModel.cancelBag)
     }
     
@@ -45,7 +40,7 @@ struct MainMapView: UIViewRepresentable {
     }
     
     func moveMapPlace(_ view: MTMapView) {
-        if view.poiItems.isEmpty == false {
+        if view.poiItems.isEmpty == false && viewModel.isSelected {
             guard let poiItem = view.poiItems[viewModel.cardCurrentIndex] as? MTMapPOIItem else { return }
             view.select(poiItem, animated: true)
             view.setMapCenter(poiItem.mapPoint, animated: true)
@@ -73,24 +68,13 @@ struct MainMapView: UIViewRepresentable {
         
         // 마커 선택됐을 때
         func mapView(_ mapView: MTMapView!, selectedPOIItem poiItem: MTMapPOIItem!) -> Bool {
-            // 조건처리안하면 계속 viewModel.currentIndex를 바꾸어서 화면이 나오지 않음
-            withAnimation {
-                if viewModel.cardCurrentIndex != poiItem.tag {
-                    viewModel.slideCard(poiItem.tag)
-                }
-            }
-            return true
-        }
-        
-        // 말풍선 터치했을 때
-        func mapView(_ mapView: MTMapView!, touchedCalloutBalloonOf poiItem: MTMapPOIItem!) {
-            print(viewModel.places[poiItem.tag].placeUrl)
-            viewModel.showSafari.toggle()
+            viewModel.slideCard(poiItem.tag)
+            return false
         }
         
         // 지도 터치했을 때
         func mapView(_ mapView: MTMapView!, singleTapOn mapPoint: MTMapPoint!) {
-            UIApplication.hideKeyboard()
+            viewModel.isSelected = false
         }
     }
 }
