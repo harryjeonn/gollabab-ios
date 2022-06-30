@@ -26,6 +26,7 @@ class MainViewModel: ObservableObject {
     
     var mtMapPoint = PassthroughSubject<MTMapPoint, Never>()
     var poiItems = PassthroughSubject<[MTMapPOIItem], Never>()
+    var selectedPoiItemIndex = PassthroughSubject<Int, Never>()
     
     // MARK: - 권한체크
     func checkPermisson() {
@@ -142,6 +143,7 @@ class MainViewModel: ObservableObject {
             cardCurrentIndex = idx
         }
         isSelected = true
+        selectedPoiItemIndex.send(idx)
     }
     
     // MARK: - 최근 검색
