@@ -17,6 +17,7 @@ struct MainMapView: UIViewRepresentable {
         setupPoiItems(view)
         setupMapView(view)
         moveMapMyLocation(view)
+        moveMapPoiItem(view)
         view.delegate = context.coordinator
         return view
     }
@@ -43,8 +44,16 @@ struct MainMapView: UIViewRepresentable {
         if view.poiItems.isEmpty == false && viewModel.isSelected {
             guard let poiItem = view.poiItems[viewModel.cardCurrentIndex] as? MTMapPOIItem else { return }
             view.select(poiItem, animated: true)
-            view.setMapCenter(poiItem.mapPoint, animated: true)
         }
+    }
+    
+    func moveMapPoiItem(_ view: MTMapView) {
+        viewModel.selectedPoiItemIndex
+            .sink(receiveValue: { index in
+                guard let poiItem = view.poiItems[index] as? MTMapPOIItem else { return }
+                view.select(poiItem, animated: true)
+            })
+            .store(in: &viewModel.cancelBag)
     }
     
     func moveMapMyLocation(_ view: MTMapView) {
@@ -68,7 +77,11 @@ struct MainMapView: UIViewRepresentable {
         
         // 마커 선택됐을 때
         func mapView(_ mapView: MTMapView!, selectedPOIItem poiItem: MTMapPOIItem!) -> Bool {
-            viewModel.slideCard(poiItem.tag)
+            withAnimation {
+                viewModel.cardCurrentIndex = poiItem.tag
+            }
+            viewModel.isSelected = true
+            mapView.setMapCenter(poiItem.mapPoint, animated: true)
             return false
         }
         
