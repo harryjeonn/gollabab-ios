@@ -22,17 +22,12 @@ struct CardContentView: View {
                     .foregroundColor(.red)
                 VStack(alignment: .leading, spacing: 4) {
                     Text(placeModel.placeName)
-                        .fontWeight(.bold)
                         .font(.eliceP2())
                         .foregroundColor(viewModel.isSelectedCard(index) ? .primaryBeige : .text200)
-                        .frame(height: 23)
-                        .minimumScaleFactor(0.1)
                     
                     Text(viewModel.convertCategory(placeModel.categoryName))
                         .foregroundColor(viewModel.isSelectedCard(index) ? .gray700 : .gray500)
-                        .frame(height: 20)
                         .font(.eliceCaption())
-                        .minimumScaleFactor(0.1)
                 }
                 Spacer()
             }
