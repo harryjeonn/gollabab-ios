@@ -65,6 +65,21 @@ struct MainView: View {
                             .background(Color.white)
                     } else {
                         Spacer()
+                        HStack {
+                            Spacer()
+                            
+                            Image("location_outline")
+                                .frame(width: 42, height: 42)
+                                .background(Color.white)
+                                .clipShape(Circle())
+                                .padding(.bottom, 24)
+                                .padding(.trailing, 24)
+                                .shadow(color: .cardShadowColor, radius: 3, x: 1, y: 1)
+                                .onTapGesture {
+                                    viewModel.getMapPoint()
+                                }
+                        }
+                        
                         PlaceCardView(viewModel: viewModel, index: $currentIndex)
                             .frame(height: 103)
                             .padding(.bottom, 24)
