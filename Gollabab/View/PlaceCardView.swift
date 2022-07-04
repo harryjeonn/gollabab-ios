@@ -47,7 +47,7 @@ struct PlaceCardView: View {
                             
                             viewModel.cardCurrentIndex = max(min(viewModel.cardCurrentIndex + Int(roundIndex), viewModel.places.count - 1), 0)
                             
-                            viewModel.cardCurrentIndex = index
+                            viewModel.slideCard(index)
                         })
                         .onChanged({ value in
                             let offsetX = value.translation.width
