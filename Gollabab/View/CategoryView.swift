@@ -16,7 +16,7 @@ struct CategoryView: View {
         ScrollView(.horizontal, showsIndicators: false, content: {
             HStack(spacing: 6) {
                 ForEach(Array(caterory.enumerated()), id: \.0) { index, type in
-                    Text("\(type.title())")
+                    Text("\(type.rawValue)")
                         .font(.eliceP4())
                         .foregroundColor(viewModel.isSelectedCategory(index) ? .primaryBeige : .text300)
                         .padding(EdgeInsets(top: 8, leading: 10, bottom: 8, trailing: 10))

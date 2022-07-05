@@ -7,40 +7,43 @@
 
 import Foundation
 
-enum CategoryType: CaseIterable {
-    case all
-    case korean
-    case chinese
-    case japanese
-    case western
-    case casual
-    case fastfood
-    case asian
-    case cafe
-    case snack
+enum CategoryType: String, CaseIterable {
+    case all = "전체"
+    case korean = "한식"
+    case chinese = "중식"
+    case japanese = "일식"
+    case western = "양식"
+    case chicken = "치킨"
+    case casual = "분식"
+    case fastfood = "패스트푸드"
+    case asian = "아시아음식"
+    case cafe = "카페"
+    case snack = "간식"
     
-    func title() -> String {
+    func image() -> String {
         switch self {
         case .all:
-            return "전체"
+            return "icon_all"
         case .korean:
-            return "한식"
+            return "icon_korean"
         case .chinese:
-            return "중식"
+            return "icon_chinese"
         case .japanese:
-            return "일식"
+            return "icon_japanese"
         case .western:
-            return "양식"
+            return "icon_western"
+        case .chicken:
+            return "icon_chicken"
         case .casual:
-            return "분식"
+            return "icon_casual"
         case .fastfood:
-            return "패스트푸드"
+            return "icon_fastfood"
         case .asian:
-            return "아시아음식"
+            return "icon_asian"
         case .cafe:
-            return "카페"
+            return "icon_cafe"
         case .snack:
-            return "간식"
+            return "icon_snack"
         }
     }
 }

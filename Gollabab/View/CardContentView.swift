@@ -17,9 +17,10 @@ struct CardContentView: View {
         VStack(spacing: 0) {
             Spacer().frame(height: 12)
             HStack {
-                Image(systemName: "xmark")
+                Image(viewModel.getCategoryImageName(placeModel.categoryName))
+                    .resizable()
                     .frame(width: 40, height: 40)
-                    .foregroundColor(.red)
+                
                 VStack(alignment: .leading, spacing: 4) {
                     Text(placeModel.placeName)
                         .font(.eliceP2())
