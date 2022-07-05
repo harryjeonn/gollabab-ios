@@ -36,7 +36,7 @@ enum CategoryType: CaseIterable {
         case .fastfood:
             return "패스트푸드"
         case .asian:
-            return "아시안음식"
+            return "아시아음식"
         case .cafe:
             return "카페"
         case .snack:
