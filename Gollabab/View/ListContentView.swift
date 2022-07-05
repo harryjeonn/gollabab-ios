@@ -75,6 +75,11 @@ struct ListContentView: View {
                 .frame(height: 1)
                 .edgesIgnoringSafeArea(.horizontal)
         }
+        .contentShape(Rectangle())
+        .onTapGesture {
+            viewModel.touchedIndex = index
+            viewModel.showSafari.toggle()
+        }
     }
 }
 

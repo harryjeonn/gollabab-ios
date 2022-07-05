@@ -81,12 +81,9 @@ struct CardContentView: View {
         .cornerRadius(16)
         .shadow(color: .cardShadowColor, radius: 3, x: 0, y: 2)
         .onTapGesture {
+            viewModel.touchedIndex = index
             viewModel.isSelectedCard(index) ? viewModel.showSafari.toggle() : viewModel.slideCard(index)
         }
-        .fullScreenCover(isPresented: $viewModel.showSafari, content: {
-            SafariView(url: viewModel.getURL())
-                .edgesIgnoringSafeArea(.all)
-        })
     }
 }
 

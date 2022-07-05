@@ -27,6 +27,7 @@ class MainViewModel: ObservableObject {
     var mtMapPoint = PassthroughSubject<MTMapPoint, Never>()
     var poiItems = PassthroughSubject<[MTMapPOIItem], Never>()
     var selectedPoiItemIndex = PassthroughSubject<Int, Never>()
+    var touchedIndex: Int = 0
     
     // MARK: - 권한체크
     func checkPermisson() {
@@ -75,7 +76,7 @@ class MainViewModel: ObservableObject {
     }
     
     func getURL() -> URL {
-        if let url = URL(string: places[cardCurrentIndex].placeUrl) {
+        if let url = URL(string: places[touchedIndex].placeUrl) {
             return url
         } else {
             return URL(string: "https://www.daum.net")!
