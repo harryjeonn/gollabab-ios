@@ -22,9 +22,8 @@ struct MainView: View {
             VStack(spacing: 0) {
                 VStack(spacing: 0) {
                     HStack {
-                        Spacer().frame(width: 20)
-                        
                         SearchView(viewModel: viewModel)
+                            .padding(.leading, 22)
                         
                         Spacer()
                         
@@ -38,22 +37,21 @@ struct MainView: View {
                                 .foregroundColor(.primaryRed)
                         }
                         .padding(.leading, 16)
+                        .padding(.trailing, 28)
                         .onTapGesture {
                             viewModel.isList.toggle()
                         }
-                        
-                        Spacer().frame(width: 28)
                     }
                     
-                    ScrollView(.horizontal, showsIndicators: false, content: {
-                        HStack(spacing: 16) {
-                            CategoryView(viewModel: viewModel)
-                        }
-                        .padding(EdgeInsets(top: 8, leading: 20, bottom: 8, trailing: 20))
-                    })
+                    CategoryView(viewModel: viewModel)
+                    Rectangle()
+                        .foregroundColor(.gray700)
+                        .frame(height: 0.5)
+                        .frame(minWidth: .zero, maxWidth: .infinity)
                 }
                 .padding(.top, 52)
                 .background(Color.white)
+                
                 if viewModel.isEditing {
                     RecentSearchView(viewModel: viewModel)
                         .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)

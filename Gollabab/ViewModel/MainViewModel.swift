@@ -19,7 +19,8 @@ class MainViewModel: ObservableObject {
     @Published var showSafari: Bool = false
     @Published var isList: Bool = false
     @Published var isEditing: Bool = false
-    @Published var isSelected: Bool = true
+    @Published var isCardSelectedState: Bool = true
+    @Published var isCategorySelectedState: Bool = true
     
     @Published var recentKeyword: [String] = []
     @Published var keyword: String = ""
@@ -44,6 +45,7 @@ class MainViewModel: ObservableObject {
     // MARK: - API 호출
     func fetchPlace(_ type: CategoryType) {
         cardCurrentIndex = 0
+        isCategorySelectedState = true
         service.fetchPlace(type)
             .sink(receiveCompletion: { print("completion: \($0)") },
                   receiveValue: { [weak self] value in
@@ -55,6 +57,7 @@ class MainViewModel: ObservableObject {
     
     func searchPlace() {
         cardCurrentIndex = 0
+        isCategorySelectedState = false
         service.searchPlace(keyword)
             .sink(receiveCompletion: { print("completion: \($0)") },
                   receiveValue: { [weak self] value in
@@ -125,11 +128,11 @@ class MainViewModel: ObservableObject {
     }
     
     func isSelectedCard(_ index: Int) -> Bool {
-        return cardCurrentIndex == index && isSelected
+        return cardCurrentIndex == index && isCardSelectedState
     }
     
     func isSelectedCategory(_ index: Int) -> Bool {
-        return categoryCurrentIndex == index
+        return categoryCurrentIndex == index && isCategorySelectedState
     }
     
     func callToPlace(_ phone: String) {
@@ -143,7 +146,7 @@ class MainViewModel: ObservableObject {
         withAnimation {
             cardCurrentIndex = idx
         }
-        isSelected = true
+        isCardSelectedState = true
         selectedPoiItemIndex.send(idx)
     }
     
