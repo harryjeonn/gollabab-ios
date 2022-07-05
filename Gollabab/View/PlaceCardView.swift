@@ -33,7 +33,6 @@ struct PlaceCardView: View {
                     }
                 }
                 .padding(.leading, 22)
-                .padding(.bottom, 24)
                 .offset(x: (CGFloat(viewModel.cardCurrentIndex) * -width) + offset)
                 .gesture(
                     DragGesture()
@@ -58,6 +57,7 @@ struct PlaceCardView: View {
                         })
                 )
             }
+            .frame(height: UIScreen.main.bounds.height * 0.13)
             .animation(.easeInOut, value: offset == 0)
         }
     }
