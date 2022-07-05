@@ -176,7 +176,7 @@ class MainViewModel: ObservableObject {
     }
     
     func dismissRecentSearchView() {
-        isEditing.toggle()
+        isEditing = false
         UIApplication.hideKeyboard()
     }
 }

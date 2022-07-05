@@ -40,6 +40,7 @@ struct MainView: View {
                         .padding(.trailing, 28)
                         .onTapGesture {
                             viewModel.isList.toggle()
+                            viewModel.dismissRecentSearchView()
                         }
                     }
                     
