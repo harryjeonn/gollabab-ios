@@ -81,7 +81,6 @@ struct MainView: View {
                         }
                         
                         PlaceCardView(viewModel: viewModel, index: $currentIndex)
-                            .frame(height: 103)
                             .padding(.bottom, 24)
                     }
                 }

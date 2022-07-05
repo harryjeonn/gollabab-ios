@@ -12,7 +12,7 @@ struct EmptyView: View {
         Text("주변엔 없다밥..😢")
             .foregroundColor(.text200)
             .font(.eliceP2Regular())
-            .frame(width: UIScreen.main.bounds.width * 0.7, height: 103)
+            .frame(width: UIScreen.main.bounds.width * 0.7, height: UIScreen.main.bounds.height * 0.13)
             .background(Color.white)
             .cornerRadius(16)
     }
