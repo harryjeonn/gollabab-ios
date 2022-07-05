@@ -13,18 +13,24 @@ struct CategoryView: View {
     var caterory = CategoryType.allCases
     
     var body: some View {
-        ForEach(Array(caterory.enumerated()), id: \.0) { index, type in
-            Text("\(type.title())")
-                .font(.eliceP4())
-                .foregroundColor(viewModel.isSelectedCategory(index) ? .primaryBeige : .text300)
-                .padding(getSelectedPadding(index))
-                .background(viewModel.isSelectedCategory(index) ? Color.gray100 : Color.white)
-                .cornerRadius(100)
-                .onTapGesture {
-                    viewModel.categoryCurrentIndex = index
-                    viewModel.fetchPlace(type)
+        ScrollView(.horizontal, showsIndicators: false, content: {
+            HStack(spacing: 6) {
+                ForEach(Array(caterory.enumerated()), id: \.0) { index, type in
+                    Text("\(type.title())")
+                        .font(.eliceP4())
+                        .foregroundColor(viewModel.isSelectedCategory(index) ? .primaryBeige : .text300)
+                        .padding(EdgeInsets(top: 8, leading: 10, bottom: 8, trailing: 10))
+                        .background(viewModel.isSelectedCategory(index) ? Color.gray100 : Color.white)
+                        .cornerRadius(100)
+                        .onTapGesture {
+                            viewModel.categoryCurrentIndex = index
+                            viewModel.fetchPlace(type)
+                        }
                 }
-        }
+            }
+            .padding(EdgeInsets(top: 8, leading: 22, bottom: 8, trailing: 22))
+        })
+        
     }
     
     func getSelectedPadding(_ index: Int) -> EdgeInsets {

@@ -41,7 +41,7 @@ struct MainMapView: UIViewRepresentable {
     }
     
     func moveMapPlace(_ view: MTMapView) {
-        if view.poiItems.isEmpty == false && viewModel.isSelected {
+        if view.poiItems.isEmpty == false && viewModel.isCardSelectedState {
             guard let poiItem = view.poiItems[viewModel.cardCurrentIndex] as? MTMapPOIItem else { return }
             view.select(poiItem, animated: true)
         }
@@ -80,14 +80,14 @@ struct MainMapView: UIViewRepresentable {
             withAnimation {
                 viewModel.cardCurrentIndex = poiItem.tag
             }
-            viewModel.isSelected = true
+            viewModel.isCardSelectedState = true
             mapView.setMapCenter(poiItem.mapPoint, animated: true)
             return false
         }
         
         // 지도 터치했을 때
         func mapView(_ mapView: MTMapView!, singleTapOn mapPoint: MTMapPoint!) {
-            viewModel.isSelected = false
+            viewModel.isCardSelectedState = false
         }
     }
 }
