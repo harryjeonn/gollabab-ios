@@ -87,6 +87,10 @@ struct MainView: View {
                 }
             }
             .edgesIgnoringSafeArea(.all)
+            .fullScreenCover(isPresented: $viewModel.showSafari, content: {
+                SafariView(url: viewModel.getURL())
+                    .edgesIgnoringSafeArea(.all)
+            })
         }
     }
 }
