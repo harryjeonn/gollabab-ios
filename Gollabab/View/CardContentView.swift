@@ -19,7 +19,7 @@ struct CardContentView: View {
             HStack {
                 Image(viewModel.getCategoryImageName(placeModel.categoryName))
                     .resizable()
-                    .frame(width: 40, height: 40)
+                    .frame(width: 50, height: 50)
                 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(placeModel.placeName)
@@ -32,31 +32,30 @@ struct CardContentView: View {
                 }
                 Spacer()
             }
-            .padding(.leading, 12)
+            .padding(.leading, 2)
             
             Spacer().frame(height: 8)
             
             HStack(spacing: 0) {
                 Spacer().frame(width: 60)
                 Image("pin_card")
-                    .frame(width: 10, height: 10)
-                    .foregroundColor(.red)
+                    .resizable()
+                    .frame(width: 14, height: 14)
                 
                 Text("\(placeModel.distance)m")
                     .foregroundColor(viewModel.isSelectedCard(index) ? .gray700 : .gray500)
-                    .frame(height: 20)
                     .font(.eliceCaption())
-                    .padding(.leading, 8)
+                    .padding(.leading, 4)
                 
-                HStack {
-                    Image("phone")
-                        .frame(width: 12, height: 12)
-                        .padding(.leading, 8)
+                HStack(spacing: 0) {
+                    Image(placeModel.phone.isEmpty ? "phone_disable" : "phone")
+                        .resizable()
+                        .frame(width: 14, height: 14)
                      
                     Spacer().frame(width: 4)
                     
                     if placeModel.phone.isEmpty {
-                        Text("전화번호가 없다밥")
+                        Text("통화불가")
                             .font(.eliceCaption())
                             .foregroundColor(viewModel.isSelectedCard(index) ? .gray700 : .gray500)
                     } else {
@@ -64,13 +63,11 @@ struct CardContentView: View {
                             .foregroundColor(viewModel.isSelectedCard(index) ? .secondaryPink : .primaryRed)
                             .font(.eliceCaption())
                             .underline()
-                            .padding(.trailing, 8)
                             .onTapGesture {
                                 viewModel.callToPlace(placeModel.phone)
                             }
                     }
                 }
-                .frame(height: 24)
                 .cornerRadius(30)
                 .padding(.leading, 12)
                 Spacer()
