@@ -8,8 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selection: Int = 0
+    
+    init() {
+        UITabBar.appearance().scrollEdgeAppearance = .init()
+    }
+    
     var body: some View {
-        MainView()
+        TabView(selection: $selection) {
+            MainView()
+                .tabItem {
+                    selection == 0 ? Image("home_fill") : Image("home_outline")
+                }
+                .tag(0)
+            
+            Text("랜덤")
+                .tabItem {
+                    selection == 1 ? Image("shuffle_2_fill") : Image("shuffle_2_outline")
+                }
+                .tag(1)
+            
+            Text("게임")
+                .tabItem {
+                    selection == 2 ? Image("smiling_face_fill") : Image("smiling_face_outline")
+                }
+                .tag(2)
+        }
     }
 }
 

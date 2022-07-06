@@ -30,12 +30,16 @@ class MainViewModel: ObservableObject {
     var selectedPoiItemIndex = PassthroughSubject<Int, Never>()
     var touchedIndex: Int = 0
     
+    init() {
+        checkPermisson()
+        setupLocation()
+    }
+    
     // MARK: - 권한체크
     func checkPermisson() {
         service.checkPermission()
             .filter { $0 == true }
             .sink(receiveValue: { [weak self] _ in
-                self?.setupLocation()
                 self?.fetchPlace(.all)
                 self?.getMapPoint()
             })
@@ -47,7 +51,7 @@ class MainViewModel: ObservableObject {
         cardCurrentIndex = 0
         isCategorySelectedState = true
         service.fetchPlace(type)
-            .sink(receiveCompletion: { print("completion: \($0)") },
+            .sink(receiveCompletion: { print("fetchPlace completion: \($0)") },
                   receiveValue: { [weak self] value in
                 self?.places = value
                 self?.createPoiItems()
@@ -59,7 +63,7 @@ class MainViewModel: ObservableObject {
         cardCurrentIndex = 0
         isCategorySelectedState = false
         service.searchPlace(keyword)
-            .sink(receiveCompletion: { print("completion: \($0)") },
+            .sink(receiveCompletion: { print("searchPlace completion: \($0)") },
                   receiveValue: { [weak self] value in
                 self?.places = value
                 self?.createPoiItems()

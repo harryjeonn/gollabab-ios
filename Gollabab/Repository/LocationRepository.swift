@@ -22,6 +22,7 @@ class LocationRepository: NSObject {
         if let coordinate = locationManager.location?.coordinate {
             myLocationModel.lat = coordinate.latitude
             myLocationModel.lon = coordinate.longitude
+            authorization.send(.authorizedWhenInUse)
         } else {
             // 기본 위/경도 값 = 서울시청
             myLocationModel.lat = 37.5666805
