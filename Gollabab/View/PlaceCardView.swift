@@ -11,11 +11,6 @@ struct PlaceCardView: View {
     @ObservedObject var viewModel: MainViewModel
     @Binding var index: Int
     
-    init(viewModel: MainViewModel, index: Binding<Int>) {
-        self.viewModel = viewModel
-        self._index = index
-    }
-    
     @GestureState var offset: CGFloat = 0
     
     var body: some View {

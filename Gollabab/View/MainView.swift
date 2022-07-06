@@ -14,10 +14,7 @@ struct MainView: View {
     var body: some View {
         ZStack {
             MainMapView(viewModel: viewModel)
-                .edgesIgnoringSafeArea(.all)
-                .onAppear {
-                    viewModel.checkPermisson()
-                }
+                .edgesIgnoringSafeArea(.top)
             
             VStack(spacing: 0) {
                 VStack(spacing: 0) {
@@ -84,7 +81,7 @@ struct MainView: View {
                     }
                 }
             }
-            .edgesIgnoringSafeArea(.all)
+            .edgesIgnoringSafeArea(.top)
             .fullScreenCover(isPresented: $viewModel.showSafari, content: {
                 SafariView(url: viewModel.getURL())
                     .edgesIgnoringSafeArea(.all)
