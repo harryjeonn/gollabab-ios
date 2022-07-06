@@ -89,5 +89,9 @@ struct MainMapView: UIViewRepresentable {
         func mapView(_ mapView: MTMapView!, singleTapOn mapPoint: MTMapPoint!) {
             viewModel.isCardSelectedState = false
         }
+        
+        func mapView(_ mapView: MTMapView!, centerPointMovedTo mapCenterPoint: MTMapPoint!) {
+            viewModel.isActiveMyLocation = false
+        }
     }
 }

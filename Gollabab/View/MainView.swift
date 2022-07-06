@@ -64,7 +64,7 @@ struct MainView: View {
                         HStack {
                             Spacer()
                             
-                            Image("location_outline")
+                            Image(viewModel.isActiveMyLocation ? "location_active" : "location_outline")
                                 .frame(width: 42, height: 42)
                                 .background(Color.white)
                                 .clipShape(Circle())
