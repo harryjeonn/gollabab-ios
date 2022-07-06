@@ -21,6 +21,7 @@ class MainViewModel: ObservableObject {
     @Published var isEditing: Bool = false
     @Published var isCardSelectedState: Bool = true
     @Published var isCategorySelectedState: Bool = true
+    @Published var isActiveMyLocation: Bool = true
     
     @Published var recentKeyword: [String] = []
     @Published var keyword: String = ""
@@ -80,6 +81,7 @@ class MainViewModel: ObservableObject {
     func getMapPoint() {
         let myLocation = service.getLocation()
         let geoCoord = MTMapPointGeo(latitude: myLocation.lat!, longitude: myLocation.lon!)
+        isActiveMyLocation = true
         mtMapPoint.send(MTMapPoint(geoCoord: geoCoord))
     }
     
