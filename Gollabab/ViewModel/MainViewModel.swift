@@ -68,24 +68,6 @@ class MainViewModel: ObservableObject {
             .store(in: &cancelBag)
     }
     
-    func convertCategory(_ category: String) -> String {
-        var splitedStr = category.split(separator: ">")
-        splitedStr.removeFirst()
-        
-        return splitedStr
-            .map { $0.components(separatedBy: .whitespaces).joined() }
-            .map { "#\($0) " }
-            .joined()
-    }
-    
-    func getURL() -> URL {
-        if let url = URL(string: places[touchedIndex].placeUrl) {
-            return url
-        } else {
-            return URL(string: "https://www.daum.net")!
-        }
-    }
-    
     // MARK: - 지도
     func setupLocation() {
         service.setupLocation()
@@ -133,6 +115,37 @@ class MainViewModel: ObservableObject {
     
     func isSelectedCategory(_ index: Int) -> Bool {
         return categoryCurrentIndex == index && isCategorySelectedState
+    }
+    
+    func splitedCategory(_ category: String) -> [String.SubSequence] {
+        var splitedStr = category.split(separator: ">")
+        splitedStr.removeFirst()
+        
+        return splitedStr
+    }
+    
+    func convertCategory(_ category: String) -> String {
+        return splitedCategory(category)
+            .map { $0.components(separatedBy: .whitespaces).joined() }
+            .map { "#\($0) " }
+            .joined()
+    }
+    
+    func getCategoryImageName(_ category: String) -> String {
+        let splitedStr = splitedCategory(category)
+        let str = String(splitedStr[0].components(separatedBy: .whitespaces).joined())
+        
+        guard let type = CategoryType(rawValue: str) else { return "icon_other" }
+        
+        return type.image()
+    }
+    
+    func getURL() -> URL {
+        if let url = URL(string: places[touchedIndex].placeUrl) {
+            return url
+        } else {
+            return URL(string: "https://www.daum.net")!
+        }
     }
     
     func callToPlace(_ phone: String) {

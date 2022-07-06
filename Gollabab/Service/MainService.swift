@@ -13,7 +13,7 @@ class MainService {
     private let locationRepository = LocationRepository()
     
     func fetchPlace(_ type: CategoryType) -> AnyPublisher<[PlaceModel], Error> {
-        let param = type == .all ? "FD6" : type.title()
+        let param = type == .all ? "FD6" : type.rawValue
         let searchType: SearchType = type == .all ? .category : .keyword
         
         return fetch(param: param, type: searchType)
