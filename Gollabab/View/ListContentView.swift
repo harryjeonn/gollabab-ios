@@ -13,46 +13,45 @@ struct ListContentView: View {
     var index: Int
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Spacer().frame(height: 12)
+        VStack(alignment: .leading, spacing: 0) {
+            Spacer().frame(height: 16)
             
             Text(placeModel.placeName)
                 .font(.eliceP2())
                 .foregroundColor(.text300)
-                .frame(height: 23)
                 .padding(.leading, 22)
             
-            Spacer().frame(height: 4)
+            Spacer().frame(height: 8)
             
             HStack {
                 Text(viewModel.convertCategory(placeModel.categoryName))
                     .font(.eliceCaption())
                     .foregroundColor(.gray500)
-                    .frame(height: 20)
                 
                 Spacer()
             }
             .padding(.leading, 22)
             
-            Spacer().frame(height: 10)
+            Spacer().frame(height: 24)
             
-            HStack {
+            HStack(spacing: 0) {
                 Image("pin_card")
+                    .resizable()
                     .frame(width: 12, height: 12)
-                    .foregroundColor(.red)
                 
                 Text("\(placeModel.distance)m")
                     .font(.eliceCaption())
                     .foregroundColor(.gray500)
-                    .frame(height: 20)
+                    .padding(.leading, 4)
                 
-                Image("phone")
+                Image(placeModel.phone.isEmpty ? "phone_disable" : "phone")
+                    .resizable()
                     .frame(width: 12, height: 12)
-                    .foregroundColor(.red)
-                    .padding(.leading, 8)
+                    .padding(.leading, 16)
+                    .padding(.trailing, 4)
                 
                 if placeModel.phone.isEmpty {
-                    Text("전화번호가 없다밥")
+                    Text("통화불가")
                         .font(.eliceCaption())
                         .foregroundColor(.gray500)
                 } else {
@@ -60,7 +59,6 @@ struct ListContentView: View {
                         .font(.eliceCaption())
                         .foregroundColor(.primaryRed)
                         .underline()
-                        .frame(height: 20)
                         .onTapGesture {
                             viewModel.callToPlace(placeModel.phone)
                         }
@@ -68,7 +66,7 @@ struct ListContentView: View {
             }
             .padding(.leading, 22)
             
-            Spacer().frame(height: 18)
+            Spacer().frame(height: 22)
             
             Rectangle()
                 .fill(Color.gray800)
