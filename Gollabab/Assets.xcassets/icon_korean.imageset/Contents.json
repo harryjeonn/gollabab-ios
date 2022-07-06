@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "icon_korean.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
