@@ -26,6 +26,8 @@ class MainViewModel: ObservableObject {
     @Published var recentKeyword: [String] = []
     @Published var keyword: String = ""
     
+    @Published var selectedPoiItem: MTMapPOIItem = MTMapPOIItem()
+    
     var mtMapPoint = PassthroughSubject<MTMapPoint, Never>()
     var poiItems = PassthroughSubject<[MTMapPOIItem], Never>()
     var selectedPoiItemIndex = PassthroughSubject<Int, Never>()
