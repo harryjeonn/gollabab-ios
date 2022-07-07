@@ -312,6 +312,10 @@
 		4AF706E0286C38FD00C83304 /* UserDefaultsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF706DF286C38FD00C83304 /* UserDefaultsRepository.swift */; };
 		4AF706E2286C4AA400C83304 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF706E1286C4AA400C83304 /* UIApplicationExtension.swift */; };
 		4AF706E4286DB1D000C83304 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF706E3286DB1D000C83304 /* EmptyView.swift */; };
+		4AF706EC2876BC3F00C83304 /* RandomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF706EB2876BC3F00C83304 /* RandomView.swift */; };
+		4AF706EE2876BECE00C83304 /* ChooseCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF706ED2876BECE00C83304 /* ChooseCategoryView.swift */; };
+		4AF706F02877F85100C83304 /* RandomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF706EF2877F85100C83304 /* RandomViewModel.swift */; };
+		4AF706F2287802BB00C83304 /* RandomAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF706F1287802BB00C83304 /* RandomAnimationView.swift */; };
 		82C93535281AD618009791EA /* GollababApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C93534281AD618009791EA /* GollababApp.swift */; };
 		82C93537281AD618009791EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C93536281AD618009791EA /* ContentView.swift */; };
 		82C93539281AD61D009791EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C93538281AD61D009791EA /* Assets.xcassets */; };
@@ -634,6 +638,10 @@
 		4AF706DF286C38FD00C83304 /* UserDefaultsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsRepository.swift; sourceTree = "<group>"; };
 		4AF706E1286C4AA400C83304 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		4AF706E3286DB1D000C83304 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		4AF706EB2876BC3F00C83304 /* RandomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomView.swift; sourceTree = "<group>"; };
+		4AF706ED2876BECE00C83304 /* ChooseCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoryView.swift; sourceTree = "<group>"; };
+		4AF706EF2877F85100C83304 /* RandomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomViewModel.swift; sourceTree = "<group>"; };
+		4AF706F1287802BB00C83304 /* RandomAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomAnimationView.swift; sourceTree = "<group>"; };
 		82C93531281AD618009791EA /* Gollabab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gollabab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82C93534281AD618009791EA /* GollababApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GollababApp.swift; sourceTree = "<group>"; };
 		82C93536281AD618009791EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -1072,6 +1080,7 @@
 			isa = PBXGroup;
 			children = (
 				4A346CBC2836463100C574A5 /* MainViewModel.swift */,
+				4AF706EF2877F85100C83304 /* RandomViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1079,17 +1088,8 @@
 		4AC5BE5F281FE579006CA43F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4AC5BE61281FE58C006CA43F /* MainMapView.swift */,
-				4AC5BE63281FE598006CA43F /* MainView.swift */,
-				4A136374283F8BC20070EA54 /* PlaceCardView.swift */,
-				4A5856D22850BAA200659013 /* PlaceListView.swift */,
-				4A08C24F2852020000123531 /* ListContentView.swift */,
-				4A7906232848403400B2830A /* CardContentView.swift */,
-				4AB39DD6284B49E30014DE41 /* SafariView.swift */,
-				4AF706D7286B0E9900C83304 /* CategoryView.swift */,
-				4AF706D9286C11AE00C83304 /* SearchView.swift */,
-				4AF706DB286C2C5300C83304 /* RecentSearchView.swift */,
-				4AF706E3286DB1D000C83304 /* EmptyView.swift */,
+				4AF706E92876BC1600C83304 /* Main */,
+				4AF706EA2876BC2B00C83304 /* Random */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1111,6 +1111,34 @@
 				4AE41A0C2859EF00009130A6 /* EliceDigitalBaeumOTF_Regular.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		4AF706E92876BC1600C83304 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4AC5BE61281FE58C006CA43F /* MainMapView.swift */,
+				4AC5BE63281FE598006CA43F /* MainView.swift */,
+				4A136374283F8BC20070EA54 /* PlaceCardView.swift */,
+				4A5856D22850BAA200659013 /* PlaceListView.swift */,
+				4A08C24F2852020000123531 /* ListContentView.swift */,
+				4A7906232848403400B2830A /* CardContentView.swift */,
+				4AB39DD6284B49E30014DE41 /* SafariView.swift */,
+				4AF706D7286B0E9900C83304 /* CategoryView.swift */,
+				4AF706D9286C11AE00C83304 /* SearchView.swift */,
+				4AF706DB286C2C5300C83304 /* RecentSearchView.swift */,
+				4AF706E3286DB1D000C83304 /* EmptyView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4AF706EA2876BC2B00C83304 /* Random */ = {
+			isa = PBXGroup;
+			children = (
+				4AF706EB2876BC3F00C83304 /* RandomView.swift */,
+				4AF706ED2876BECE00C83304 /* ChooseCategoryView.swift */,
+				4AF706F1287802BB00C83304 /* RandomAnimationView.swift */,
+			);
+			path = Random;
 			sourceTree = "<group>";
 		};
 		82C93528281AD618009791EA = {
@@ -1559,7 +1587,9 @@
 				4A346CBB2836462300C574A5 /* MainService.swift in Sources */,
 				4AF706E2286C4AA400C83304 /* UIApplicationExtension.swift in Sources */,
 				4AC5BE62281FE58C006CA43F /* MainMapView.swift in Sources */,
+				4AF706F2287802BB00C83304 /* RandomAnimationView.swift in Sources */,
 				4AF706E4286DB1D000C83304 /* EmptyView.swift in Sources */,
+				4AF706EE2876BECE00C83304 /* ChooseCategoryView.swift in Sources */,
 				4A08C2502852020000123531 /* ListContentView.swift in Sources */,
 				4A136379283F94160070EA54 /* LocationRepository.swift in Sources */,
 				4A136377283F93270070EA54 /* MyLocationModel.swift in Sources */,
@@ -1567,6 +1597,7 @@
 				4A7906242848403400B2830A /* CardContentView.swift in Sources */,
 				4A346CB8283644FD00C574A5 /* KakaoRepository.swift in Sources */,
 				4AF706D6286B0C5A00C83304 /* CategoryModel.swift in Sources */,
+				4AF706F02877F85100C83304 /* RandomViewModel.swift in Sources */,
 				4AB39DD7284B49E30014DE41 /* SafariView.swift in Sources */,
 				4AC5BE64281FE598006CA43F /* MainView.swift in Sources */,
 				4A346CB52836407000C574A5 /* KakaoResponse.swift in Sources */,
@@ -1576,6 +1607,7 @@
 				4AF706DC286C2C5300C83304 /* RecentSearchView.swift in Sources */,
 				4AE41A102859EF90009130A6 /* FontExtension.swift in Sources */,
 				4A5856D32850BAA200659013 /* PlaceListView.swift in Sources */,
+				4AF706EC2876BC3F00C83304 /* RandomView.swift in Sources */,
 				4A346CBD2836463100C574A5 /* MainViewModel.swift in Sources */,
 				4AF706E0286C38FD00C83304 /* UserDefaultsRepository.swift in Sources */,
 				4A7906272848BD6F00B2830A /* ColorExtension.swift in Sources */,

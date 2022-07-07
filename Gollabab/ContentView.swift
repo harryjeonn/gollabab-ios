@@ -15,24 +15,26 @@ struct ContentView: View {
     }
     
     var body: some View {
-        TabView(selection: $selection) {
-            MainView()
-                .tabItem {
-                    selection == 0 ? Image("home_fill") : Image("home_outline")
-                }
-                .tag(0)
-            
-            Text("1")
-                .tabItem {
-                    selection == 1 ? Image("shuffle_2_fill") : Image("shuffle_2_outline")
-                }
-                .tag(1)
-            
-            Text("2")
-                .tabItem {
-                    selection == 2 ? Image("smiling_face_fill") : Image("smiling_face_outline")
-                }
-                .tag(2)
+        NavigationView {
+            TabView(selection: $selection) {
+                MainView()
+                    .tabItem {
+                        selection == 0 ? Image("home_fill") : Image("home_outline")
+                    }
+                    .tag(0)
+                
+                RandomView()
+                    .tabItem {
+                        selection == 1 ? Image("shuffle_2_fill") : Image("shuffle_2_outline")
+                    }
+                    .tag(1)
+                
+                Text("2")
+                    .tabItem {
+                        selection == 2 ? Image("smiling_face_fill") : Image("smiling_face_outline")
+                    }
+                    .tag(2)
+            }
         }
     }
 }
