@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PlaceCardView: View {
-    @StateObject var viewModel: MainViewModel
+    @ObservedObject var viewModel: MainViewModel
     @Binding var index: Int
     
     @GestureState var offset: CGFloat = 0
