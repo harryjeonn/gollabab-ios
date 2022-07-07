@@ -166,6 +166,7 @@ class MainViewModel: ObservableObject {
             cardCurrentIndex = idx
         }
         isCardSelectedState = true
+        isActiveMyLocation = false
         selectedPoiItemIndex.send(idx)
     }
     
