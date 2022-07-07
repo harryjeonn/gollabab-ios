@@ -8,12 +8,8 @@
 import SwiftUI
 
 struct PlaceListView: View {
-    @ObservedObject var viewModel: MainViewModel
+    @StateObject var viewModel: MainViewModel
     @State private var selection = Set<UUID>()
-    
-    init(viewModel: MainViewModel) {
-        self.viewModel = viewModel
-    }
     
     var body: some View {
         if viewModel.places.isEmpty {

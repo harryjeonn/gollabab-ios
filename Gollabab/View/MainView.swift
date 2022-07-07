@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    @ObservedObject private var viewModel = MainViewModel()
+    @StateObject private var viewModel = MainViewModel()
     @State var currentIndex: Int = 0
     
     var body: some View {

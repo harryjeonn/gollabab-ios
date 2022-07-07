@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RecentSearchView: View {
-    @ObservedObject var viewModel: MainViewModel
+    @StateObject var viewModel: MainViewModel
     
     var body: some View {
         VStack(spacing: 0) {

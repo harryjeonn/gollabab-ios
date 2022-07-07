@@ -22,13 +22,13 @@ struct ContentView: View {
                 }
                 .tag(0)
             
-            Text("랜덤")
+            Text("1")
                 .tabItem {
                     selection == 1 ? Image("shuffle_2_fill") : Image("shuffle_2_outline")
                 }
                 .tag(1)
             
-            Text("게임")
+            Text("2")
                 .tabItem {
                     selection == 2 ? Image("smiling_face_fill") : Image("smiling_face_outline")
                 }
