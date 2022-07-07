@@ -81,6 +81,7 @@ struct MainMapView: UIViewRepresentable {
                 viewModel.cardCurrentIndex = poiItem.tag
             }
             viewModel.isCardSelectedState = true
+            viewModel.isActiveMyLocation = false
             mapView.setMapCenter(poiItem.mapPoint, animated: true)
             return false
         }
