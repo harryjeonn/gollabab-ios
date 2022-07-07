@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ListContentView: View {
-    @StateObject var viewModel: MainViewModel
+    @ObservedObject var viewModel: MainViewModel
     var placeModel: PlaceModel
     var index: Int
     

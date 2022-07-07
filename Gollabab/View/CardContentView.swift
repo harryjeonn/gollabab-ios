@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CardContentView: View {
-    @StateObject var viewModel: MainViewModel
+    @ObservedObject var viewModel: MainViewModel
     @State var isSelected: Bool = false
     var placeModel: PlaceModel
     var index: Int

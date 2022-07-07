@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PlaceListView: View {
-    @StateObject var viewModel: MainViewModel
+    @ObservedObject var viewModel: MainViewModel
     @State private var selection = Set<UUID>()
     
     var body: some View {

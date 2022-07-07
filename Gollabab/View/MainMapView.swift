@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 struct MainMapView: UIViewRepresentable {
-    @StateObject var viewModel: MainViewModel
+    @ObservedObject var viewModel: MainViewModel
     
     func makeUIView(context: Context) -> MTMapView {
         viewModel.setupLocation()

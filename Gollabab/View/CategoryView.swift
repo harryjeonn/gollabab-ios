@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CategoryView: View {
-    @StateObject var viewModel: MainViewModel
+    @ObservedObject var viewModel: MainViewModel
     
     var caterory = CategoryType.allCases
     
