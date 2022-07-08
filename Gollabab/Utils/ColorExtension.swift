@@ -29,6 +29,7 @@ extension Color {
     
     static let primaryRed = Color(hex: "D8412B")
     static let secondaryRed = Color(hex: "EC674E")
+    static let selectedRed = Color(hex: "F94D08")
     static let secondaryPink = Color(hex: "FEB0A2")
     
     static let gray100 = Color(hex: "121212")
