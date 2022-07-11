@@ -11,6 +11,7 @@ struct RandomAnimationView: View {
     @ObservedObject var viewModel: RandomViewModel
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @State var index: CGFloat = 2
     
     var body: some View {
         ZStack {
@@ -41,38 +42,45 @@ struct RandomAnimationView: View {
                 Text("우주의 기운을 모아서... 멈춰!")
                     .font(.eliceP3())
                     .foregroundColor(.secondaryPink)
-                    .padding(.bottom, 65)
+                    .padding(.bottom, 48)
                 
-                ScrollView(.horizontal, showsIndicators: false) {
+                GeometryReader { proxy in
+                    let width = proxy.size.width - (proxy.size.width / 2)
+                    
                     HStack(spacing: 20) {
-                        Image("card_clover")
-                            .resizable()
-                            .frame(width: 120, height: 180)
-                        
-                        Image("card_diamond")
-                            .resizable()
-                            .frame(width: 120, height: 180)
-                        
-                        Image("card_heart")
-                            .resizable()
-                            .frame(width: 120, height: 180)
+                        ForEach(0..<50, id: \.self) { _ in
+                            Image("card_clover")
+                                .resizable()
+                                .frame(width: 178, height: 267)
+                            
+                            Image("card_diamond")
+                                .resizable()
+                                .frame(width: 178, height: 267)
+                            
+                            Image("card_heart")
+                                .resizable()
+                                .frame(width: 178, height: 267)
+                        }
                     }
                     .padding(EdgeInsets(top: 0, leading: 21, bottom: 0, trailing: 21))
+                    .offset(x: index * -width)
+                    .onReceive(viewModel.places.publisher) { _ in
+                        withAnimation(.easeInOut(duration: 3)) {
+                            index = 48
+                        }
+                    }
                 }
-                .padding(EdgeInsets(top: 0, leading: 0, bottom: 110, trailing: 0))
+                .frame(height: 267)
                 
                 Button {
                     // 투표결과 보여주기
                 } label: {
-                    Text("멈춰!")
-                        .font(.eliceP1())
-                        .foregroundColor(.white)
-                        .frame(minWidth: .zero, maxWidth: .infinity)
-                        .frame(height: 48)
-                        .background(Color.secondaryRed)
-                        .cornerRadius(100)
+                    Text("애니메이션 건너뛰기")
+                        .font(.eliceP3())
+                        .foregroundColor(.gray500)
+                        .underline()
+                        .padding(.top, 72)
                 }
-                .padding(EdgeInsets(top: 40, leading: 27, bottom: 27, trailing: 32))
                 
             }
             .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)

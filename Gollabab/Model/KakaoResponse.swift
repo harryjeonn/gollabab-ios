@@ -25,7 +25,7 @@ struct Meta: Codable {
 }
 
 
-struct PlaceModel: Codable {
+struct PlaceModel: Codable, Hashable {
     var placeName: String
     var addressName: String
     var latY: String

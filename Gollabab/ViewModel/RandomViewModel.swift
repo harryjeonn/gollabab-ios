@@ -79,11 +79,7 @@ class RandomViewModel: ObservableObject {
         }
     }
     
-    func selectAll() {
-        isSelected = false
-        selectedItems.removeAll()
-    }
-    
+    // MARK: - Random Animation View
     func resultPlace() {
         // 랜덤결과
     }

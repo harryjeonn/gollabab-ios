@@ -20,9 +20,6 @@ struct RandomView: View {
             
             // 카테고리 뷰
             ChooseCategoryView(viewModel: viewModel)
-                .onAppear {
-                    viewModel.selectAll()
-                }
             
             NavigationLink(destination: RandomAnimationView(viewModel: viewModel)) {
                 Text("여기서 골라밥!")
