@@ -36,6 +36,7 @@ struct ChooseCategoryView: View {
                 })
                 .onTapGesture {
                     viewModel.selectItem(item)
+                    print(viewModel.selectedItems)
                 }
             }
         }

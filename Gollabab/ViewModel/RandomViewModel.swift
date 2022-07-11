@@ -74,10 +74,14 @@ class RandomViewModel: ObservableObject {
                     value.forEach { place in
                         self?.places.append(place)
                     }
-                    print(self?.places)
                 })
                 .store(in: &cancelBag)
         }
+    }
+    
+    func selectAll() {
+        isSelected = false
+        selectedItems.removeAll()
     }
     
     func resultPlace() {
