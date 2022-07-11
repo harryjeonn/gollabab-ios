@@ -83,6 +83,8 @@ struct MainView: View {
                 }
             }
             .edgesIgnoringSafeArea(.top)
+            .navigationTitle("")
+            .navigationBarHidden(true)
             .fullScreenCover(isPresented: $viewModel.showSafari, content: {
                 SafariView(url: viewModel.getURL())
                     .edgesIgnoringSafeArea(.all)
