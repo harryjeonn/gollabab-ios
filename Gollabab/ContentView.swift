@@ -22,18 +22,24 @@ struct ContentView: View {
                         selection == 0 ? Image("home_fill") : Image("home_outline")
                     }
                     .tag(0)
+                    .navigationTitle("")
+                    .navigationBarHidden(true)
                 
                 RandomView()
                     .tabItem {
                         selection == 1 ? Image("shuffle_2_fill") : Image("shuffle_2_outline")
                     }
                     .tag(1)
+                    .navigationTitle("")
+                    .navigationBarHidden(true)
                 
                 Text("2")
                     .tabItem {
                         selection == 2 ? Image("smiling_face_fill") : Image("smiling_face_outline")
                     }
                     .tag(2)
+                    .navigationTitle("")
+                    .navigationBarHidden(true)
             }
         }
     }
