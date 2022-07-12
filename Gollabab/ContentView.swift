@@ -11,7 +11,7 @@ struct ContentView: View {
     @State private var selection: Int = 0
     
     init() {
-        UITabBar.appearance().scrollEdgeAppearance = .init()
+        UITabBar.appearance().backgroundColor = .white
     }
     
     var body: some View {
