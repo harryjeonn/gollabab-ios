@@ -16,25 +16,27 @@ struct CardContentView: View {
     var body: some View {
         VStack(spacing: 0) {
             Spacer().frame(height: 12)
-            HStack {
+            HStack(spacing: 0) {
                 Image(viewModel.getCategoryImageName(placeModel.categoryName))
                     .resizable()
                     .frame(width: 50, height: 50)
+                    .padding(.leading, 8)
                 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(placeModel.placeName)
                         .font(.eliceP2())
                         .foregroundColor(viewModel.isSelectedCard(index) ? .primaryBeige : .text200)
                         .lineLimit(1)
+                        .padding(.leading, 2)
                     
                     Text(viewModel.convertCategory(placeModel.categoryName))
                         .foregroundColor(viewModel.isSelectedCard(index) ? .gray700 : .gray500)
                         .font(.eliceCaption())
                         .lineLimit(1)
+                        .padding(.leading, 2)
                 }
                 Spacer()
             }
-            .padding(.leading, 2)
             
             Spacer().frame(height: 8)
             
