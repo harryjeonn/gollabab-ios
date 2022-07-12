@@ -13,6 +13,10 @@ struct RandomView: View {
     var body: some View {
         VStack(spacing: 0) {
             Spacer()
+            Text("카테고리 선택해밥")
+                .font(.eliceBold(size: 20))
+                .foregroundColor(.white)
+                .padding(.bottom, 38)
             
             // 카테고리 뷰
             ChooseCategoryView(viewModel: viewModel)
@@ -25,11 +29,13 @@ struct RandomView: View {
                     .frame(height: 48)
                     .background(Color.secondaryRed)
                     .cornerRadius(100)
-                    .padding(EdgeInsets(top: 40, leading: 27, bottom: 27, trailing: 32))
             }
+            .padding(EdgeInsets(top: 40, leading: 27, bottom: 40, trailing: 27))
         }
         .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)
         .background(Color.text300)
+        .navigationTitle("")
+        .navigationBarHidden(true)
     }
 }
 

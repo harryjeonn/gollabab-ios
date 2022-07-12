@@ -10,7 +10,7 @@ import SwiftUI
 struct ChooseCategoryView: View {
     @ObservedObject var viewModel: RandomViewModel
     
-    let category = CategoryType.allCases
+    let category: [CategoryType] = [.korean, .chinese, .casual, .western, .japanese, .fastfood, .asian, .chicken, .cafe, .snack, .all]
     let columns = [GridItem(.adaptive(minimum: 104))]
     
     var body: some View {
