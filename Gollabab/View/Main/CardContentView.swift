@@ -25,10 +25,12 @@ struct CardContentView: View {
                     Text(placeModel.placeName)
                         .font(.eliceP2())
                         .foregroundColor(viewModel.isSelectedCard(index) ? .primaryBeige : .text200)
+                        .lineLimit(1)
                     
                     Text(viewModel.convertCategory(placeModel.categoryName))
                         .foregroundColor(viewModel.isSelectedCard(index) ? .gray700 : .gray500)
                         .font(.eliceCaption())
+                        .lineLimit(1)
                 }
                 Spacer()
             }

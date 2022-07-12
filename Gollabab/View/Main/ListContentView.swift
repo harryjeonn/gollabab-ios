@@ -20,6 +20,7 @@ struct ListContentView: View {
                 .font(.eliceP2())
                 .foregroundColor(.text300)
                 .padding(.leading, 22)
+                .lineLimit(1)
             
             Spacer().frame(height: 8)
             
@@ -27,6 +28,7 @@ struct ListContentView: View {
                 Text(viewModel.convertCategory(placeModel.categoryName))
                     .font(.eliceCaption())
                     .foregroundColor(.gray500)
+                    .lineLimit(1)
                 
                 Spacer()
             }
