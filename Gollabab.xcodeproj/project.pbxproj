@@ -299,6 +299,7 @@
 		4AAEBF45283263AB00AA3E65 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAEBF44283263AB00AA3E65 /* libc++.tbd */; };
 		4AAEBF47283263B800AA3E65 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAEBF46283263B800AA3E65 /* libxml2.tbd */; };
 		4AAEBF49283263C000AA3E65 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAEBF48283263C000AA3E65 /* libsqlite3.tbd */; };
+		4AB1A236287BB0FB00A9791C /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB1A235287BB0FB00A9791C /* UINavigationControllerExtension.swift */; };
 		4AB39DD7284B49E30014DE41 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB39DD6284B49E30014DE41 /* SafariView.swift */; };
 		4AC5BE62281FE58C006CA43F /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5BE61281FE58C006CA43F /* MainMapView.swift */; };
 		4AC5BE64281FE598006CA43F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5BE63281FE598006CA43F /* MainView.swift */; };
@@ -624,6 +625,7 @@
 		4AAEBF44283263AB00AA3E65 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		4AAEBF46283263B800AA3E65 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		4AAEBF48283263C000AA3E65 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		4AB1A235287BB0FB00A9791C /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		4AB39DD6284B49E30014DE41 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		4AC5BE61281FE58C006CA43F /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
 		4AC5BE63281FE598006CA43F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -728,6 +730,7 @@
 				4A7906262848BD6F00B2830A /* ColorExtension.swift */,
 				4AE41A0F2859EF90009130A6 /* FontExtension.swift */,
 				4AF706E1286C4AA400C83304 /* UIApplicationExtension.swift */,
+				4AB1A235287BB0FB00A9791C /* UINavigationControllerExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1589,6 +1592,7 @@
 				4AC5BE62281FE58C006CA43F /* MainMapView.swift in Sources */,
 				4AF706F2287802BB00C83304 /* RandomAnimationView.swift in Sources */,
 				4AF706E4286DB1D000C83304 /* EmptyView.swift in Sources */,
+				4AB1A236287BB0FB00A9791C /* UINavigationControllerExtension.swift in Sources */,
 				4AF706EE2876BECE00C83304 /* ChooseCategoryView.swift in Sources */,
 				4A08C2502852020000123531 /* ListContentView.swift in Sources */,
 				4A136379283F94160070EA54 /* LocationRepository.swift in Sources */,

@@ -27,15 +27,16 @@ struct ChooseCategoryView: View {
                 }
                 .padding(EdgeInsets(top: 8, leading: 22, bottom: 22, trailing: 22))
                 .background(Color.primaryBeige)
-                .cornerRadius(12)
                 .overlay(content: {
                     if viewModel.isDisable(item) {
                         Rectangle()
                             .fill(.black.opacity(0.35))
                     }
                 })
+                .cornerRadius(12)
                 .onTapGesture {
                     viewModel.selectItem(item)
+                    print(viewModel.selectedItems)
                 }
             }
         }
