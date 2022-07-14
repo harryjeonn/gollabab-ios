@@ -33,6 +33,11 @@ class LocationRepository: NSObject {
     func getLocation() -> MyLocationModel {
         return myLocationModel
     }
+    
+    func updateLocation(_ location: MTMapPoint) {
+        myLocationModel.lat = location.mapPointGeo().latitude
+        myLocationModel.lon = location.mapPointGeo().longitude
+    }
 }
 
 extension LocationRepository: CLLocationManagerDelegate {
