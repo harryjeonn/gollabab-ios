@@ -47,17 +47,9 @@ struct RandomAnimationView: View {
                 GeometryReader { proxy in
                     let width = proxy.size.width - (proxy.size.width / 2)
                     
-                    HStack(spacing: 20) {
+                    HStack(spacing: -40) {
                         ForEach(0..<50, id: \.self) { _ in
-                            Image("card_clover")
-                                .resizable()
-                                .frame(width: 178, height: 267)
-                            
-                            Image("card_diamond")
-                                .resizable()
-                                .frame(width: 178, height: 267)
-                            
-                            Image("card_heart")
+                            Image("card_shuffle")
                                 .resizable()
                                 .frame(width: 178, height: 267)
                         }
@@ -65,8 +57,8 @@ struct RandomAnimationView: View {
                     .padding(EdgeInsets(top: 0, leading: 21, bottom: 0, trailing: 21))
                     .offset(x: index * -width)
                     .onReceive(viewModel.places.publisher) { _ in
-                        withAnimation(.easeInOut(duration: 3)) {
-                            index = 48
+                        withAnimation(.easeInOut(duration: 2)) {
+                            index = 30
                         }
                     }
                 }
