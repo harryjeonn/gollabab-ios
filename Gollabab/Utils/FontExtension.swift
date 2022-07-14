@@ -17,30 +17,30 @@ extension Font {
     }
     
     static func eliceP1() -> Font {
-        return Font.custom("EliceDigitalBaeumOTF-Bd", size: 16)
+        return Font.custom("EliceDigitalBaeumOTF-Bd", size: 18)
     }
     
     static func eliceP2() -> Font {
-        return Font.custom("EliceDigitalBaeumOTF-Bd", size: 15)
+        return Font.custom("EliceDigitalBaeumOTF-Bd", size: 17)
     }
     
     static func eliceP2Regular() -> Font {
-        return Font.custom("EliceDigitalBaeumOTF", size: 15)
+        return Font.custom("EliceDigitalBaeumOTF", size: 17)
     }
     
     static func eliceP3() -> Font {
-        return Font.custom("EliceDigitalBaeumOTF", size: 14)
+        return Font.custom("EliceDigitalBaeumOTF", size: 16)
     }
     
     static func eliceP4() -> Font {
-        return Font.custom("EliceDigitalBaeumOTF", size: 13)
+        return Font.custom("EliceDigitalBaeumOTF", size: 15)
     }
     
     static func eliceCaption() -> Font {
-        return Font.custom("EliceDigitalBaeumOTF", size: 12)
+        return Font.custom("EliceDigitalBaeumOTF", size: 14)
     }
     
     static func eliceCaptionSmall() -> Font {
-        return Font.custom("EliceDigitalBaeumOTF", size: 10)
+        return Font.custom("EliceDigitalBaeumOTF", size: 12)
     }
 }

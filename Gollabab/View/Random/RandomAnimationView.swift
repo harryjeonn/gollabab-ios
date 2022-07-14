@@ -35,7 +35,7 @@ struct RandomAnimationView: View {
             
             VStack(spacing: 0) {
                 Text("여기서 골라밥")
-                    .font(.eliceBold(size: 30))
+                    .font(.eliceBold(size: 32))
                     .foregroundColor(.primaryBeige)
                     .padding(.bottom, 12)
                 
