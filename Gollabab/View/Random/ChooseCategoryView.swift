@@ -20,12 +20,13 @@ struct ChooseCategoryView: View {
                     Image(item.image())
                         .resizable()
                         .frame(width: 60, height: 60)
+                        .padding(EdgeInsets(top: 8, leading: 22, bottom: 0, trailing: 22))
                     
                     Text(item.rawValue)
                         .font(.eliceP3())
                         .foregroundColor(.text300)
+                        .padding(.bottom, 22)
                 }
-                .padding(EdgeInsets(top: 8, leading: 22, bottom: 22, trailing: 22))
                 .background(Color.primaryBeige)
                 .overlay(content: {
                     if viewModel.isDisable(item) {

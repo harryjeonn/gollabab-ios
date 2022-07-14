@@ -14,7 +14,7 @@ struct RandomView: View {
         VStack(spacing: 0) {
             Spacer()
             Text("카테고리 선택해밥")
-                .font(.eliceBold(size: 20))
+                .font(.eliceBold(size: 22))
                 .foregroundColor(.white)
                 .padding(.bottom, 38)
             
