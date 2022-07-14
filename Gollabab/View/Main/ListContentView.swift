@@ -39,7 +39,7 @@ struct ListContentView: View {
             HStack(spacing: 0) {
                 Image("pin_card")
                     .resizable()
-                    .frame(width: 12, height: 12)
+                    .frame(width: 14, height: 14)
                 
                 Text("\(placeModel.distance)m")
                     .font(.eliceCaption())
@@ -48,7 +48,7 @@ struct ListContentView: View {
                 
                 Image(placeModel.phone.isEmpty ? "phone_disable" : "phone")
                     .resizable()
-                    .frame(width: 12, height: 12)
+                    .frame(width: 14, height: 14)
                     .padding(.leading, 16)
                     .padding(.trailing, 4)
                 
