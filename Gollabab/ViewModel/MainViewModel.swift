@@ -115,6 +115,10 @@ class MainViewModel: ObservableObject {
         service.setupLocation()
     }
     
+    func updateLocation(_ location: MTMapPoint) {
+        service.updateLocation(location)
+    }
+    
     func getMapPoint() {
         let myLocation = service.getLocation()
         let geoCoord = MTMapPointGeo(latitude: myLocation.lat!, longitude: myLocation.lon!)

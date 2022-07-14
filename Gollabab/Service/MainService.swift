@@ -39,6 +39,10 @@ class MainService {
         locationRepository.setupLocation()
     }
     
+    func updateLocation(_ location: MTMapPoint) {
+        locationRepository.updateLocation(location)
+    }
+    
     func getLocation() -> MyLocationModel {
         return locationRepository.getLocation()
     }

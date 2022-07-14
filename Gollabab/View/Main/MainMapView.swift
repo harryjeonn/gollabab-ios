@@ -119,5 +119,10 @@ struct MainMapView: UIViewRepresentable {
         func mapView(_ mapView: MTMapView!, centerPointMovedTo mapCenterPoint: MTMapPoint!) {
             viewModel.isActiveMyLocation = false
         }
+        
+        // 현 위치 변경 됐을 때
+        func mapView(_ mapView: MTMapView!, updateCurrentLocation location: MTMapPoint!, withAccuracy accuracy: MTMapLocationAccuracy) {
+            viewModel.updateLocation(location)
+        }
     }
 }
