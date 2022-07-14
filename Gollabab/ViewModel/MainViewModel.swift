@@ -53,6 +53,11 @@ class MainViewModel: ObservableObject {
     func fetchPlace(_ type: CategoryType) {
         cardCurrentIndex = 0
         isCategorySelectedState = true
+        
+        type == .all ? fetchAll() : fetchCategory(type)
+    }
+    
+    func fetchCategory(_ type: CategoryType) {
         service.fetchPlace(type)
             .sink(receiveCompletion: { print("fetchPlace completion: \($0)") },
                   receiveValue: { [weak self] value in
@@ -60,6 +65,36 @@ class MainViewModel: ObservableObject {
                 self?.createPoiItems()
             })
             .store(in: &cancelBag)
+    }
+    
+    func fetchAll() {
+        var temp: [PlaceModel] = []
+        
+        CategoryType.allCases
+            .filter { $0 != .all }
+            .filter { $0 != .snack }
+            .filter { $0 != .cafe }
+            .forEach { category in
+                service.fetchPlace(category)
+                    .sink(receiveCompletion: { print("fetchPlaceAll completion: \($0)") },
+                          receiveValue: { [weak self] value in
+                        value.forEach { place in
+                            temp.append(place)
+                        }
+                        self?.randomPlace(temp)
+                        self?.createPoiItems()
+                    })
+                    .store(in: &cancelBag)
+            }
+    }
+    
+    func randomPlace(_ orgPlace: [PlaceModel]) {
+        var newPlaces = orgPlace.shuffled()
+        if newPlaces.count > 30 {
+            newPlaces = Array(newPlaces[..<30])
+        }
+        
+        places = newPlaces.sorted(by: { service.stringToInt($0.distance) < service.stringToInt($1.distance) })
     }
     
     func searchPlace() {
@@ -79,7 +114,7 @@ class MainViewModel: ObservableObject {
     func setupLocation() {
         service.setupLocation()
     }
-
+    
     func getMapPoint() {
         let myLocation = service.getLocation()
         let geoCoord = MTMapPointGeo(latitude: myLocation.lat!, longitude: myLocation.lon!)
