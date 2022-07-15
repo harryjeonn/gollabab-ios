@@ -11,15 +11,14 @@ import Combine
 struct MainMapView: UIViewRepresentable {
     @ObservedObject var viewModel: MainViewModel
     
-    let view = MTMapView()
-    
     func makeUIView(context: Context) -> MTMapView {
+        let view = MTMapView()
         viewModel.setupLocation()
-        setupMapView()
+        setupMapView(view)
         
-        subscribePoiItems()
-        subscribeMyLocation()
-        subscribeSelectedPoiItem()
+        subscribePoiItems(view)
+        subscribeMyLocation(view)
+        subscribeSelectedPoiItem(view)
         
         view.delegate = context.coordinator
         
@@ -29,45 +28,45 @@ struct MainMapView: UIViewRepresentable {
     func updateUIView(_ uiView: MTMapView, context: Context) {
     }
     
-    func subscribePoiItems() {
+    func subscribePoiItems(_ view: MTMapView) {
         viewModel.poiItems
             .sink { items in
                 view.removeAllPOIItems()
                 view.addPOIItems(items)
-                self.selectPoiItem(items.first)
+                self.selectPoiItem(poiItem: items.first, view: view)
             }.store(in: &viewModel.cancelBag)
     }
     
-    func setupMapView() {
+    func setupMapView(_ view: MTMapView) {
         view.baseMapType = .standard
         view.showCurrentLocationMarker = true
         view.currentLocationTrackingMode = .onWithoutHeadingWithoutMapMoving
     }
     
-    func subscribeSelectedPoiItem() {
+    func subscribeSelectedPoiItem(_ view: MTMapView) {
         viewModel.selectedPoiItemIndex
             .sink(receiveValue: { index in
                 guard let poiItem = view.poiItems[index] as? MTMapPOIItem else { return }
-                deselectPoiItem()
-                selectPoiItem(poiItem)
+                deselectPoiItem(view)
+                selectPoiItem(poiItem: poiItem, view: view)
             })
             .store(in: &viewModel.cancelBag)
     }
     
-    func deselectPoiItem() {
+    func deselectPoiItem(_ view: MTMapView) {
         view.poiItems.forEach { poiItem in
             let item = poiItem as! MTMapPOIItem
             view.deselect(item)
         }
     }
     
-    func selectPoiItem(_ poiItem: MTMapPOIItem?) {
+    func selectPoiItem(poiItem: MTMapPOIItem?, view: MTMapView) {
         guard let poiItem = poiItem else { return }
         viewModel.selectedPoiItem = poiItem
         view.select(poiItem, animated: true)
     }
     
-    func subscribeMyLocation() {
+    func subscribeMyLocation(_ view: MTMapView) {
         viewModel.mtMapPoint
             .sink(receiveValue: { view.setMapCenter($0, zoomLevel: .zero, animated: true) })
             .store(in: &viewModel.cancelBag)
