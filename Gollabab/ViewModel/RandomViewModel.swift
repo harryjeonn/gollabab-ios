@@ -18,6 +18,8 @@ class RandomViewModel: ObservableObject {
     
     @Published var isNavigationActive: Bool = false
     
+    var randomPlaces: [PlaceModel] = []
+    
     func isDisable(_ item: CategoryType) -> Bool {
         return selectedItems.contains(item) == false || isSelectedAll == false && item == .all
     }
@@ -69,12 +71,16 @@ class RandomViewModel: ObservableObject {
             selectedItems = CategoryType.allCases
         }
         
-        selectedItems.forEach { item in
+        selectedItems.enumerated().forEach { index, item in
             service.fetchPlace(item)
                 .sink(receiveCompletion: { print("fetchPlace completion: \($0)") },
                       receiveValue: { [weak self] value in
                     value.forEach { place in
                         self?.places.append(place)
+                    }
+                    
+                    if index == (self?.selectedItems.count)! - 1 {
+                        self?.getRandomPlaces()
                     }
                 })
                 .store(in: &cancelBag)
@@ -82,15 +88,27 @@ class RandomViewModel: ObservableObject {
     }
     
     // MARK: - Random Animation View
-    func resultPlace() {
-        // 랜덤결과
+    func getRandomPlaces() {
+        randomPlaces.removeAll()
+        
+        if places.count <= 3 {
+            randomPlaces = places
+            return
+        }
+        
+        while randomPlaces.count < 3 {
+            guard let place = places.randomElement() else { return }
+            
+            if randomPlaces.contains(place) == false {
+                randomPlaces.append(place)
+            }
+        }
     }
     
-    func startAnimation() {
+    // MARK: - Random Result View
+    func getMidIndex() -> Int {
+        guard randomPlaces.count != 0 else { return 0 }
         
-    }
-    
-    func stopAnimation() {
-        
+        return (randomPlaces.count > 1 ? randomPlaces.count - 1 : randomPlaces.count) / 2
     }
 }

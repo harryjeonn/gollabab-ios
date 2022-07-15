@@ -22,7 +22,6 @@ struct CustomBackButton: View {
                         .padding(.top, 16)
                         .padding(.leading, 22)
                 }
-                
                 Spacer()
             }
             Spacer()

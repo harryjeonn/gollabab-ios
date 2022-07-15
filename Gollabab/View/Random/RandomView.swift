@@ -22,21 +22,28 @@ struct RandomView: View {
             ChooseCategoryView(viewModel: viewModel)
             
             NavigationLink(destination: RandomAnimationView(viewModel: viewModel), isActive: $viewModel.isNavigationActive) {
-                Text("여기서 골라밥!")
-                    .font(.eliceP1())
-                    .foregroundColor(.white)
-                    .frame(minWidth: .zero, maxWidth: .infinity)
-                    .frame(height: 48)
-                    .background(Color.secondaryRed)
-                    .cornerRadius(100)
-                    .onTapGesture {
-                        viewModel.isNavigationActive = true
-                    }
+                Text("")
             }
-            .padding(EdgeInsets(top: 40, leading: 27, bottom: 40, trailing: 27))
+            
+            Text("여기서 골라밥!")
+                .font(.eliceP1())
+                .foregroundColor(.white)
+                .frame(minWidth: .zero, maxWidth: .infinity)
+                .frame(height: 48)
+                .background(Color.secondaryRed)
+                .cornerRadius(100)
+                .padding(EdgeInsets(top: 40, leading: 27, bottom: 40, trailing: 27))
+                .onTapGesture {
+                    // TODO: - 검색결과 비어있는지 확인
+                    viewModel.fetchPlace()
+                    viewModel.isNavigationActive = true
+                }
         }
         .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)
         .background(Color.text300)
+        .onAppear {
+            viewModel.isNavigationActive = false
+        }
     }
 }
 

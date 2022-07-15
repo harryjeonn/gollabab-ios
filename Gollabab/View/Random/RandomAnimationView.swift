@@ -49,6 +49,7 @@ struct RandomAnimationView: View {
                         withAnimation(.easeInOut(duration: 2)) {
                             index = 30
                         }
+                        
                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(2500)) {
                             isShowResult = true
                         }
@@ -57,7 +58,6 @@ struct RandomAnimationView: View {
                 .frame(height: 267)
                 
                 Button {
-                    // 투표결과 보여주기
                     isShowResult = true
                 } label: {
                     Text("애니메이션 건너뛰기")
@@ -70,9 +70,6 @@ struct RandomAnimationView: View {
             }
             .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)
             .background(Color.text300)
-            .onAppear {
-                viewModel.fetchPlace()
-            }
         }
         .navigationTitle("")
         .navigationBarHidden(true)

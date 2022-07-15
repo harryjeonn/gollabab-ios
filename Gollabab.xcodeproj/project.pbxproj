@@ -319,6 +319,7 @@
 		4AF706EE2876BECE00C83304 /* ChooseCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF706ED2876BECE00C83304 /* ChooseCategoryView.swift */; };
 		4AF706F02877F85100C83304 /* RandomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF706EF2877F85100C83304 /* RandomViewModel.swift */; };
 		4AF706F2287802BB00C83304 /* RandomAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF706F1287802BB00C83304 /* RandomAnimationView.swift */; };
+		825365DE2883DD4500801CB0 /* ResultCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825365DD2883DD4500801CB0 /* ResultCardView.swift */; };
 		82C93535281AD618009791EA /* GollababApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C93534281AD618009791EA /* GollababApp.swift */; };
 		82C93537281AD618009791EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C93536281AD618009791EA /* ContentView.swift */; };
 		82C93539281AD61D009791EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C93538281AD61D009791EA /* Assets.xcassets */; };
@@ -648,6 +649,7 @@
 		4AF706ED2876BECE00C83304 /* ChooseCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoryView.swift; sourceTree = "<group>"; };
 		4AF706EF2877F85100C83304 /* RandomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomViewModel.swift; sourceTree = "<group>"; };
 		4AF706F1287802BB00C83304 /* RandomAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomAnimationView.swift; sourceTree = "<group>"; };
+		825365DD2883DD4500801CB0 /* ResultCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCardView.swift; sourceTree = "<group>"; };
 		82C93531281AD618009791EA /* Gollabab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gollabab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82C93534281AD618009791EA /* GollababApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GollababApp.swift; sourceTree = "<group>"; };
 		82C93536281AD618009791EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -1146,6 +1148,7 @@
 				4AF706F1287802BB00C83304 /* RandomAnimationView.swift */,
 				4AB100CE28814DC100A4A9C8 /* RandomResultView.swift */,
 				4AB100D028814E1B00A4A9C8 /* CustomBackButton.swift */,
+				825365DD2883DD4500801CB0 /* ResultCardView.swift */,
 			);
 			path = Random;
 			sourceTree = "<group>";
@@ -1595,6 +1598,7 @@
 				4AF706DA286C11AE00C83304 /* SearchView.swift in Sources */,
 				4A346CBB2836462300C574A5 /* MainService.swift in Sources */,
 				4AF706E2286C4AA400C83304 /* UIApplicationExtension.swift in Sources */,
+				825365DE2883DD4500801CB0 /* ResultCardView.swift in Sources */,
 				4AC5BE62281FE58C006CA43F /* MainMapView.swift in Sources */,
 				4AF706F2287802BB00C83304 /* RandomAnimationView.swift in Sources */,
 				4AF706E4286DB1D000C83304 /* EmptyView.swift in Sources */,
