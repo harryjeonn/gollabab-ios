@@ -21,7 +21,7 @@ struct RandomView: View {
             // 카테고리 뷰
             ChooseCategoryView(viewModel: viewModel)
             
-            NavigationLink(destination: RandomAnimationView(viewModel: viewModel)) {
+            NavigationLink(destination: RandomAnimationView(viewModel: viewModel), isActive: $viewModel.isNavigationActive) {
                 Text("여기서 골라밥!")
                     .font(.eliceP1())
                     .foregroundColor(.white)
@@ -29,6 +29,9 @@ struct RandomView: View {
                     .frame(height: 48)
                     .background(Color.secondaryRed)
                     .cornerRadius(100)
+                    .onTapGesture {
+                        viewModel.isNavigationActive = true
+                    }
             }
             .padding(EdgeInsets(top: 40, leading: 27, bottom: 40, trailing: 27))
         }

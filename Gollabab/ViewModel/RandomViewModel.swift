@@ -16,6 +16,8 @@ class RandomViewModel: ObservableObject {
     @Published var selectedItems: [CategoryType] = [.korean]
     @Published var isSelectedAll: Bool = false
     
+    @Published var isNavigationActive: Bool = false
+    
     func isDisable(_ item: CategoryType) -> Bool {
         return selectedItems.contains(item) == false || isSelectedAll == false && item == .all
     }

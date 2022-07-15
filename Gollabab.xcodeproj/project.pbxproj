@@ -299,6 +299,8 @@
 		4AAEBF45283263AB00AA3E65 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAEBF44283263AB00AA3E65 /* libc++.tbd */; };
 		4AAEBF47283263B800AA3E65 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAEBF46283263B800AA3E65 /* libxml2.tbd */; };
 		4AAEBF49283263C000AA3E65 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAEBF48283263C000AA3E65 /* libsqlite3.tbd */; };
+		4AB100CF28814DC100A4A9C8 /* RandomResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB100CE28814DC100A4A9C8 /* RandomResultView.swift */; };
+		4AB100D128814E1B00A4A9C8 /* CustomBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB100D028814E1B00A4A9C8 /* CustomBackButton.swift */; };
 		4AB1A236287BB0FB00A9791C /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB1A235287BB0FB00A9791C /* UINavigationControllerExtension.swift */; };
 		4AB39DD7284B49E30014DE41 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB39DD6284B49E30014DE41 /* SafariView.swift */; };
 		4AC5BE62281FE58C006CA43F /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5BE61281FE58C006CA43F /* MainMapView.swift */; };
@@ -625,6 +627,8 @@
 		4AAEBF44283263AB00AA3E65 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		4AAEBF46283263B800AA3E65 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		4AAEBF48283263C000AA3E65 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		4AB100CE28814DC100A4A9C8 /* RandomResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomResultView.swift; sourceTree = "<group>"; };
+		4AB100D028814E1B00A4A9C8 /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
 		4AB1A235287BB0FB00A9791C /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		4AB39DD6284B49E30014DE41 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		4AC5BE61281FE58C006CA43F /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
@@ -1140,6 +1144,8 @@
 				4AF706EB2876BC3F00C83304 /* RandomView.swift */,
 				4AF706ED2876BECE00C83304 /* ChooseCategoryView.swift */,
 				4AF706F1287802BB00C83304 /* RandomAnimationView.swift */,
+				4AB100CE28814DC100A4A9C8 /* RandomResultView.swift */,
+				4AB100D028814E1B00A4A9C8 /* CustomBackButton.swift */,
 			);
 			path = Random;
 			sourceTree = "<group>";
@@ -1598,10 +1604,12 @@
 				4A136379283F94160070EA54 /* LocationRepository.swift in Sources */,
 				4A136377283F93270070EA54 /* MyLocationModel.swift in Sources */,
 				4AF706D8286B0E9900C83304 /* CategoryView.swift in Sources */,
+				4AB100CF28814DC100A4A9C8 /* RandomResultView.swift in Sources */,
 				4A7906242848403400B2830A /* CardContentView.swift in Sources */,
 				4A346CB8283644FD00C574A5 /* KakaoRepository.swift in Sources */,
 				4AF706D6286B0C5A00C83304 /* CategoryModel.swift in Sources */,
 				4AF706F02877F85100C83304 /* RandomViewModel.swift in Sources */,
+				4AB100D128814E1B00A4A9C8 /* CustomBackButton.swift in Sources */,
 				4AB39DD7284B49E30014DE41 /* SafariView.swift in Sources */,
 				4AC5BE64281FE598006CA43F /* MainView.swift in Sources */,
 				4A346CB52836407000C574A5 /* KakaoResponse.swift in Sources */,
