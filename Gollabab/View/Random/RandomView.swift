@@ -12,10 +12,10 @@ struct RandomView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            Spacer()
             Text("카테고리 선택해밥")
                 .font(.eliceBold(size: 22))
                 .foregroundColor(.white)
+                .padding(.top, 54)
                 .padding(.bottom, 38)
             
             // 카테고리 뷰

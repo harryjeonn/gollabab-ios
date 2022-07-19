@@ -303,6 +303,7 @@
 		4AB100D128814E1B00A4A9C8 /* CustomBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB100D028814E1B00A4A9C8 /* CustomBackButton.swift */; };
 		4AB1A236287BB0FB00A9791C /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB1A235287BB0FB00A9791C /* UINavigationControllerExtension.swift */; };
 		4AB39DD7284B49E30014DE41 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB39DD6284B49E30014DE41 /* SafariView.swift */; };
+		4ABDFDF828869307004DF6AF /* ResultCardScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDFDF728869307004DF6AF /* ResultCardScrollView.swift */; };
 		4AC5BE62281FE58C006CA43F /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5BE61281FE58C006CA43F /* MainMapView.swift */; };
 		4AC5BE64281FE598006CA43F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5BE63281FE598006CA43F /* MainView.swift */; };
 		4AE41A0D2859EF00009130A6 /* EliceDigitalBaeumOTF_Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4AE41A0B2859EF00009130A6 /* EliceDigitalBaeumOTF_Bold.otf */; };
@@ -632,6 +633,7 @@
 		4AB100D028814E1B00A4A9C8 /* CustomBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButton.swift; sourceTree = "<group>"; };
 		4AB1A235287BB0FB00A9791C /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		4AB39DD6284B49E30014DE41 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		4ABDFDF728869307004DF6AF /* ResultCardScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCardScrollView.swift; sourceTree = "<group>"; };
 		4AC5BE61281FE58C006CA43F /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
 		4AC5BE63281FE598006CA43F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4AC5BE65281FEE07006CA43F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -1144,10 +1146,11 @@
 			isa = PBXGroup;
 			children = (
 				4AF706EB2876BC3F00C83304 /* RandomView.swift */,
+				4AB100D028814E1B00A4A9C8 /* CustomBackButton.swift */,
 				4AF706ED2876BECE00C83304 /* ChooseCategoryView.swift */,
 				4AF706F1287802BB00C83304 /* RandomAnimationView.swift */,
 				4AB100CE28814DC100A4A9C8 /* RandomResultView.swift */,
-				4AB100D028814E1B00A4A9C8 /* CustomBackButton.swift */,
+				4ABDFDF728869307004DF6AF /* ResultCardScrollView.swift */,
 				825365DD2883DD4500801CB0 /* ResultCardView.swift */,
 			);
 			path = Random;
@@ -1601,6 +1604,7 @@
 				825365DE2883DD4500801CB0 /* ResultCardView.swift in Sources */,
 				4AC5BE62281FE58C006CA43F /* MainMapView.swift in Sources */,
 				4AF706F2287802BB00C83304 /* RandomAnimationView.swift in Sources */,
+				4ABDFDF828869307004DF6AF /* ResultCardScrollView.swift in Sources */,
 				4AF706E4286DB1D000C83304 /* EmptyView.swift in Sources */,
 				4AB1A236287BB0FB00A9791C /* UINavigationControllerExtension.swift in Sources */,
 				4AF706EE2876BECE00C83304 /* ChooseCategoryView.swift in Sources */,

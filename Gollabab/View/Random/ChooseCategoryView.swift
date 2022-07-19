@@ -11,7 +11,7 @@ struct ChooseCategoryView: View {
     @ObservedObject var viewModel: RandomViewModel
     
     let category: [CategoryType] = [.korean, .chinese, .casual, .western, .japanese, .fastfood, .asian, .chicken, .cafe, .snack, .all]
-    let columns = [GridItem(.adaptive(minimum: 104))]
+    let columns = [GridItem(.adaptive(minimum: (UIScreen.main.bounds.width - 42 - 20) / 3))]
     
     var body: some View {
         LazyVGrid(columns: columns, spacing: 10) {
