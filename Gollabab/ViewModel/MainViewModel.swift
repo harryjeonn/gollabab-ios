@@ -18,6 +18,7 @@ class MainViewModel: ObservableObject {
     
     @Published var cardCurrentIndex: Int = 0
     @Published var categoryCurrentIndex: Int = 0
+    @Published var moveIndex: Int = 2
     
     @Published var showSafari: Bool = false
     @Published var isList: Bool = false
@@ -332,6 +333,10 @@ class MainViewModel: ObservableObject {
                 randomResult.append(place)
             }
         }
+    }
+    
+    func startAnimation() {
+        moveIndex = 30
     }
     
     // MARK: - Random Result View

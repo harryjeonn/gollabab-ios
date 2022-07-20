@@ -11,7 +11,7 @@ struct RandomAnimationView: View {
     @ObservedObject var viewModel: MainViewModel
     
     @State var isShowResult: Bool = false
-    @State var index: CGFloat = 2
+    @State var index: Int = 2
     
     var body: some View {
         ZStack {
@@ -44,16 +44,16 @@ struct RandomAnimationView: View {
                         }
                     }
                     .padding(EdgeInsets(top: 0, leading: 21, bottom: 0, trailing: 21))
-                    .offset(x: index * -width)
-                    .onAppear {
+                    .offset(x: CGFloat(index) * -width)
+                    .onReceive(viewModel.$moveIndex, perform: { output in
                         withAnimation(.easeInOut(duration: 2)) {
-                            index = 30
+                            index = output
                         }
                         
                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(2300)) {
                             isShowResult = true
                         }
-                    }
+                    })
                 }
                 .frame(height: 267)
                 
@@ -70,6 +70,9 @@ struct RandomAnimationView: View {
             }
             .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)
             .background(Color.text300)
+            .onAppear {
+                viewModel.startAnimation()
+            }
         }
         .navigationTitle("")
         .navigationBarHidden(true)
