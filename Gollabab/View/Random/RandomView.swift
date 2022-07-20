@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RandomView: View {
-    @StateObject private var viewModel = RandomViewModel()
+    @ObservedObject var viewModel: MainViewModel
     
     var body: some View {
         VStack(spacing: 0) {
@@ -35,7 +35,7 @@ struct RandomView: View {
                 .padding(EdgeInsets(top: 40, leading: 27, bottom: 40, trailing: 27))
                 .onTapGesture {
                     // TODO: - 검색결과 비어있는지 확인
-                    viewModel.fetchPlace()
+                    viewModel.fetchRandomPlace()
                     viewModel.isNavigationActive = true
                 }
         }
@@ -49,6 +49,6 @@ struct RandomView: View {
 
 struct RandomView_Previews: PreviewProvider {
     static var previews: some View {
-        RandomView()
+        RandomView(viewModel: MainViewModel())
     }
 }

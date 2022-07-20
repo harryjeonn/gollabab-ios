@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ResultCardScrollView: View {
-    @ObservedObject var viewModel: RandomViewModel
+    @ObservedObject var viewModel: MainViewModel
     
     @GestureState var offset: CGFloat = 0
     @State var currentIndex: Int = 0
@@ -24,7 +24,7 @@ struct ResultCardScrollView: View {
             let xOffsetToShift = (totalWidth - UIScreen.main.bounds.width) / 2
             
             HStack(spacing: 0) {
-                ForEach(Array(viewModel.randomPlaces.enumerated()), id: \.0) { idx, place in
+                ForEach(Array(viewModel.randomResult.enumerated()), id: \.0) { idx, place in
                     ResultCardView(place: place)
                         .frame(width: cardWidth)
                         .background(Color.white)
@@ -33,7 +33,7 @@ struct ResultCardScrollView: View {
                 }
             }
             .padding(.leading, 20)
-            .offset(x: (-xOffsetToShift * CGFloat(currentIndex)) + offset + (spacing / 2) + (viewModel.randomPlaces.count != 3 ? 20 : 0))
+            .offset(x: (-xOffsetToShift * CGFloat(currentIndex)) + offset + (spacing / 2) + (viewModel.randomResult.count != 3 ? 20 : 0))
             .gesture(
                 DragGesture()
                     .updating($offset, body: { value, out, _ in
@@ -45,7 +45,7 @@ struct ResultCardScrollView: View {
                         let progress = -offsetX / (proxy.size.width / 2)
                         let roundIndex = progress.rounded()
                         
-                        currentIndex = max(min(currentIndex + Int(roundIndex), viewModel.randomPlaces.count - 1), 0)
+                        currentIndex = max(min(currentIndex + Int(roundIndex), viewModel.randomResult.count - 1), 0)
                     })
             )
         }
@@ -59,6 +59,6 @@ struct ResultCardScrollView: View {
 
 struct ResultCardScrollView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultCardScrollView(viewModel: RandomViewModel())
+        ResultCardScrollView(viewModel: MainViewModel())
     }
 }

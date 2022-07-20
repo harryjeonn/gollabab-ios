@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RandomResultView: View {
-    @ObservedObject var viewModel: RandomViewModel
+    @ObservedObject var viewModel: MainViewModel
     
     var body: some View {
         ZStack {
@@ -58,6 +58,6 @@ struct RandomResultView: View {
 
 struct RandomResultView_Previews: PreviewProvider {
     static var previews: some View {
-        RandomResultView(viewModel: RandomViewModel())
+        RandomResultView(viewModel: MainViewModel())
     }
 }

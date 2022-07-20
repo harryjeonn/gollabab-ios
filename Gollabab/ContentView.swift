@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var viewModel: MainViewModel = MainViewModel()
+    
     @State private var selection: Int = 0
     
     init() {
@@ -17,7 +19,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             TabView(selection: $selection) {
-                MainView()
+                MainView(viewModel: viewModel)
                     .tabItem {
                         selection == 0 ? Image("home_fill") : Image("home_outline")
                     }
@@ -25,7 +27,7 @@ struct ContentView: View {
                     .navigationTitle("")
                     .navigationBarHidden(true)
                 
-                RandomView()
+                RandomView(viewModel: viewModel)
                     .tabItem {
                         selection == 1 ? Image("shuffle_2_fill") : Image("shuffle_2_outline")
                     }

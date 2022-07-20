@@ -15,7 +15,6 @@ class RandomViewModel: ObservableObject {
     @Published var places: [PlaceModel] = []
     @Published var selectedItems: [CategoryType] = [.korean]
     @Published var isSelectedAll: Bool = false
-    
     @Published var isNavigationActive: Bool = false
     
     var randomPlaces: [PlaceModel] = []

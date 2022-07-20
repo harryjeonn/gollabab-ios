@@ -14,14 +14,20 @@ class MainViewModel: ObservableObject {
     var cancelBag = Set<AnyCancellable>()
     
     @Published var places: [PlaceModel] = []
+    @Published var selectedRandomItems: [CategoryType] = [.korean]
+    
     @Published var cardCurrentIndex: Int = 0
     @Published var categoryCurrentIndex: Int = 0
+    
     @Published var showSafari: Bool = false
     @Published var isList: Bool = false
     @Published var isEditing: Bool = false
     @Published var isCardSelectedState: Bool = true
     @Published var isCategorySelectedState: Bool = true
     @Published var isActiveMyLocation: Bool = true
+    
+    @Published var isSelectedAll: Bool = false
+    @Published var isNavigationActive: Bool = false
     
     @Published var recentKeyword: [String] = []
     @Published var keyword: String = ""
@@ -32,6 +38,9 @@ class MainViewModel: ObservableObject {
     var poiItems = PassthroughSubject<[MTMapPOIItem], Never>()
     var selectedPoiItemIndex = PassthroughSubject<Int, Never>()
     var touchedIndex: Int = 0
+    
+    var randomPlaces: [PlaceModel] = []
+    var randomResult: [PlaceModel] = []
     
     init() {
         checkPermisson()
@@ -239,5 +248,96 @@ class MainViewModel: ObservableObject {
     func dismissRecentSearchView() {
         isEditing = false
         UIApplication.hideKeyboard()
+    }
+    
+    // MARK: - 랜덤
+    func isDisable(_ item: CategoryType) -> Bool {
+        return selectedRandomItems.contains(item) == false || isSelectedAll == false && item == .all
+    }
+    
+    func selectItem(_ item: CategoryType) {
+        isSelectedAll = false
+        
+        if item == .all {
+            // 전체선택
+            if selectedRandomItems == CategoryType.allCases {
+                selectedRandomItems = [.korean]
+            } else {
+                selectAll()
+            }
+        } else if selectedRandomItems.contains(item) {
+            // 선택해제
+            selectedRandomItems.removeAll(where: { $0 == item })
+        } else {
+            // 선택
+            selectedRandomItems.append(item)
+        }
+        
+        if checkSelectedItem() {
+            selectAll()
+        }
+    }
+    
+    func selectAll() {
+        selectedRandomItems = CategoryType.allCases
+        isSelectedAll = true
+    }
+    
+    func checkSelectedItem() -> Bool {
+        return sortItem(selectedRandomItems) == sortItem(CategoryType.allCases)
+    }
+    
+    func sortItem(_ item: [CategoryType]) -> [CategoryType] {
+        return item
+            .filter { $0 != .all }
+            .sorted(by: { $0.hashValue < $1.hashValue })
+    }
+    
+    func fetchRandomPlace() {
+        randomPlaces.removeAll()
+        
+        if selectedRandomItems.isEmpty {
+            selectedRandomItems = CategoryType.allCases
+        }
+        
+        selectedRandomItems.enumerated().forEach { index, item in
+            service.fetchPlace(item)
+                .sink(receiveCompletion: { print("fetchPlace completion: \($0)") },
+                      receiveValue: { [weak self] value in
+                    value.forEach { place in
+                        self?.randomPlaces.append(place)
+                    }
+                    
+                    if index == (self?.selectedRandomItems.count)! - 1 {
+                        self?.getRandomPlaces()
+                    }
+                })
+                .store(in: &cancelBag)
+        }
+    }
+    
+    // MARK: - Random Animation View
+    func getRandomPlaces() {
+        randomResult.removeAll()
+        
+        if randomPlaces.count <= 3 {
+            randomResult = randomPlaces
+            return
+        }
+        
+        while randomResult.count < 3 {
+            guard let place = randomPlaces.randomElement() else { return }
+            
+            if randomResult.contains(place) == false {
+                randomResult.append(place)
+            }
+        }
+    }
+    
+    // MARK: - Random Result View
+    func getMidIndex() -> Int {
+        guard randomResult.count != 0 else { return 0 }
+        
+        return (randomResult.count > 1 ? randomResult.count - 1 : randomResult.count) / 2
     }
 }

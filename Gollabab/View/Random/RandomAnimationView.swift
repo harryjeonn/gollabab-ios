@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RandomAnimationView: View {
-    @ObservedObject var viewModel: RandomViewModel
+    @ObservedObject var viewModel: MainViewModel
     
     @State var isShowResult: Bool = false
     @State var index: CGFloat = 2
@@ -45,12 +45,12 @@ struct RandomAnimationView: View {
                     }
                     .padding(EdgeInsets(top: 0, leading: 21, bottom: 0, trailing: 21))
                     .offset(x: index * -width)
-                    .onReceive(viewModel.places.publisher) { _ in
+                    .onAppear {
                         withAnimation(.easeInOut(duration: 2)) {
                             index = 30
                         }
                         
-                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(2500)) {
+                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(2300)) {
                             isShowResult = true
                         }
                     }
@@ -78,6 +78,6 @@ struct RandomAnimationView: View {
 
 struct RandomAnimationView_Previews: PreviewProvider {
     static var previews: some View {
-        RandomAnimationView(viewModel: RandomViewModel())
+        RandomAnimationView(viewModel: MainViewModel())
     }
 }
