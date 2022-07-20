@@ -39,10 +39,16 @@ struct ResultCardView: View {
                 .background(Color.primaryBeige)
                 
                 VStack(alignment: .leading, spacing: 0) {
-                    Text("\(place.placeName) >")
-                        .font(.eliceP1())
-                        .foregroundColor(.text200)
-                        .padding(.top, 32)
+                    HStack(spacing: 0) {
+                        Text("\(place.placeName)")
+                            .font(.eliceP1())
+                            .foregroundColor(.text200)
+                        
+                        Image("chevron_right_outline")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                    }
+                    .padding(.top, 32)
                     
                     Text(viewModel.convertCategory(place.categoryName))
                         .font(.eliceP4())
