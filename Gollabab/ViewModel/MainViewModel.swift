@@ -266,7 +266,7 @@ class MainViewModel: ObservableObject {
         
         if item == .all {
             // 전체선택
-            if selectedRandomItems == CategoryType.allCases {
+            if selectedRandomItems == CategoryType.allCases.filter({ $0 != .other }) {
                 selectedRandomItems = [.korean]
             } else {
                 selectAll()
@@ -303,7 +303,7 @@ class MainViewModel: ObservableObject {
         randomPlaces.removeAll()
         
         if selectedRandomItems.isEmpty {
-            selectedRandomItems = CategoryType.allCases.filter { $0 != .other }
+            return
         }
         
         selectedRandomItems.enumerated().forEach { index, item in
