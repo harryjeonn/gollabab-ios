@@ -202,8 +202,8 @@ class MainViewModel: ObservableObject {
         return type
     }
     
-    func getURL() -> URL {
-        if let url = URL(string: places[touchedIndex].placeUrl) {
+    func getURL(_ urlStr: String) -> URL {
+        if let url = URL(string: urlStr) {
             return url
         } else {
             return URL(string: "https://www.daum.net")!
