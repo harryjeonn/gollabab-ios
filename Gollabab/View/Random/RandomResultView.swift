@@ -36,7 +36,7 @@ struct RandomResultView: View {
                     .padding(.leading, 27)
                     
                     Button {
-                        print("tap retry")
+                        viewModel.retryGetRandomPlaces()
                     } label: {
                         Text("다시 골라밥")
                             .font(.eliceP1())
