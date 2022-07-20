@@ -77,6 +77,7 @@ class MainViewModel: ObservableObject {
                   receiveValue: { [weak self] value in
                 self?.places = value
                 self?.createPoiItems()
+                self?.dismissRecentSearchView()
             })
             .store(in: &cancelBag)
     }
