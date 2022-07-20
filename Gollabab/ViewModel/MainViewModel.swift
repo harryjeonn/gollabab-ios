@@ -28,6 +28,7 @@ class MainViewModel: ObservableObject {
     @Published var isActiveMyLocation: Bool = true
     
     @Published var isSelectedAll: Bool = false
+    @Published var isRandomEmpty: Bool = false
     @Published var isNavigationActive: Bool = false
     
     @Published var recentKeyword: [String] = []
@@ -319,12 +320,19 @@ class MainViewModel: ObservableObject {
     
     // MARK: - Random Animation View
     func getRandomPlaces() {
-        randomResult.removeAll()
+        isNavigationActive = !randomPlaces.isEmpty
         
-        if randomPlaces.count <= 3 {
+        if randomPlaces.isEmpty {
+            withAnimation(.easeInOut) {
+                isRandomEmpty = true
+            }
+            return
+        } else if randomPlaces.count <= 3 {
             randomResult = randomPlaces
             return
         }
+        
+        randomResult.removeAll()
         
         while randomResult.count < 3 {
             guard let place = randomPlaces.randomElement() else { return }
