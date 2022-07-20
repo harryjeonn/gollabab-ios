@@ -25,7 +25,7 @@ struct ResultCardScrollView: View {
             
             HStack(spacing: 0) {
                 ForEach(Array(viewModel.randomResult.enumerated()), id: \.0) { idx, place in
-                    ResultCardView(place: place)
+                    ResultCardView(viewModel: viewModel, place: place)
                         .frame(width: cardWidth)
                         .background(Color.white)
                         .cornerRadius(6)

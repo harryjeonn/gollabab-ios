@@ -88,6 +88,7 @@ class MainViewModel: ObservableObject {
             .filter { $0 != .all }
             .filter { $0 != .snack }
             .filter { $0 != .cafe }
+            .filter { $0 != .other }
             .forEach { category in
                 service.fetchPlace(category)
                     .sink(receiveCompletion: { print("fetchPlaceAll completion: \($0)") },
@@ -192,13 +193,13 @@ class MainViewModel: ObservableObject {
             .joined()
     }
     
-    func getCategoryImageName(_ category: String) -> String {
+    func getCategory(_ category: String) -> CategoryType {
         let splitedStr = splitedCategory(category)
         let str = String(splitedStr[0].components(separatedBy: .whitespaces).joined())
         
-        guard let type = CategoryType(rawValue: str) else { return "icon_other" }
+        guard let type = CategoryType(rawValue: str) else { return .other }
         
-        return type.image()
+        return type
     }
     
     func getURL() -> URL {
@@ -284,7 +285,7 @@ class MainViewModel: ObservableObject {
     }
     
     func selectAll() {
-        selectedRandomItems = CategoryType.allCases
+        selectedRandomItems = CategoryType.allCases.filter { $0 != .other }
         isSelectedAll = true
     }
     
@@ -302,7 +303,7 @@ class MainViewModel: ObservableObject {
         randomPlaces.removeAll()
         
         if selectedRandomItems.isEmpty {
-            selectedRandomItems = CategoryType.allCases
+            selectedRandomItems = CategoryType.allCases.filter { $0 != .other }
         }
         
         selectedRandomItems.enumerated().forEach { index, item in

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ResultCardView: View {
+    @ObservedObject var viewModel: MainViewModel
+    
     var place: PlaceModel
     
     var body: some View {
@@ -15,7 +17,7 @@ struct ResultCardView: View {
             VStack {
                 VStack {
                     HStack {
-                        Text("오늘은\n일식\n먹어밥")
+                        Text("오늘은\n\(viewModel.getCategory(place.categoryName).rawValue)\n먹어밥")
                             .font(.eliceBold(size: 32))
                             .foregroundColor(.selectedRed)
                             .fixedSize(horizontal: false, vertical: true)
@@ -27,7 +29,7 @@ struct ResultCardView: View {
                     HStack {
                         Spacer()
                         
-                        Image("icon_japanese")
+                        Image(viewModel.getCategory(place.categoryName).image())
                             .resizable()
                             .frame(width: 120, height: 120)
                             .opacity(0.4)
@@ -42,7 +44,7 @@ struct ResultCardView: View {
                         .foregroundColor(.text200)
                         .padding(.top, 32)
                     
-                    Text("#한식 #김치찌개")
+                    Text(viewModel.convertCategory(place.categoryName))
                         .font(.eliceP4())
                         .foregroundColor(.gray500)
                         .padding(.top, 12)
@@ -73,7 +75,7 @@ struct ResultCardView: View {
                                 .foregroundColor(.primaryRed)
                                 .underline()
                                 .onTapGesture {
-                                    // 전화걸기
+                                    viewModel.callToPlace(place.phone)
                                 }
                         }
                         

@@ -19,6 +19,7 @@ enum CategoryType: String, CaseIterable {
     case asian = "아시아음식"
     case cafe = "카페"
     case snack = "간식"
+    case other
     
     func image() -> String {
         switch self {
@@ -44,6 +45,8 @@ enum CategoryType: String, CaseIterable {
             return "icon_cafe"
         case .snack:
             return "icon_snack"
+        case .other:
+            return "icon_other"
         }
     }
 }
