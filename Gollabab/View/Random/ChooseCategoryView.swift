@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ChooseCategoryView: View {
-    @ObservedObject var viewModel: RandomViewModel
+    @ObservedObject var viewModel: MainViewModel
     
     let category: [CategoryType] = [.korean, .chinese, .casual, .western, .japanese, .fastfood, .asian, .chicken, .cafe, .snack, .all]
-    let columns = [GridItem(.adaptive(minimum: 104))]
+    let columns = [GridItem(.adaptive(minimum: (UIScreen.main.bounds.width - 42 - 20) / 3))]
     
     var body: some View {
         LazyVGrid(columns: columns, spacing: 10) {
@@ -37,7 +37,6 @@ struct ChooseCategoryView: View {
                 .cornerRadius(12)
                 .onTapGesture {
                     viewModel.selectItem(item)
-                    print(viewModel.selectedItems)
                 }
             }
         }
@@ -48,6 +47,6 @@ struct ChooseCategoryView: View {
 
 struct ChooseCategoryView_Previews: PreviewProvider {
     static var previews: some View {
-        ChooseCategoryView(viewModel: RandomViewModel())
+        ChooseCategoryView(viewModel: MainViewModel())
     }
 }

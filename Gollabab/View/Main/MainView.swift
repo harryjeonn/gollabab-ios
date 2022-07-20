@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    @StateObject private var viewModel = MainViewModel()
+    @ObservedObject var viewModel: MainViewModel
     @State var currentIndex: Int = 0
     
     var body: some View {
@@ -87,12 +87,18 @@ struct MainView: View {
                 SafariView(url: viewModel.getURL())
                     .edgesIgnoringSafeArea(.all)
             })
+            .onAppear {
+                if viewModel.previousIsRandom {
+                    viewModel.slideCard(viewModel.cardCurrentIndex)
+                    viewModel.previousIsRandom = false
+                }
+            }
         }
     }
 }
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainView(viewModel: MainViewModel())
     }
 }

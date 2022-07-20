@@ -13,15 +13,26 @@ class MainViewModel: ObservableObject {
     private let userDefaultsRepo = UserDefaultsRepository()
     var cancelBag = Set<AnyCancellable>()
     
+    @Published var selectionTab: Int = 0
+    
     @Published var places: [PlaceModel] = []
+    @Published var selectedRandomItems: [CategoryType] = [.korean]
+    
     @Published var cardCurrentIndex: Int = 0
     @Published var categoryCurrentIndex: Int = 0
+    @Published var moveIndex: Int = 2
+    
     @Published var showSafari: Bool = false
     @Published var isList: Bool = false
     @Published var isEditing: Bool = false
     @Published var isCardSelectedState: Bool = true
     @Published var isCategorySelectedState: Bool = true
     @Published var isActiveMyLocation: Bool = true
+    
+    @Published var isSelectedAll: Bool = false
+    @Published var isRandomEmpty: Bool = false
+    @Published var isNavigationActive: Bool = false
+    @Published var previousIsRandom: Bool = false
     
     @Published var recentKeyword: [String] = []
     @Published var keyword: String = ""
@@ -32,6 +43,9 @@ class MainViewModel: ObservableObject {
     var poiItems = PassthroughSubject<[MTMapPOIItem], Never>()
     var selectedPoiItemIndex = PassthroughSubject<Int, Never>()
     var touchedIndex: Int = 0
+    
+    var randomPlaces: [PlaceModel] = []
+    var randomResult: [PlaceModel] = []
     
     init() {
         checkPermisson()
@@ -74,6 +88,7 @@ class MainViewModel: ObservableObject {
             .filter { $0 != .all }
             .filter { $0 != .snack }
             .filter { $0 != .cafe }
+            .filter { $0 != .other }
             .forEach { category in
                 service.fetchPlace(category)
                     .sink(receiveCompletion: { print("fetchPlaceAll completion: \($0)") },
@@ -178,13 +193,13 @@ class MainViewModel: ObservableObject {
             .joined()
     }
     
-    func getCategoryImageName(_ category: String) -> String {
+    func getCategory(_ category: String) -> CategoryType {
         let splitedStr = splitedCategory(category)
         let str = String(splitedStr[0].components(separatedBy: .whitespaces).joined())
         
-        guard let type = CategoryType(rawValue: str) else { return "icon_other" }
+        guard let type = CategoryType(rawValue: str) else { return .other }
         
-        return type.image()
+        return type
     }
     
     func getURL() -> URL {
@@ -239,5 +254,126 @@ class MainViewModel: ObservableObject {
     func dismissRecentSearchView() {
         isEditing = false
         UIApplication.hideKeyboard()
+    }
+    
+    // MARK: - 랜덤
+    func isDisable(_ item: CategoryType) -> Bool {
+        return selectedRandomItems.contains(item) == false || isSelectedAll == false && item == .all
+    }
+    
+    func selectItem(_ item: CategoryType) {
+        isSelectedAll = false
+        
+        if item == .all {
+            // 전체선택
+            if selectedRandomItems == CategoryType.allCases.filter({ $0 != .other }) {
+                selectedRandomItems = [.korean]
+            } else {
+                selectAll()
+            }
+        } else if selectedRandomItems.contains(item) {
+            // 선택해제
+            selectedRandomItems.removeAll(where: { $0 == item })
+        } else {
+            // 선택
+            selectedRandomItems.append(item)
+        }
+        
+        if checkSelectedItem() {
+            selectAll()
+        }
+    }
+    
+    func selectAll() {
+        selectedRandomItems = CategoryType.allCases.filter { $0 != .other }
+        isSelectedAll = true
+    }
+    
+    func checkSelectedItem() -> Bool {
+        return sortItem(selectedRandomItems) == sortItem(CategoryType.allCases)
+    }
+    
+    func sortItem(_ item: [CategoryType]) -> [CategoryType] {
+        return item
+            .filter { $0 != .all }
+            .sorted(by: { $0.hashValue < $1.hashValue })
+    }
+    
+    func fetchRandomPlace() {
+        randomPlaces.removeAll()
+        
+        if selectedRandomItems.isEmpty {
+            return
+        }
+        
+        selectedRandomItems.enumerated().forEach { index, item in
+            service.fetchPlace(item)
+                .sink(receiveCompletion: { print("fetchPlace completion: \($0)") },
+                      receiveValue: { [weak self] value in
+                    value.forEach { place in
+                        self?.randomPlaces.append(place)
+                    }
+                    
+                    if index == (self?.selectedRandomItems.count)! - 1 {
+                        self?.getRandomPlaces()
+                    }
+                })
+                .store(in: &cancelBag)
+        }
+    }
+    
+    // MARK: - Random Animation View
+    func getRandomPlaces() {
+        isNavigationActive = !randomPlaces.isEmpty
+        
+        if randomPlaces.isEmpty {
+            withAnimation(.easeInOut) {
+                isRandomEmpty = true
+            }
+            return
+        } else if randomPlaces.count <= 3 {
+            randomResult = randomPlaces
+            return
+        }
+        
+        randomResult.removeAll()
+        
+        while randomResult.count < 3 {
+            guard let place = randomPlaces.randomElement() else { return }
+            
+            if randomResult.contains(place) == false {
+                randomResult.append(place)
+            }
+        }
+    }
+    
+    func retryGetRandomPlaces() {
+        for i in 0...randomResult.count - 1 {
+            randomPlaces.removeAll(where: { $0.placeUrl == randomResult[i].placeUrl })
+        }
+        
+        getRandomPlaces() 
+    }
+    
+    func startAnimation() {
+        moveIndex = 30
+    }
+    
+    // MARK: - Random Result View
+    func getMidIndex() -> Int {
+        guard randomResult.count != 0 else { return 0 }
+        
+        return (randomResult.count > 1 ? randomResult.count - 1 : randomResult.count) / 2
+    }
+    
+    func showMapButtonClicked(_ currentIndex: Int) {
+        places = randomResult
+        createPoiItems()
+        selectionTab = 0
+        
+        isNavigationActive = false
+        isCategorySelectedState = false
+        
+        slideCard(currentIndex)
     }
 }

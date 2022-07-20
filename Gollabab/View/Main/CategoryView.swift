@@ -10,7 +10,7 @@ import SwiftUI
 struct CategoryView: View {
     @ObservedObject var viewModel: MainViewModel
     
-    var caterory = CategoryType.allCases
+    var caterory = CategoryType.allCases.filter { $0 != .other }
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false, content: {

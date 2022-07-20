@@ -17,7 +17,7 @@ struct CardContentView: View {
         VStack(spacing: 0) {
             Spacer().frame(height: 12)
             HStack(spacing: 0) {
-                Image(viewModel.getCategoryImageName(placeModel.categoryName))
+                Image(viewModel.getCategory(placeModel.categoryName).image())
                     .resizable()
                     .frame(width: 50, height: 50)
                     .padding(.leading, 8)

@@ -8,20 +8,34 @@
 import SwiftUI
 
 struct RandomView: View {
-    @StateObject private var viewModel = RandomViewModel()
+    @ObservedObject var viewModel: MainViewModel
     
     var body: some View {
-        VStack(spacing: 0) {
-            Spacer()
-            Text("카테고리 선택해밥")
-                .font(.eliceBold(size: 22))
-                .foregroundColor(.white)
-                .padding(.bottom, 38)
+        ZStack {
+            if viewModel.isRandomEmpty {
+                EmptyView()
+                    .zIndex(999)
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
+                            viewModel.isRandomEmpty.toggle()
+                        }
+                    }
+            }
             
-            // 카테고리 뷰
-            ChooseCategoryView(viewModel: viewModel)
-            
-            NavigationLink(destination: RandomAnimationView(viewModel: viewModel)) {
+            VStack(spacing: 0) {
+                Text("카테고리 선택해밥")
+                    .font(.eliceBold(size: 22))
+                    .foregroundColor(.white)
+                    .padding(.top, 54)
+                    .padding(.bottom, 38)
+                
+                // 카테고리 뷰
+                ChooseCategoryView(viewModel: viewModel)
+                
+                NavigationLink(destination: RandomAnimationView(viewModel: viewModel), isActive: $viewModel.isNavigationActive) {
+                    Text("")
+                }
+                
                 Text("여기서 골라밥!")
                     .font(.eliceP1())
                     .foregroundColor(.white)
@@ -29,16 +43,23 @@ struct RandomView: View {
                     .frame(height: 48)
                     .background(Color.secondaryRed)
                     .cornerRadius(100)
+                    .padding(EdgeInsets(top: 40, leading: 27, bottom: 40, trailing: 27))
+                    .onTapGesture {
+                        viewModel.fetchRandomPlace()
+                    }
             }
-            .padding(EdgeInsets(top: 40, leading: 27, bottom: 40, trailing: 27))
+            .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)
+            .background(Color.text300)
+            .onAppear {
+                viewModel.isNavigationActive = false
+            }
         }
-        .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)
-        .background(Color.text300)
+        
     }
 }
 
 struct RandomView_Previews: PreviewProvider {
     static var previews: some View {
-        RandomView()
+        RandomView(viewModel: MainViewModel())
     }
 }

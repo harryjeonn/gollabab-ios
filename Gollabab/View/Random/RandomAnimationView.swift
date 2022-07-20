@@ -8,30 +8,19 @@
 import SwiftUI
 
 struct RandomAnimationView: View {
-    @ObservedObject var viewModel: RandomViewModel
+    @ObservedObject var viewModel: MainViewModel
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @State var index: CGFloat = 2
+    @State var isShowResult: Bool = false
+    @State var index: Int = 2
     
     var body: some View {
         ZStack {
-            VStack {
-                HStack {
-                    Button {
-                        presentationMode.wrappedValue.dismiss()
-                    } label: {
-                        Image("arrow_ios_back_outline")
-                            .resizable()
-                            .frame(width: 24, height: 24)
-                            .padding(.top, 16)
-                            .padding(.leading, 22)
-                    }
-                    
-                    Spacer()
-                }
-                Spacer()
+            NavigationLink(destination: RandomResultView(viewModel: viewModel), isActive: $isShowResult) {
+                EmptyView()
             }
-            .zIndex(999)
+            
+            CustomBackButton(viewModel: viewModel)
+                .zIndex(999)
             
             VStack(spacing: 0) {
                 Text("여기서 골라밥")
@@ -55,17 +44,21 @@ struct RandomAnimationView: View {
                         }
                     }
                     .padding(EdgeInsets(top: 0, leading: 21, bottom: 0, trailing: 21))
-                    .offset(x: index * -width)
-                    .onReceive(viewModel.places.publisher) { _ in
+                    .offset(x: CGFloat(index) * -width)
+                    .onReceive(viewModel.$moveIndex, perform: { output in
                         withAnimation(.easeInOut(duration: 2)) {
-                            index = 30
+                            index = output
                         }
-                    }
+                        
+                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(2300)) {
+                            isShowResult = true
+                        }
+                    })
                 }
                 .frame(height: 267)
                 
                 Button {
-                    // 투표결과 보여주기
+                    isShowResult = true
                 } label: {
                     Text("애니메이션 건너뛰기")
                         .font(.eliceP3())
@@ -78,7 +71,7 @@ struct RandomAnimationView: View {
             .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)
             .background(Color.text300)
             .onAppear {
-                viewModel.fetchPlace()
+                viewModel.startAnimation()
             }
         }
         .navigationTitle("")
@@ -88,6 +81,6 @@ struct RandomAnimationView: View {
 
 struct RandomAnimationView_Previews: PreviewProvider {
     static var previews: some View {
-        RandomAnimationView(viewModel: RandomViewModel())
+        RandomAnimationView(viewModel: MainViewModel())
     }
 }
