@@ -9,19 +9,21 @@ import SwiftUI
 
 struct RandomResultView: View {
     @ObservedObject var viewModel: MainViewModel
+    @State var currentIndex: Int = 0
     
     var body: some View {
         ZStack {
             CustomBackButton(viewModel: viewModel)
                 .zIndex(999)
             VStack(spacing: 0) {
-                ResultCardScrollView(viewModel: viewModel)
+                ResultCardScrollView(viewModel: viewModel, currentIndex: $currentIndex)
                     .padding(.top, 70)
                     .padding(.bottom, 95)
                 
                 HStack(spacing: 24) {
                     Button {
-                        print("tap show map")
+                        viewModel.previousIsRandom = true
+                        viewModel.showMapButtonClicked(currentIndex)
                     } label: {
                         Text("지도 보여줘")
                             .font(.eliceP1())

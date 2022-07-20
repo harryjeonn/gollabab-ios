@@ -13,6 +13,8 @@ class MainViewModel: ObservableObject {
     private let userDefaultsRepo = UserDefaultsRepository()
     var cancelBag = Set<AnyCancellable>()
     
+    @Published var selectionTab: Int = 0
+    
     @Published var places: [PlaceModel] = []
     @Published var selectedRandomItems: [CategoryType] = [.korean]
     
@@ -30,6 +32,7 @@ class MainViewModel: ObservableObject {
     @Published var isSelectedAll: Bool = false
     @Published var isRandomEmpty: Bool = false
     @Published var isNavigationActive: Bool = false
+    @Published var previousIsRandom: Bool = false
     
     @Published var recentKeyword: [String] = []
     @Published var keyword: String = ""
@@ -352,5 +355,16 @@ class MainViewModel: ObservableObject {
         guard randomResult.count != 0 else { return 0 }
         
         return (randomResult.count > 1 ? randomResult.count - 1 : randomResult.count) / 2
+    }
+    
+    func showMapButtonClicked(_ currentIndex: Int) {
+        places = randomResult
+        createPoiItems()
+        selectionTab = 0
+        
+        isNavigationActive = false
+        isCategorySelectedState = false
+        
+        slideCard(currentIndex)
     }
 }

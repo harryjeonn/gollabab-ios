@@ -11,7 +11,7 @@ struct ResultCardScrollView: View {
     @ObservedObject var viewModel: MainViewModel
     
     @GestureState var offset: CGFloat = 0
-    @State var currentIndex: Int = 0
+    @Binding var currentIndex: Int
     
     let limitCount: CGFloat = 3
     let cardWidth: CGFloat = 351 * 0.7
@@ -57,8 +57,8 @@ struct ResultCardScrollView: View {
     }
 }
 
-struct ResultCardScrollView_Previews: PreviewProvider {
-    static var previews: some View {
-        ResultCardScrollView(viewModel: MainViewModel())
-    }
-}
+//struct ResultCardScrollView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ResultCardScrollView(viewModel: MainViewModel())
+//    }
+//}

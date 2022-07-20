@@ -87,6 +87,12 @@ struct MainView: View {
                 SafariView(url: viewModel.getURL())
                     .edgesIgnoringSafeArea(.all)
             })
+            .onAppear {
+                if viewModel.previousIsRandom {
+                    viewModel.slideCard(viewModel.cardCurrentIndex)
+                    viewModel.previousIsRandom = false
+                }
+            }
         }
     }
 }

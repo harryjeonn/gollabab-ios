@@ -10,18 +10,16 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var viewModel: MainViewModel = MainViewModel()
     
-    @State private var selection: Int = 0
-    
     init() {
         UITabBar.appearance().backgroundColor = .white
     }
     
     var body: some View {
         NavigationView {
-            TabView(selection: $selection) {
+            TabView(selection: $viewModel.selectionTab) {
                 MainView(viewModel: viewModel)
                     .tabItem {
-                        selection == 0 ? Image("home_fill") : Image("home_outline")
+                        viewModel.selectionTab == 0 ? Image("home_fill") : Image("home_outline")
                     }
                     .tag(0)
                     .navigationTitle("")
@@ -29,7 +27,7 @@ struct ContentView: View {
                 
                 RandomView(viewModel: viewModel)
                     .tabItem {
-                        selection == 1 ? Image("shuffle_2_fill") : Image("shuffle_2_outline")
+                        viewModel.selectionTab == 1 ? Image("shuffle_2_fill") : Image("shuffle_2_outline")
                     }
                     .tag(1)
                     .navigationTitle("")
@@ -37,7 +35,7 @@ struct ContentView: View {
                 
                 Text("2")
                     .tabItem {
-                        selection == 2 ? Image("smiling_face_fill") : Image("smiling_face_outline")
+                        viewModel.selectionTab == 2 ? Image("smiling_face_fill") : Image("smiling_face_outline")
                     }
                     .tag(2)
                     .navigationTitle("")
