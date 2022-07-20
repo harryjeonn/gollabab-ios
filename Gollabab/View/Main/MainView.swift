@@ -84,7 +84,7 @@ struct MainView: View {
             }
             .edgesIgnoringSafeArea(.top)
             .fullScreenCover(isPresented: $viewModel.showSafari, content: {
-                SafariView(url: viewModel.getURL())
+                SafariView(url: viewModel.getURL(viewModel.places[viewModel.touchedIndex].placeUrl))
                     .edgesIgnoringSafeArea(.all)
             })
             .onAppear {

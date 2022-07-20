@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ResultCardView: View {
     @ObservedObject var viewModel: MainViewModel
+    @State var showSafari: Bool = false
     
     var place: PlaceModel
     
@@ -96,6 +97,13 @@ struct ResultCardView: View {
                 .stroke(Color.secondaryRed, lineWidth: 2))
             .padding(EdgeInsets(top: 6, leading: 6, bottom: 6, trailing: 6))
         }
+        .onTapGesture {
+            showSafari = true
+        }
+        .fullScreenCover(isPresented: $showSafari, content: {
+            SafariView(url: viewModel.getURL(place.placeUrl))
+                .edgesIgnoringSafeArea(.all)
+        })
     }
 }
 
