@@ -53,9 +53,6 @@ struct RandomResultView: View {
         .background(Color.text300)
         .navigationTitle("")
         .navigationBarHidden(true)
-        .onDisappear {
-            viewModel.isNavigationActive = false
-        }
     }
 }
 
