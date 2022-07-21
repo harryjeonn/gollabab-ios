@@ -20,7 +20,7 @@ struct PlaceCardView: View {
         } else {
             GeometryReader { proxy in
                 
-                let width = proxy.size.width - (proxy.size.width * 0.28)
+                let xOffsetToShift = UIScreen.main.bounds.width * 0.75 + 10
                 
                 HStack(spacing: 10) {
                     ForEach(Array(viewModel.places.enumerated()), id: \.0) { idx, place in
@@ -28,7 +28,7 @@ struct PlaceCardView: View {
                     }
                 }
                 .padding(.leading, 22)
-                .offset(x: (CGFloat(viewModel.cardCurrentIndex) * -width) + offset)
+                .offset(x: offset - (CGFloat(viewModel.cardCurrentIndex) * xOffsetToShift))
                 .gesture(
                     DragGesture()
                         .updating($offset, body: { value, out, _ in
@@ -36,7 +36,7 @@ struct PlaceCardView: View {
                         })
                         .onEnded({ value in
                             let offsetX = value.translation.width
-                            let progress = -offsetX / width
+                            let progress = -offsetX / (proxy.size.width / 2)
                             let roundIndex = progress.rounded()
                             
                             viewModel.cardCurrentIndex = max(min(viewModel.cardCurrentIndex + Int(roundIndex), viewModel.places.count - 1), 0)
@@ -45,7 +45,7 @@ struct PlaceCardView: View {
                         })
                         .onChanged({ value in
                             let offsetX = value.translation.width
-                            let progress = -offsetX / width
+                            let progress = -offsetX / (proxy.size.width / 2)
                             let roundIndex = progress.rounded()
                             
                             index = max(min(viewModel.cardCurrentIndex + Int(roundIndex), viewModel.places.count - 1), 0)
