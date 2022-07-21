@@ -13,7 +13,7 @@ struct PlaceListView: View {
     
     var body: some View {
         if viewModel.places.isEmpty {
-            EmptyView()
+            EmptyView(title: "주변엔 없다밥..😢")
         } else {
             VStack {
                 HStack {

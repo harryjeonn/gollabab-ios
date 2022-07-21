@@ -348,12 +348,18 @@ class MainViewModel: ObservableObject {
         }
     }
     
-    func retryGetRandomPlaces() {
+    func retryGetRandomPlaces() -> Bool {
         for i in 0...randomResult.count - 1 {
             randomPlaces.removeAll(where: { $0.placeUrl == randomResult[i].placeUrl })
         }
         
-        getRandomPlaces() 
+        if randomPlaces.isEmpty {
+            return false
+        }
+        
+        getRandomPlaces()
+        
+        return true
     }
     
     func startAnimation() {
