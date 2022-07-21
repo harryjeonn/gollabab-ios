@@ -10,11 +10,23 @@ import SwiftUI
 struct RandomResultView: View {
     @ObservedObject var viewModel: MainViewModel
     @State var currentIndex: Int = 0
+    @State var isShowToast: Bool = false
     
     var body: some View {
         ZStack {
             CustomBackButton(viewModel: viewModel)
                 .zIndex(999)
+            
+            if isShowToast {
+                EmptyView(title: "그만 골라밥..😢")
+                    .zIndex(999)
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {
+                            isShowToast.toggle()
+                        }
+                    }
+            }
+            
             VStack(spacing: 0) {
                 ResultCardScrollView(viewModel: viewModel, currentIndex: $currentIndex)
                     .padding(.top, 70)
@@ -36,7 +48,7 @@ struct RandomResultView: View {
                     .padding(.leading, 27)
                     
                     Button {
-                        viewModel.retryGetRandomPlaces()
+                        isShowToast = !viewModel.retryGetRandomPlaces()
                     } label: {
                         Text("다시 골라밥")
                             .font(.eliceP1())
