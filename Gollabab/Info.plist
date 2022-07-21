@@ -4,6 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>OTSBAggroM.otf</string>
 		<string>EliceDigitalBaeumOTF_Bold.otf</string>
 		<string>EliceDigitalBaeumOTF_Regular.otf</string>
 	</array>

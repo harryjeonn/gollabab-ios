@@ -19,11 +19,11 @@ struct ResultCardView: View {
                 VStack {
                     HStack {
                         Text("오늘은\n\(viewModel.getCategory(place.categoryName).rawValue)\n먹어밥")
-                            .font(.eliceBold(size: 32))
+                            .font(.aggroTitle())
                             .foregroundColor(.selectedRed)
                             .fixedSize(horizontal: false, vertical: true)
-                            .padding(.top, 26)
-                            .padding(.leading, 16)
+                            .padding(.top, 24)
+                            .padding(.leading, 20)
                         Spacer()
                     }
                     

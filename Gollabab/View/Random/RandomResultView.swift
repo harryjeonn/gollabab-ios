@@ -18,7 +18,7 @@ struct RandomResultView: View {
                 .zIndex(999)
             
             if isShowToast {
-                EmptyView(title: "그만 골라밥..😢")
+                EmptyView(title: "더이상 없다밥...😢")
                     .zIndex(999)
                     .onAppear {
                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {

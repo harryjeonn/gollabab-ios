@@ -43,4 +43,8 @@ extension Font {
     static func eliceCaptionSmall() -> Font {
         return Font.custom("EliceDigitalBaeumOTF", size: 12)
     }
+    
+    static func aggroTitle() -> Font {
+        return Font.custom("OTSBAggroM", size: 36)
+    }
 }
