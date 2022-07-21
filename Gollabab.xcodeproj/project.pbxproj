@@ -19,6 +19,7 @@
 		4A5856D32850BAA200659013 /* PlaceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5856D22850BAA200659013 /* PlaceListView.swift */; };
 		4A7906242848403400B2830A /* CardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7906232848403400B2830A /* CardContentView.swift */; };
 		4A7906272848BD6F00B2830A /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7906262848BD6F00B2830A /* ColorExtension.swift */; };
+		4A7B5C3B28895B5700ED02E5 /* OTSBAggroM.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4A7B5C3A28895B5700ED02E5 /* OTSBAggroM.otf */; };
 		4AAEBE2B2832635500AA3E65 /* net.daum.MobileMap.docset in Resources */ = {isa = PBXBuildFile; fileRef = 4AAEBD0C2832635500AA3E65 /* net.daum.MobileMap.docset */; };
 		4AAEBE2C2832635500AA3E65 /* setupDocsetDocument.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4AAEBD0D2832635500AA3E65 /* setupDocsetDocument.rb */; };
 		4AAEBE2D2832635500AA3E65 /* OpenSourceNotice.md in Resources */ = {isa = PBXBuildFile; fileRef = 4AAEBD0E2832635500AA3E65 /* OpenSourceNotice.md */; };
@@ -340,6 +341,7 @@
 		4A75A79E2833BBA1003F5F70 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		4A7906232848403400B2830A /* CardContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContentView.swift; sourceTree = "<group>"; };
 		4A7906262848BD6F00B2830A /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		4A7B5C3A28895B5700ED02E5 /* OTSBAggroM.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OTSBAggroM.otf; sourceTree = "<group>"; };
 		4AAEBD0C2832635500AA3E65 /* net.daum.MobileMap.docset */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = net.daum.MobileMap.docset; sourceTree = "<group>"; };
 		4AAEBD0D2832635500AA3E65 /* setupDocsetDocument.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = setupDocsetDocument.rb; sourceTree = "<group>"; };
 		4AAEBD0E2832635500AA3E65 /* OpenSourceNotice.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = OpenSourceNotice.md; sourceTree = "<group>"; };
@@ -1115,6 +1117,7 @@
 		4AE41A0A2859EEEC009130A6 /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				4A7B5C3A28895B5700ED02E5 /* OTSBAggroM.otf */,
 				4AE41A0B2859EF00009130A6 /* EliceDigitalBaeumOTF_Bold.otf */,
 				4AE41A0C2859EF00009130A6 /* EliceDigitalBaeumOTF_Regular.otf */,
 			);
@@ -1329,6 +1332,7 @@
 				4AAEBEEA2832635500AA3E65 /* search_l.png in Resources */,
 				4AAEBEFA2832635500AA3E65 /* pages_0.html in Resources */,
 				4AAEBE2B2832635500AA3E65 /* net.daum.MobileMap.docset in Resources */,
+				4A7B5C3B28895B5700ED02E5 /* OTSBAggroM.otf in Resources */,
 				4AAEBF102832635500AA3E65 /* dir_3a58f908fac257e60a62a7e10a93cdbc.html in Resources */,
 				4AAEBF2E2832635500AA3E65 /* _m_t_map_view_8h.html in Resources */,
 				4AAEBE592832635500AA3E65 /* struct_m_t_map_bounds.js in Resources */,
