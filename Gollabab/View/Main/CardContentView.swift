@@ -27,13 +27,13 @@ struct CardContentView: View {
                         .font(.eliceP2())
                         .foregroundColor(viewModel.isSelectedCard(index) ? .primaryBeige : .text200)
                         .lineLimit(1)
-                        .padding(.leading, 2)
+                        .padding(.leading, 8)
                     
                     Text(viewModel.convertCategory(placeModel.categoryName))
                         .foregroundColor(viewModel.isSelectedCard(index) ? .gray700 : .gray500)
                         .font(.eliceCaption())
                         .lineLimit(1)
-                        .padding(.leading, 2)
+                        .padding(.leading, 8)
                 }
                 Spacer()
             }
@@ -41,7 +41,7 @@ struct CardContentView: View {
             Spacer().frame(height: 8)
             
             HStack(spacing: 0) {
-                Spacer().frame(width: 60)
+                Spacer().frame(width: 66)
                 Image("pin_card")
                     .resizable()
                     .frame(width: 14, height: 14)
