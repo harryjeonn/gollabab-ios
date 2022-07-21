@@ -78,7 +78,7 @@ struct CardContentView: View {
             }
             Spacer().frame(height: 12)
         }
-        .frame(width: UIScreen.main.bounds.width * 0.7, height: UIScreen.main.bounds.height * 0.13)
+        .frame(width: UIScreen.main.bounds.width * 0.75, height: UIScreen.main.bounds.height * 0.13)
         .background(viewModel.isSelectedCard(index) ? Color.text300 : Color.white)
         .cornerRadius(16)
         .shadow(color: .cardShadowColor, radius: 3, x: 0, y: 2)
