@@ -15,8 +15,7 @@ struct PlaceCardView: View {
     
     var body: some View {
         if viewModel.places.isEmpty {
-            EmptyView()
-                .shadow(color: .cardShadowColor, radius: 3, x: 0, y: 2)
+            EmptyView(title: "주변엔 없다밥..😢")
         } else {
             GeometryReader { proxy in
                 

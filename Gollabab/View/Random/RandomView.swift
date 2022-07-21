@@ -13,7 +13,7 @@ struct RandomView: View {
     var body: some View {
         ZStack {
             if viewModel.isRandomEmpty {
-                EmptyView()
+                EmptyView(title: "주변엔 없다밥..😢")
                     .zIndex(999)
                     .onAppear {
                         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1)) {

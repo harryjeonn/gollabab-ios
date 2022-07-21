@@ -16,7 +16,7 @@ struct RandomAnimationView: View {
     var body: some View {
         ZStack {
             NavigationLink(destination: RandomResultView(viewModel: viewModel), isActive: $isShowResult) {
-                EmptyView()
+                EmptyView(title: "")
             }
             
             CustomBackButton(viewModel: viewModel)
