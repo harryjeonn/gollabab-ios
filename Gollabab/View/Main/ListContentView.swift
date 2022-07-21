@@ -14,27 +14,23 @@ struct ListContentView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Spacer().frame(height: 16)
-            
             Text(placeModel.placeName)
                 .font(.eliceP2())
                 .foregroundColor(.text300)
+                .padding(.top, 24)
                 .padding(.leading, 22)
                 .lineLimit(1)
-            
-            Spacer().frame(height: 8)
             
             HStack {
                 Text(viewModel.convertCategory(placeModel.categoryName))
                     .font(.eliceCaption())
                     .foregroundColor(.gray500)
                     .lineLimit(1)
+                    .padding(.top, 8)
                 
                 Spacer()
             }
             .padding(.leading, 22)
-            
-            Spacer().frame(height: 24)
             
             HStack(spacing: 0) {
                 Image("pin_card")
@@ -66,14 +62,14 @@ struct ListContentView: View {
                         }
                 }
             }
+            .padding(.top, 20)
             .padding(.leading, 22)
-            
-            Spacer().frame(height: 22)
             
             Rectangle()
                 .fill(Color.gray800)
                 .frame(height: 1)
                 .edgesIgnoringSafeArea(.horizontal)
+                .padding(.top, 24)
         }
         .contentShape(Rectangle())
         .onTapGesture {
