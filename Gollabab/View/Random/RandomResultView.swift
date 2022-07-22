@@ -62,6 +62,12 @@ struct RandomResultView: View {
                 }
                 .padding(.bottom, 32)
             }
+            
+            VStack {
+                Spacer()
+                AdmobView(admobType: .banner)
+                    .frame(width: UIScreen.main.bounds.width, height: 50)
+            }
         }
         .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)
         .background(Color.text300)

@@ -13,6 +13,25 @@ struct AdmobView: UIViewControllerRepresentable {
     
     func makeUIViewController(context: Context) -> UIViewController {
         let vc = UIViewController()
+        checkType(vc)
+        
+        return vc
+    }
+    
+    func updateUIViewController(_ viewController: UIViewController, context: Context) {
+        
+    }
+    
+    func checkType(_ vc: UIViewController) {
+        switch admobType {
+        case .banner, .testBanner:
+            addBannerView(vc)
+        case .full, .testFull:
+            addFullView(vc)
+        }
+    }
+    
+    func addBannerView(_ vc: UIViewController) {
         let bannerSize = GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth(UIScreen.main.bounds.width)
         let bannerView = GADBannerView(adSize: bannerSize)
         
@@ -22,11 +41,9 @@ struct AdmobView: UIViewControllerRepresentable {
         
         vc.view.addSubview(bannerView)
         vc.view.frame = CGRect(origin: .zero, size: bannerSize.size)
-        
-        return vc
     }
     
-    func updateUIViewController(_ viewController: UIViewController, context: Context) {
+    func addFullView(_ vc: UIViewController) {
         
     }
 }
