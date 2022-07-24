@@ -322,6 +322,7 @@
 		4AF706EE2876BECE00C83304 /* ChooseCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF706ED2876BECE00C83304 /* ChooseCategoryView.swift */; };
 		4AF706F02877F85100C83304 /* RandomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF706EF2877F85100C83304 /* RandomViewModel.swift */; };
 		4AF706F2287802BB00C83304 /* RandomAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF706F1287802BB00C83304 /* RandomAnimationView.swift */; };
+		822751F2288D47BA00BB9F24 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822751F1288D47BA00BB9F24 /* GameView.swift */; };
 		825365DE2883DD4500801CB0 /* ResultCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825365DD2883DD4500801CB0 /* ResultCardView.swift */; };
 		82C93535281AD618009791EA /* GollababApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C93534281AD618009791EA /* GollababApp.swift */; };
 		82C93537281AD618009791EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C93536281AD618009791EA /* ContentView.swift */; };
@@ -655,6 +656,7 @@
 		4AF706ED2876BECE00C83304 /* ChooseCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoryView.swift; sourceTree = "<group>"; };
 		4AF706EF2877F85100C83304 /* RandomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomViewModel.swift; sourceTree = "<group>"; };
 		4AF706F1287802BB00C83304 /* RandomAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomAnimationView.swift; sourceTree = "<group>"; };
+		822751F1288D47BA00BB9F24 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		825365DD2883DD4500801CB0 /* ResultCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCardView.swift; sourceTree = "<group>"; };
 		82C93531281AD618009791EA /* Gollabab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gollabab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82C93534281AD618009791EA /* GollababApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GollababApp.swift; sourceTree = "<group>"; };
@@ -1114,6 +1116,7 @@
 				4A7B5C3C288A21DA00ED02E5 /* Common */,
 				4AF706E92876BC1600C83304 /* Main */,
 				4AF706EA2876BC2B00C83304 /* Random */,
+				822751F0288D479A00BB9F24 /* Game */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1168,6 +1171,14 @@
 				825365DD2883DD4500801CB0 /* ResultCardView.swift */,
 			);
 			path = Random;
+			sourceTree = "<group>";
+		};
+		822751F0288D479A00BB9F24 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				822751F1288D47BA00BB9F24 /* GameView.swift */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 		82C93528281AD618009791EA = {
@@ -1647,6 +1658,7 @@
 				4A346CBD2836463100C574A5 /* MainViewModel.swift in Sources */,
 				4AF706E0286C38FD00C83304 /* UserDefaultsRepository.swift in Sources */,
 				4A7906272848BD6F00B2830A /* ColorExtension.swift in Sources */,
+				822751F2288D47BA00BB9F24 /* GameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

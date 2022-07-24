@@ -33,7 +33,7 @@ struct ContentView: View {
                     .navigationTitle("")
                     .navigationBarHidden(true)
                 
-                Text("2")
+                GameView()
                     .tabItem {
                         viewModel.selectionTab == 2 ? Image("smiling_face_fill") : Image("smiling_face_outline")
                     }
