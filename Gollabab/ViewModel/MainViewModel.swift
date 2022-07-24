@@ -78,6 +78,7 @@ class MainViewModel: ObservableObject {
                 self?.places = value
                 self?.createPoiItems()
                 self?.dismissRecentSearchView()
+                self?.keyword = ""
             })
             .store(in: &cancelBag)
     }
@@ -99,6 +100,8 @@ class MainViewModel: ObservableObject {
                         }
                         self?.randomPlace(temp)
                         self?.createPoiItems()
+                        self?.dismissRecentSearchView()
+                        self?.keyword = ""
                     })
                     .store(in: &cancelBag)
             }
