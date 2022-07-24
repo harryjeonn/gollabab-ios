@@ -7,5 +7,6 @@ target 'Gollabab' do
 
   # Pods for Gollabab
   pod 'Alamofire'
+  pod 'Google-Mobile-Ads-SDK'
 
 end
