@@ -47,4 +47,8 @@ extension Font {
     static func aggroTitle() -> Font {
         return Font.custom("OTSBAggroM", size: 36)
     }
+    
+    static func aggroBold(_ size: CGFloat) -> Font {
+        return Font.custom("OTSBAggroB", size: size)
+    }
 }
