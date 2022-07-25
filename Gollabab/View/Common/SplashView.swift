@@ -25,7 +25,44 @@ struct SplashView: View {
             }
             
             if isShow {
-                EmptyView(title: "위치 접근 권한이 없으면\n 시작할 수 없다 밥..😥")
+                VStack(spacing: 0) {
+                    Text("위치 접근 권한 허용")
+                        .foregroundColor(.text300)
+                        .font(.eliceP1())
+                        .padding(.top, 24)
+                    
+                    Text("근처 식당을 찾으려면\n접근 권한이 필요하다밥 ☺️")
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.text200)
+                        .font(.eliceP3())
+                        .padding(.top, 20)
+                    
+                    Button {
+                        openSettings()
+                    } label: {
+                        HStack(alignment: .center, spacing: 0) {
+                            Text("설정하러가기")
+                                .font(.eliceBold(size: 16))
+                                .foregroundColor(.primaryBeige)
+                            
+                            Image("chevron_right_outline_beige")
+                                .resizable()
+                                .frame(width: 24, height: 24)
+                                .foregroundColor(.primaryBeige)
+                        }
+                        .frame(minWidth: .zero, maxWidth: .infinity)
+                        .padding(EdgeInsets(top: 15, leading: 0, bottom: 15, trailing: 0))
+                        .background(Color.secondaryRed)
+                        .padding(.top, 20)
+                    }
+                }
+                .frame(minWidth: .zero, maxWidth: .infinity)
+                .background(Color.white)
+                .cornerRadius(16)
+                .padding(EdgeInsets(top: 0, leading: 40, bottom: 0, trailing: 40))
+                .shadow(color: .cardShadowColor, radius: 3, x: 0, y: 2)
+                .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)
+                .background(Color.black.opacity(0.6))
             }
         }
         .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)
@@ -36,8 +73,16 @@ struct SplashView: View {
                 viewModel.setupLocation()
             }
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                isShow = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                isShow = !viewModel.isPermission
+            }
+        }
+    }
+    
+    private func openSettings(){
+        if let url = URL(string: UIApplication.openSettingsURLString) {
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
         }
     }
