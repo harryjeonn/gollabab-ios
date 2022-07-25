@@ -15,32 +15,36 @@ struct ContentView: View {
     }
     
     var body: some View {
-        NavigationView {
-            TabView(selection: $viewModel.selectionTab) {
-                MainView(viewModel: viewModel)
-                    .tabItem {
-                        viewModel.selectionTab == 0 ? Image("home_fill") : Image("home_outline")
-                    }
-                    .tag(0)
-                    .navigationTitle("")
-                    .navigationBarHidden(true)
-                
-                RandomView(viewModel: viewModel)
-                    .tabItem {
-                        viewModel.selectionTab == 1 ? Image("shuffle_2_fill") : Image("shuffle_2_outline")
-                    }
-                    .tag(1)
-                    .navigationTitle("")
-                    .navigationBarHidden(true)
-                
-                GameView()
-                    .tabItem {
-                        viewModel.selectionTab == 2 ? Image("smiling_face_fill") : Image("smiling_face_outline")
-                    }
-                    .tag(2)
-                    .navigationTitle("")
-                    .navigationBarHidden(true)
+        if viewModel.isPermission {
+            NavigationView {
+                TabView(selection: $viewModel.selectionTab) {
+                    MainView(viewModel: viewModel)
+                        .tabItem {
+                            viewModel.selectionTab == 0 ? Image("home_fill") : Image("home_outline")
+                        }
+                        .tag(0)
+                        .navigationTitle("")
+                        .navigationBarHidden(true)
+                    
+                    RandomView(viewModel: viewModel)
+                        .tabItem {
+                            viewModel.selectionTab == 1 ? Image("shuffle_2_fill") : Image("shuffle_2_outline")
+                        }
+                        .tag(1)
+                        .navigationTitle("")
+                        .navigationBarHidden(true)
+                    
+                    GameView()
+                        .tabItem {
+                            viewModel.selectionTab == 2 ? Image("smiling_face_fill") : Image("smiling_face_outline")
+                        }
+                        .tag(2)
+                        .navigationTitle("")
+                        .navigationBarHidden(true)
+                }
             }
+        } else {
+            SplashView(viewModel: viewModel)
         }
     }
 }
