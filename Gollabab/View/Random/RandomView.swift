@@ -26,8 +26,7 @@ struct RandomView: View {
                 Text("카테고리 선택해밥")
                     .font(.eliceBold(size: 22))
                     .foregroundColor(.white)
-                    .padding(.top, 54)
-                    .padding(.bottom, 38)
+                    .padding(.bottom, 20)
                 
                 // 카테고리 뷰
                 ChooseCategoryView(viewModel: viewModel)
@@ -43,7 +42,7 @@ struct RandomView: View {
                     .frame(height: 48)
                     .background(Color.secondaryRed)
                     .cornerRadius(100)
-                    .padding(EdgeInsets(top: 40, leading: 27, bottom: 40, trailing: 27))
+                    .padding(EdgeInsets(top: 24, leading: 27, bottom: 0, trailing: 27))
                     .onTapGesture {
                         viewModel.fetchRandomPlace()
                     }

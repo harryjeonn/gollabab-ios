@@ -40,8 +40,8 @@ struct ChooseCategoryView: View {
                 }
             }
         }
-        .padding(.leading, 22)
-        .padding(.trailing, 22)
+        .padding(.leading, 21)
+        .padding(.trailing, 21)
     }
 }
 
