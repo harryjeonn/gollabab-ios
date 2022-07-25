@@ -1806,7 +1806,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Gollabab/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "골라밥";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "주변 정보를 얻어오기 위해 지도 권한을 허용해주세요.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "근처 식당을 찾으려면 접근 권한이 필요하다밥☺️";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "추적을 허용하면, 불필요한 광고 대신 관심사 맞춤형 광고를 볼 수 있다밥☺️";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1849,7 +1850,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Gollabab/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "골라밥";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "주변 정보를 얻어오기 위해 지도 권한을 허용해주세요.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "근처 식당을 찾으려면 접근 권한이 필요하다밥☺️";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "추적을 허용하면, 불필요한 광고 대신 관심사 맞춤형 광고를 볼 수 있다밥☺️";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
