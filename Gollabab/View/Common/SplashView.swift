@@ -15,17 +15,28 @@ struct SplashView: View {
         ZStack {
             VStack {
                 Text("골라밥")
+                    .font(.aggroBold(63))
+                    .foregroundColor(.selectedRed)
+                    .padding(.bottom, 20)
+                
+                Image("splash")
+                    .resizable()
+                    .frame(width: 350, height: 350)
             }
             
             if isShow {
                 EmptyView(title: "위치 접근 권한이 없으면\n 시작할 수 없다 밥..😥")
             }
         }
+        .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)
+        .background(Color.primaryBeige)
         .onAppear {
-            viewModel.checkPermisson()
-            viewModel.setupLocation()
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1500)) {
+                viewModel.checkPermisson()
+                viewModel.setupLocation()
+            }
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                 isShow = true
             }
         }

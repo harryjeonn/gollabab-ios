@@ -6,12 +6,11 @@
 	<string>d313c31626c7afecaa6a8420a2a22d21</string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>OTSBAggroB.otf</string>
 		<string>OTSBAggroM.otf</string>
 		<string>EliceDigitalBaeumOTF_Bold.otf</string>
 		<string>EliceDigitalBaeumOTF_Regular.otf</string>
 	</array>
-	<key>KAKAO_APP_KEY</key>
-	<string>d313c31626c7afecaa6a8420a2a22d21</string>
 	<key>NSUserTrackingUsageDescription</key>
 	<string>관심이 없는 광고를 보고 싶지않으시다면 허용해주세요.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
