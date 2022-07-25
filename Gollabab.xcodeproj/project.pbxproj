@@ -23,6 +23,7 @@
 		4A7B5C3E288A21ED00ED02E5 /* AdmobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7B5C3D288A21ED00ED02E5 /* AdmobView.swift */; };
 		4A7B5C40288A312200ED02E5 /* AdmobType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7B5C3F288A312200ED02E5 /* AdmobType.swift */; };
 		4AACA9D4288E1D71003F000F /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AACA9D3288E1D71003F000F /* SplashView.swift */; };
+		4AACA9D6288E2F90003F000F /* OTSBAggroB.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4AACA9D5288E2F90003F000F /* OTSBAggroB.otf */; };
 		4AAEBE2B2832635500AA3E65 /* net.daum.MobileMap.docset in Resources */ = {isa = PBXBuildFile; fileRef = 4AAEBD0C2832635500AA3E65 /* net.daum.MobileMap.docset */; };
 		4AAEBE2C2832635500AA3E65 /* setupDocsetDocument.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4AAEBD0D2832635500AA3E65 /* setupDocsetDocument.rb */; };
 		4AAEBE2D2832635500AA3E65 /* OpenSourceNotice.md in Resources */ = {isa = PBXBuildFile; fileRef = 4AAEBD0E2832635500AA3E65 /* OpenSourceNotice.md */; };
@@ -349,6 +350,7 @@
 		4A7B5C3D288A21ED00ED02E5 /* AdmobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobView.swift; sourceTree = "<group>"; };
 		4A7B5C3F288A312200ED02E5 /* AdmobType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobType.swift; sourceTree = "<group>"; };
 		4AACA9D3288E1D71003F000F /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		4AACA9D5288E2F90003F000F /* OTSBAggroB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OTSBAggroB.otf; sourceTree = "<group>"; };
 		4AAEBD0C2832635500AA3E65 /* net.daum.MobileMap.docset */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = net.daum.MobileMap.docset; sourceTree = "<group>"; };
 		4AAEBD0D2832635500AA3E65 /* setupDocsetDocument.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = setupDocsetDocument.rb; sourceTree = "<group>"; };
 		4AAEBD0E2832635500AA3E65 /* OpenSourceNotice.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = OpenSourceNotice.md; sourceTree = "<group>"; };
@@ -1138,6 +1140,7 @@
 		4AE41A0A2859EEEC009130A6 /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				4AACA9D5288E2F90003F000F /* OTSBAggroB.otf */,
 				4A7B5C3A28895B5700ED02E5 /* OTSBAggroM.otf */,
 				4AE41A0B2859EF00009130A6 /* EliceDigitalBaeumOTF_Bold.otf */,
 				4AE41A0C2859EF00009130A6 /* EliceDigitalBaeumOTF_Regular.otf */,
@@ -1347,6 +1350,7 @@
 				4AAEBE972832635500AA3E65 /* all_8.html in Resources */,
 				4AAEBE4C2832635500AA3E65 /* dir_e176454b22f670c69197578a11d04323.js in Resources */,
 				4AAEBE7A2832635500AA3E65 /* doxygen.png in Resources */,
+				4AACA9D6288E2F90003F000F /* OTSBAggroB.otf in Resources */,
 				4AAEBE7F2832635500AA3E65 /* files.html in Resources */,
 				4AAEBE652832635500AA3E65 /* struct_m_t_map_point_plain-members.html in Resources */,
 				4AAEBEB32832635500AA3E65 /* defines_0.html in Resources */,
