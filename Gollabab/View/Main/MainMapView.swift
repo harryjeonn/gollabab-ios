@@ -41,6 +41,7 @@ struct MainMapView: UIViewRepresentable {
         view.baseMapType = .standard
         view.showCurrentLocationMarker = true
         view.currentLocationTrackingMode = .onWithoutHeadingWithoutMapMoving
+        view.setZoomLevel(.zero, animated: true)
     }
     
     func subscribeSelectedPoiItem(_ view: MTMapView) {
@@ -68,7 +69,7 @@ struct MainMapView: UIViewRepresentable {
     
     func subscribeMyLocation(_ view: MTMapView) {
         viewModel.mtMapPoint
-            .sink(receiveValue: { view.setMapCenter($0, zoomLevel: .zero, animated: true) })
+            .sink(receiveValue: { view.setMapCenter($0, animated: true) })
             .store(in: &viewModel.cancelBag)
     }
     
