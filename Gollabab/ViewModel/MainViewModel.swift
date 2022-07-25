@@ -381,6 +381,7 @@ class MainViewModel: ObservableObject {
         
         isNavigationActive = false
         isCategorySelectedState = false
+        isList = false
         
         slideCard(currentIndex)
     }
