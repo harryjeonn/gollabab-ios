@@ -34,6 +34,8 @@ class MainViewModel: ObservableObject {
     @Published var isNavigationActive: Bool = false
     @Published var previousIsRandom: Bool = false
     
+    @Published var isPermission: Bool = false
+    
     @Published var recentKeyword: [String] = []
     @Published var keyword: String = ""
     
@@ -47,16 +49,12 @@ class MainViewModel: ObservableObject {
     var randomPlaces: [PlaceModel] = []
     var randomResult: [PlaceModel] = []
     
-    init() {
-        checkPermisson()
-        setupLocation()
-    }
-    
     // MARK: - 권한체크
     func checkPermisson() {
         service.checkPermission()
             .filter { $0 == true }
             .sink(receiveValue: { [weak self] _ in
+                self?.isPermission = true
                 self?.fetchPlace(.all)
                 self?.getMapPoint()
             })
@@ -78,6 +76,7 @@ class MainViewModel: ObservableObject {
                 self?.places = value
                 self?.createPoiItems()
                 self?.dismissRecentSearchView()
+                self?.keyword = ""
             })
             .store(in: &cancelBag)
     }
@@ -99,6 +98,8 @@ class MainViewModel: ObservableObject {
                         }
                         self?.randomPlace(temp)
                         self?.createPoiItems()
+                        self?.dismissRecentSearchView()
+                        self?.keyword = ""
                     })
                     .store(in: &cancelBag)
             }

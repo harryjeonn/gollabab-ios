@@ -22,6 +22,7 @@
 		4A7B5C3B28895B5700ED02E5 /* OTSBAggroM.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4A7B5C3A28895B5700ED02E5 /* OTSBAggroM.otf */; };
 		4A7B5C3E288A21ED00ED02E5 /* AdmobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7B5C3D288A21ED00ED02E5 /* AdmobView.swift */; };
 		4A7B5C40288A312200ED02E5 /* AdmobType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7B5C3F288A312200ED02E5 /* AdmobType.swift */; };
+		4AACA9D4288E1D71003F000F /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AACA9D3288E1D71003F000F /* SplashView.swift */; };
 		4AAEBE2B2832635500AA3E65 /* net.daum.MobileMap.docset in Resources */ = {isa = PBXBuildFile; fileRef = 4AAEBD0C2832635500AA3E65 /* net.daum.MobileMap.docset */; };
 		4AAEBE2C2832635500AA3E65 /* setupDocsetDocument.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4AAEBD0D2832635500AA3E65 /* setupDocsetDocument.rb */; };
 		4AAEBE2D2832635500AA3E65 /* OpenSourceNotice.md in Resources */ = {isa = PBXBuildFile; fileRef = 4AAEBD0E2832635500AA3E65 /* OpenSourceNotice.md */; };
@@ -347,6 +348,7 @@
 		4A7B5C3A28895B5700ED02E5 /* OTSBAggroM.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OTSBAggroM.otf; sourceTree = "<group>"; };
 		4A7B5C3D288A21ED00ED02E5 /* AdmobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobView.swift; sourceTree = "<group>"; };
 		4A7B5C3F288A312200ED02E5 /* AdmobType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobType.swift; sourceTree = "<group>"; };
+		4AACA9D3288E1D71003F000F /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		4AAEBD0C2832635500AA3E65 /* net.daum.MobileMap.docset */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = net.daum.MobileMap.docset; sourceTree = "<group>"; };
 		4AAEBD0D2832635500AA3E65 /* setupDocsetDocument.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = setupDocsetDocument.rb; sourceTree = "<group>"; };
 		4AAEBD0E2832635500AA3E65 /* OpenSourceNotice.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = OpenSourceNotice.md; sourceTree = "<group>"; };
@@ -753,6 +755,7 @@
 			children = (
 				4AF706E3286DB1D000C83304 /* EmptyView.swift */,
 				4A7B5C3D288A21ED00ED02E5 /* AdmobView.swift */,
+				4AACA9D3288E1D71003F000F /* SplashView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1641,6 +1644,7 @@
 				4AF706D8286B0E9900C83304 /* CategoryView.swift in Sources */,
 				4AB100CF28814DC100A4A9C8 /* RandomResultView.swift in Sources */,
 				4A7906242848403400B2830A /* CardContentView.swift in Sources */,
+				4AACA9D4288E1D71003F000F /* SplashView.swift in Sources */,
 				4A346CB8283644FD00C574A5 /* KakaoRepository.swift in Sources */,
 				4AF706D6286B0C5A00C83304 /* CategoryModel.swift in Sources */,
 				4AF706F02877F85100C83304 /* RandomViewModel.swift in Sources */,
