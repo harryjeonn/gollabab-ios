@@ -312,6 +312,7 @@
 		4AC5BE62281FE58C006CA43F /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5BE61281FE58C006CA43F /* MainMapView.swift */; };
 		4AC5BE64281FE598006CA43F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5BE63281FE598006CA43F /* MainView.swift */; };
 		4AE400B3288FCDF200DEEF83 /* AdmobRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE400B2288FCDF200DEEF83 /* AdmobRepository.swift */; };
+		4AE400B7288FF0A900DEEF83 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AE400B6288FF0A900DEEF83 /* splash.json */; };
 		4AE41A0D2859EF00009130A6 /* EliceDigitalBaeumOTF_Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4AE41A0B2859EF00009130A6 /* EliceDigitalBaeumOTF_Bold.otf */; };
 		4AE41A0E2859EF00009130A6 /* EliceDigitalBaeumOTF_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4AE41A0C2859EF00009130A6 /* EliceDigitalBaeumOTF_Regular.otf */; };
 		4AE41A102859EF90009130A6 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE41A0F2859EF90009130A6 /* FontExtension.swift */; };
@@ -650,6 +651,7 @@
 		4AC5BE63281FE598006CA43F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4AC5BE65281FEE07006CA43F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4AE400B2288FCDF200DEEF83 /* AdmobRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobRepository.swift; sourceTree = "<group>"; };
+		4AE400B6288FF0A900DEEF83 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
 		4AE41A0B2859EF00009130A6 /* EliceDigitalBaeumOTF_Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EliceDigitalBaeumOTF_Bold.otf; sourceTree = "<group>"; };
 		4AE41A0C2859EF00009130A6 /* EliceDigitalBaeumOTF_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EliceDigitalBaeumOTF_Regular.otf; sourceTree = "<group>"; };
 		4AE41A0F2859EF90009130A6 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
@@ -768,6 +770,7 @@
 		4AACA9D7288FB3E1003F000F /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				4AE400B6288FF0A900DEEF83 /* splash.json */,
 				4AACA9D3288E1D71003F000F /* SplashView.swift */,
 				4AACA9D9288FB42F003F000F /* SplashAnimationView.swift */,
 			);
@@ -1429,6 +1432,7 @@
 				4AAEBEC72832635500AA3E65 /* functions_8.js in Resources */,
 				4AAEBEEB2832635500AA3E65 /* variables_5.js in Resources */,
 				4AAEBE772832635500AA3E65 /* closed.png in Resources */,
+				4AE400B7288FF0A900DEEF83 /* splash.json in Resources */,
 				4AAEBEC62832635500AA3E65 /* variables_3.html in Resources */,
 				4AAEBE302832635500AA3E65 /* map_pin_custom.png in Resources */,
 				4AAEBE722832635500AA3E65 /* nav_g.png in Resources */,
