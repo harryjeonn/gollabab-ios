@@ -27,7 +27,7 @@ struct RecentSearchView: View {
                 Spacer()
                 
                 Text("전체삭제")
-                    .font(.caption)
+                    .font(.eliceCaption())
                     .foregroundColor(.gray600)
                     .onTapGesture {
                         viewModel.deleteAll()
