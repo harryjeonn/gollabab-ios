@@ -24,12 +24,12 @@ struct PlaceListView: View {
                 }
                 
                 ScrollView(.vertical, showsIndicators: false) {
-                    AdmobView(admobType: .banner)
+                    AdmobView()
                         .frame(width: UIScreen.main.bounds.width, height: 50)
                     ForEach(Array(viewModel.places.enumerated()), id: \.0) { idx, place in
                         viewModel.createPlaceList(place: place, index: idx)
                     }
-                    AdmobView(admobType: .banner)
+                    AdmobView()
                         .frame(width: UIScreen.main.bounds.width, height: 50)
                 }
                 

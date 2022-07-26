@@ -311,6 +311,7 @@
 		4ABDFDF828869307004DF6AF /* ResultCardScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDFDF728869307004DF6AF /* ResultCardScrollView.swift */; };
 		4AC5BE62281FE58C006CA43F /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5BE61281FE58C006CA43F /* MainMapView.swift */; };
 		4AC5BE64281FE598006CA43F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5BE63281FE598006CA43F /* MainView.swift */; };
+		4AE400B3288FCDF200DEEF83 /* AdmobRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE400B2288FCDF200DEEF83 /* AdmobRepository.swift */; };
 		4AE41A0D2859EF00009130A6 /* EliceDigitalBaeumOTF_Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4AE41A0B2859EF00009130A6 /* EliceDigitalBaeumOTF_Bold.otf */; };
 		4AE41A0E2859EF00009130A6 /* EliceDigitalBaeumOTF_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4AE41A0C2859EF00009130A6 /* EliceDigitalBaeumOTF_Regular.otf */; };
 		4AE41A102859EF90009130A6 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE41A0F2859EF90009130A6 /* FontExtension.swift */; };
@@ -648,6 +649,7 @@
 		4AC5BE61281FE58C006CA43F /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
 		4AC5BE63281FE598006CA43F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4AC5BE65281FEE07006CA43F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4AE400B2288FCDF200DEEF83 /* AdmobRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobRepository.swift; sourceTree = "<group>"; };
 		4AE41A0B2859EF00009130A6 /* EliceDigitalBaeumOTF_Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EliceDigitalBaeumOTF_Bold.otf; sourceTree = "<group>"; };
 		4AE41A0C2859EF00009130A6 /* EliceDigitalBaeumOTF_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EliceDigitalBaeumOTF_Regular.otf; sourceTree = "<group>"; };
 		4AE41A0F2859EF90009130A6 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
@@ -1119,6 +1121,7 @@
 		4AC5BE5E281FE575006CA43F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				4AE400B2288FCDF200DEEF83 /* AdmobRepository.swift */,
 				4A346CBC2836463100C574A5 /* MainViewModel.swift */,
 				4AF706EF2877F85100C83304 /* RandomViewModel.swift */,
 			);
@@ -1647,6 +1650,7 @@
 				4AF706E2286C4AA400C83304 /* UIApplicationExtension.swift in Sources */,
 				825365DE2883DD4500801CB0 /* ResultCardView.swift in Sources */,
 				4AACA9DA288FB42F003F000F /* SplashAnimationView.swift in Sources */,
+				4AE400B3288FCDF200DEEF83 /* AdmobRepository.swift in Sources */,
 				4A7B5C3E288A21ED00ED02E5 /* AdmobView.swift in Sources */,
 				4AC5BE62281FE58C006CA43F /* MainMapView.swift in Sources */,
 				4AF706F2287802BB00C83304 /* RandomAnimationView.swift in Sources */,

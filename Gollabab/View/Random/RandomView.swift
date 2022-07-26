@@ -45,6 +45,7 @@ struct RandomView: View {
                     .padding(EdgeInsets(top: 24, leading: 27, bottom: 0, trailing: 27))
                     .onTapGesture {
                         viewModel.fetchRandomPlace()
+                        viewModel.plusAdsCount()
                     }
             }
             .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)

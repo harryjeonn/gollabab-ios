@@ -11,6 +11,7 @@ import SwiftUI
 class MainViewModel: ObservableObject {
     private let service = MainService()
     private let userDefaultsRepo = UserDefaultsRepository()
+    private let admobRepo = AdmobRepository()
     var cancelBag = Set<AnyCancellable>()
     
     @Published var selectionTab: Int = 0
@@ -33,6 +34,7 @@ class MainViewModel: ObservableObject {
     @Published var isRandomEmpty: Bool = false
     @Published var isNavigationActive: Bool = false
     @Published var previousIsRandom: Bool = false
+    @Published var isShowFullAds: Bool = false
     
     @Published var isPermission: Bool = false
     
@@ -384,5 +386,19 @@ class MainViewModel: ObservableObject {
         isList = false
         
         slideCard(currentIndex)
+    }
+    
+    func plusAdsCount() {
+        var count = UserDefaults.standard.integer(forKey: "adsCount")
+        count += 1
+        
+        UserDefaults.standard.set(count, forKey: "adsCount")
+    }
+    
+    func checkAdsCount() {
+        if UserDefaults.standard.integer(forKey: "adsCount") % 10 == 0 {
+            admobRepo.showAd()
+            plusAdsCount()
+        }
     }
 }

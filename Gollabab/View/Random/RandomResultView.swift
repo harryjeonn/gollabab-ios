@@ -65,7 +65,7 @@ struct RandomResultView: View {
             
             VStack {
                 Spacer()
-                AdmobView(admobType: .banner)
+                AdmobView()
                     .frame(width: UIScreen.main.bounds.width, height: 50)
             }
         }
