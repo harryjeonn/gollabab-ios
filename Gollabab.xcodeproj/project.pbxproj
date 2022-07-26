@@ -24,6 +24,7 @@
 		4A7B5C40288A312200ED02E5 /* AdmobType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7B5C3F288A312200ED02E5 /* AdmobType.swift */; };
 		4AACA9D4288E1D71003F000F /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AACA9D3288E1D71003F000F /* SplashView.swift */; };
 		4AACA9D6288E2F90003F000F /* OTSBAggroB.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4AACA9D5288E2F90003F000F /* OTSBAggroB.otf */; };
+		4AACA9DA288FB42F003F000F /* SplashAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AACA9D9288FB42F003F000F /* SplashAnimationView.swift */; };
 		4AAEBE2B2832635500AA3E65 /* net.daum.MobileMap.docset in Resources */ = {isa = PBXBuildFile; fileRef = 4AAEBD0C2832635500AA3E65 /* net.daum.MobileMap.docset */; };
 		4AAEBE2C2832635500AA3E65 /* setupDocsetDocument.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4AAEBD0D2832635500AA3E65 /* setupDocsetDocument.rb */; };
 		4AAEBE2D2832635500AA3E65 /* OpenSourceNotice.md in Resources */ = {isa = PBXBuildFile; fileRef = 4AAEBD0E2832635500AA3E65 /* OpenSourceNotice.md */; };
@@ -351,6 +352,7 @@
 		4A7B5C3F288A312200ED02E5 /* AdmobType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobType.swift; sourceTree = "<group>"; };
 		4AACA9D3288E1D71003F000F /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		4AACA9D5288E2F90003F000F /* OTSBAggroB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OTSBAggroB.otf; sourceTree = "<group>"; };
+		4AACA9D9288FB42F003F000F /* SplashAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashAnimationView.swift; sourceTree = "<group>"; };
 		4AAEBD0C2832635500AA3E65 /* net.daum.MobileMap.docset */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = net.daum.MobileMap.docset; sourceTree = "<group>"; };
 		4AAEBD0D2832635500AA3E65 /* setupDocsetDocument.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = setupDocsetDocument.rb; sourceTree = "<group>"; };
 		4AAEBD0E2832635500AA3E65 /* OpenSourceNotice.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = OpenSourceNotice.md; sourceTree = "<group>"; };
@@ -757,9 +759,17 @@
 			children = (
 				4AF706E3286DB1D000C83304 /* EmptyView.swift */,
 				4A7B5C3D288A21ED00ED02E5 /* AdmobView.swift */,
-				4AACA9D3288E1D71003F000F /* SplashView.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		4AACA9D7288FB3E1003F000F /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				4AACA9D3288E1D71003F000F /* SplashView.swift */,
+				4AACA9D9288FB42F003F000F /* SplashAnimationView.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		4AAEBD0A2832635500AA3E65 /* IOS_DaumMap_SDK_1.4.0 */ = {
@@ -1118,6 +1128,7 @@
 		4AC5BE5F281FE579006CA43F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4AACA9D7288FB3E1003F000F /* Splash */,
 				4A7B5C3C288A21DA00ED02E5 /* Common */,
 				4AF706E92876BC1600C83304 /* Main */,
 				4AF706EA2876BC2B00C83304 /* Random */,
@@ -1635,6 +1646,7 @@
 				4A346CBB2836462300C574A5 /* MainService.swift in Sources */,
 				4AF706E2286C4AA400C83304 /* UIApplicationExtension.swift in Sources */,
 				825365DE2883DD4500801CB0 /* ResultCardView.swift in Sources */,
+				4AACA9DA288FB42F003F000F /* SplashAnimationView.swift in Sources */,
 				4A7B5C3E288A21ED00ED02E5 /* AdmobView.swift in Sources */,
 				4AC5BE62281FE58C006CA43F /* MainMapView.swift in Sources */,
 				4AF706F2287802BB00C83304 /* RandomAnimationView.swift in Sources */,

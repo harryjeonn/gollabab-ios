@@ -19,8 +19,7 @@ struct SplashView: View {
                     .foregroundColor(.selectedRed)
                     .padding(.bottom, 20)
                 
-                Image("splash")
-                    .resizable()
+                SplashAnimationView(filename: "Test")
                     .frame(width: 350, height: 350)
             }
             
