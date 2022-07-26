@@ -14,13 +14,9 @@ struct SplashView: View {
     var body: some View {
         ZStack {
             VStack {
-                Text("골라밥")
-                    .font(.aggroBold(63))
-                    .foregroundColor(.selectedRed)
-                    .padding(.bottom, 20)
-                
-                SplashAnimationView(filename: "Test")
-                    .frame(width: 350, height: 350)
+                SplashAnimationView(filename: "splash")
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width)
+                    .padding(.bottom, UIScreen.main.bounds.height * 0.25)
             }
             
             if isShow {
@@ -67,7 +63,7 @@ struct SplashView: View {
         .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)
         .background(Color.primaryBeige)
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1500)) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(2000)) {
                 viewModel.checkPermisson()
                 viewModel.setupLocation()
             }
