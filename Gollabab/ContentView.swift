@@ -42,6 +42,9 @@ struct ContentView: View {
                         .navigationTitle("")
                         .navigationBarHidden(true)
                 }
+                .onAppear {
+                    viewModel.checkAdsCount()
+                }
             }
         } else {
             SplashView(viewModel: viewModel)
