@@ -69,7 +69,7 @@ struct SplashView: View {
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                isShow = !viewModel.isPermission
+                isShow = viewModel.isPermission ? false : true
             }
         }
     }
