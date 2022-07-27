@@ -25,7 +25,7 @@ struct RandomView: View {
             VStack(spacing: 0) {
                 Text("카테고리 선택해밥")
                     .font(.eliceBold(size: 22))
-                    .foregroundColor(.white)
+                    .foregroundColor(.primaryBeige)
                     .padding(.bottom, 20)
                 
                 // 카테고리 뷰

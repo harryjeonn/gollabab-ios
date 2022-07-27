@@ -37,7 +37,7 @@ struct SplashView: View {
                     } label: {
                         HStack(alignment: .center, spacing: 0) {
                             Text("설정하러가기")
-                                .font(.eliceBold(size: 16))
+                                .font(.eliceBold(size: 15))
                                 .foregroundColor(.primaryBeige)
                             
                             Image("chevron_right_outline_beige")
