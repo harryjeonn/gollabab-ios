@@ -38,16 +38,9 @@ struct PlaceCardView: View {
                             let progress = -offsetX / (proxy.size.width / 2)
                             let roundIndex = progress.rounded()
                             
-                            viewModel.cardCurrentIndex = max(min(viewModel.cardCurrentIndex + Int(roundIndex), viewModel.places.count - 1), 0)
+                            index = max(min(viewModel.cardCurrentIndex + Int(roundIndex), viewModel.places.count - 1), 0)
                             
                             viewModel.slideCard(index)
-                        })
-                        .onChanged({ value in
-                            let offsetX = value.translation.width
-                            let progress = -offsetX / (proxy.size.width / 2)
-                            let roundIndex = progress.rounded()
-                            
-                            index = max(min(viewModel.cardCurrentIndex + Int(roundIndex), viewModel.places.count - 1), 0)
                         })
                 )
             }
