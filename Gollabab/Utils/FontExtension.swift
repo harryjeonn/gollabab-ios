@@ -17,38 +17,34 @@ extension Font {
     }
     
     static func eliceP1() -> Font {
-        return Font.custom("EliceDigitalBaeumOTF-Bd", fixedSize: 18)
-    }
-    
-    static func eliceP2() -> Font {
         return Font.custom("EliceDigitalBaeumOTF-Bd", fixedSize: 17)
     }
     
-    static func eliceP2Regular() -> Font {
-        return Font.custom("EliceDigitalBaeumOTF", fixedSize: 17)
+    static func eliceP2() -> Font {
+        return Font.custom("EliceDigitalBaeumOTF-Bd", fixedSize: 16)
     }
     
-    static func eliceP3() -> Font {
+    static func eliceP2Regular() -> Font {
         return Font.custom("EliceDigitalBaeumOTF", fixedSize: 16)
     }
     
-    static func eliceP4() -> Font {
+    static func eliceP3() -> Font {
         return Font.custom("EliceDigitalBaeumOTF", fixedSize: 15)
     }
     
-    static func eliceCaption() -> Font {
+    static func eliceP4() -> Font {
         return Font.custom("EliceDigitalBaeumOTF", fixedSize: 14)
     }
     
+    static func eliceCaption() -> Font {
+        return Font.custom("EliceDigitalBaeumOTF", fixedSize: 13)
+    }
+    
     static func eliceCaptionSmall() -> Font {
-        return Font.custom("EliceDigitalBaeumOTF", fixedSize: 12)
+        return Font.custom("EliceDigitalBaeumOTF", fixedSize: 11)
     }
     
     static func aggroTitle() -> Font {
-        return Font.custom("OTSBAggroM", fixedSize: 36)
-    }
-    
-    static func aggroBold(_ size: CGFloat) -> Font {
-        return Font.custom("OTSBAggroB", fixedSize: size)
+        return Font.custom("OTSBAggroM", fixedSize: 35)
     }
 }

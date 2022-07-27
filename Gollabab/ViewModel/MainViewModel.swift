@@ -36,7 +36,7 @@ class MainViewModel: ObservableObject {
     @Published var previousIsRandom: Bool = false
     @Published var isShowFullAds: Bool = false
     
-    @Published var isPermission: Bool = false
+    @Published var isPermission: LocationStateType = .unknown
     
     @Published var recentKeyword: [String] = []
     @Published var keyword: String = ""
@@ -54,11 +54,15 @@ class MainViewModel: ObservableObject {
     // MARK: - 권한체크
     func checkPermisson() {
         service.checkPermission()
-            .filter { $0 == true }
-            .sink(receiveValue: { [weak self] _ in
-                self?.isPermission = true
-                self?.fetchPlace(.all)
-                self?.getMapPoint()
+            .sink(receiveValue: { [weak self] locationState in
+                print("locationState == \(locationState)")
+                if locationState == .allow {
+                    self?.service.storeLocation()
+                    self?.fetchPlace(.all)
+                    self?.getMapPoint()
+                }
+                
+                self?.isPermission = locationState
             })
             .store(in: &cancelBag)
     }
@@ -389,16 +393,21 @@ class MainViewModel: ObservableObject {
     }
     
     func plusAdsCount() {
-        var count = UserDefaults.standard.integer(forKey: "adsCount")
+        var count = loadAdsCount()
         count += 1
         
         UserDefaults.standard.set(count, forKey: "adsCount")
     }
     
     func checkAdsCount() {
-        if UserDefaults.standard.integer(forKey: "adsCount") % 10 == 0 {
+        let count = loadAdsCount()
+        if count % 10 == 0 && count > 0 {
             admobRepo.showAd()
             plusAdsCount()
         }
+    }
+    
+    func loadAdsCount() -> Int {
+        return UserDefaults.standard.integer(forKey: "adsCount")
     }
 }
