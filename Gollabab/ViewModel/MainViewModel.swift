@@ -389,16 +389,21 @@ class MainViewModel: ObservableObject {
     }
     
     func plusAdsCount() {
-        var count = UserDefaults.standard.integer(forKey: "adsCount")
+        var count = loadAdsCount()
         count += 1
         
         UserDefaults.standard.set(count, forKey: "adsCount")
     }
     
     func checkAdsCount() {
-        if UserDefaults.standard.integer(forKey: "adsCount") % 10 == 0 {
+        let count = loadAdsCount()
+        if count % 10 == 0 && count > 0 {
             admobRepo.showAd()
             plusAdsCount()
         }
+    }
+    
+    func loadAdsCount() -> Int {
+        return UserDefaults.standard.integer(forKey: "adsCount")
     }
 }
