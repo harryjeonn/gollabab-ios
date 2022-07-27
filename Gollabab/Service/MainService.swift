@@ -39,6 +39,10 @@ class MainService {
         locationRepository.setupLocation()
     }
     
+    func storeLocation() {
+        locationRepository.storeLocation()
+    }
+    
     func updateLocation(_ location: MTMapPoint) {
         locationRepository.updateLocation(location)
     }
@@ -47,16 +51,16 @@ class MainService {
         return locationRepository.getLocation()
     }
     
-    func checkPermission() -> AnyPublisher<Bool, Never> {
+    func checkPermission() -> AnyPublisher<LocationStateType, Never> {
         return locationRepository.authorization
-            .map { status -> Bool in
+            .map { status -> LocationStateType in
                 switch status {
-                case .authorizedAlways , .authorizedWhenInUse:
-                    return true
-                case .notDetermined , .denied , .restricted:
-                    return false
+                case .authorizedAlways, .authorizedWhenInUse:
+                    return .allow
+                case .denied:
+                    return .notAllow
                 default:
-                    return false
+                    return .unknown
                 }
             }
             .eraseToAnyPublisher()

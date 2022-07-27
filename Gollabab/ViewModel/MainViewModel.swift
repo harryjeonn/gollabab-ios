@@ -36,7 +36,7 @@ class MainViewModel: ObservableObject {
     @Published var previousIsRandom: Bool = false
     @Published var isShowFullAds: Bool = false
     
-    @Published var isPermission: Bool = false
+    @Published var isPermission: LocationStateType = .unknown
     
     @Published var recentKeyword: [String] = []
     @Published var keyword: String = ""
@@ -54,11 +54,15 @@ class MainViewModel: ObservableObject {
     // MARK: - 권한체크
     func checkPermisson() {
         service.checkPermission()
-            .filter { $0 == true }
-            .sink(receiveValue: { [weak self] _ in
-                self?.isPermission = true
-                self?.fetchPlace(.all)
-                self?.getMapPoint()
+            .sink(receiveValue: { [weak self] locationState in
+                print("locationState == \(locationState)")
+                if locationState == .allow {
+                    self?.service.storeLocation()
+                    self?.fetchPlace(.all)
+                    self?.getMapPoint()
+                }
+                
+                self?.isPermission = locationState
             })
             .store(in: &cancelBag)
     }

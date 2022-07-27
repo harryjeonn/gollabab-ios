@@ -312,6 +312,8 @@
 		4AC5BE64281FE598006CA43F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5BE63281FE598006CA43F /* MainView.swift */; };
 		4AE400B3288FCDF200DEEF83 /* AdmobRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE400B2288FCDF200DEEF83 /* AdmobRepository.swift */; };
 		4AE400B7288FF0A900DEEF83 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AE400B6288FF0A900DEEF83 /* splash.json */; };
+		4AE400BF28913BCD00DEEF83 /* LocationStateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE400BE28913BCD00DEEF83 /* LocationStateType.swift */; };
+		4AE400C128913CCA00DEEF83 /* PermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE400C028913CCA00DEEF83 /* PermissionView.swift */; };
 		4AE41A0D2859EF00009130A6 /* EliceDigitalBaeumOTF_Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4AE41A0B2859EF00009130A6 /* EliceDigitalBaeumOTF_Bold.otf */; };
 		4AE41A0E2859EF00009130A6 /* EliceDigitalBaeumOTF_Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4AE41A0C2859EF00009130A6 /* EliceDigitalBaeumOTF_Regular.otf */; };
 		4AE41A102859EF90009130A6 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE41A0F2859EF90009130A6 /* FontExtension.swift */; };
@@ -649,6 +651,8 @@
 		4AC5BE65281FEE07006CA43F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4AE400B2288FCDF200DEEF83 /* AdmobRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobRepository.swift; sourceTree = "<group>"; };
 		4AE400B6288FF0A900DEEF83 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
+		4AE400BE28913BCD00DEEF83 /* LocationStateType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStateType.swift; sourceTree = "<group>"; };
+		4AE400C028913CCA00DEEF83 /* PermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionView.swift; sourceTree = "<group>"; };
 		4AE41A0B2859EF00009130A6 /* EliceDigitalBaeumOTF_Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EliceDigitalBaeumOTF_Bold.otf; sourceTree = "<group>"; };
 		4AE41A0C2859EF00009130A6 /* EliceDigitalBaeumOTF_Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EliceDigitalBaeumOTF_Regular.otf; sourceTree = "<group>"; };
 		4AE41A0F2859EF90009130A6 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
@@ -760,6 +764,7 @@
 			children = (
 				4AF706E3286DB1D000C83304 /* EmptyView.swift */,
 				4A7B5C3D288A21ED00ED02E5 /* AdmobView.swift */,
+				4AE400C028913CCA00DEEF83 /* PermissionView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1145,6 +1150,7 @@
 				4A136376283F93270070EA54 /* MyLocationModel.swift */,
 				4AF706D5286B0C5A00C83304 /* CategoryModel.swift */,
 				4A7B5C3F288A312200ED02E5 /* AdmobType.swift */,
+				4AE400BE28913BCD00DEEF83 /* LocationStateType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1645,6 +1651,7 @@
 				4AF706DA286C11AE00C83304 /* SearchView.swift in Sources */,
 				4A346CBB2836462300C574A5 /* MainService.swift in Sources */,
 				4AF706E2286C4AA400C83304 /* UIApplicationExtension.swift in Sources */,
+				4AE400C128913CCA00DEEF83 /* PermissionView.swift in Sources */,
 				825365DE2883DD4500801CB0 /* ResultCardView.swift in Sources */,
 				4AACA9DA288FB42F003F000F /* SplashAnimationView.swift in Sources */,
 				4AE400B3288FCDF200DEEF83 /* AdmobRepository.swift in Sources */,
@@ -1664,6 +1671,7 @@
 				4AACA9D4288E1D71003F000F /* SplashView.swift in Sources */,
 				4A346CB8283644FD00C574A5 /* KakaoRepository.swift in Sources */,
 				4AF706D6286B0C5A00C83304 /* CategoryModel.swift in Sources */,
+				4AE400BF28913BCD00DEEF83 /* LocationStateType.swift in Sources */,
 				4AB100D128814E1B00A4A9C8 /* CustomBackButton.swift in Sources */,
 				4AB39DD7284B49E30014DE41 /* SafariView.swift in Sources */,
 				4AC5BE64281FE598006CA43F /* MainView.swift in Sources */,
