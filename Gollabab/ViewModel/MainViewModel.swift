@@ -55,7 +55,6 @@ class MainViewModel: ObservableObject {
     func checkPermisson() {
         service.checkPermission()
             .sink(receiveValue: { [weak self] locationState in
-                print("locationState == \(locationState)")
                 if locationState == .allow {
                     self?.service.storeLocation()
                     self?.fetchPlace(.all)
@@ -282,6 +281,7 @@ class MainViewModel: ObservableObject {
         } else if selectedRandomItems.contains(item) {
             // 선택해제
             selectedRandomItems.removeAll(where: { $0 == item })
+            selectedRandomItems.removeAll(where: { $0 == .all })
         } else {
             // 선택
             selectedRandomItems.append(item)
