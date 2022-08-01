@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05BC2BC4E9051A20F97564F0 /* Pods_Gollabab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13C6646410AC450429410C6B /* Pods_Gollabab.framework */; };
 		4A08C2502852020000123531 /* ListContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A08C24F2852020000123531 /* ListContentView.swift */; };
 		4A136375283F8BC20070EA54 /* PlaceCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A136374283F8BC20070EA54 /* PlaceCardView.swift */; };
 		4A136377283F93270070EA54 /* MyLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A136376283F93270070EA54 /* MyLocationModel.swift */; };
@@ -17,6 +16,9 @@
 		4A346CBB2836462300C574A5 /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A346CBA2836462300C574A5 /* MainService.swift */; };
 		4A346CBD2836463100C574A5 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A346CBC2836463100C574A5 /* MainViewModel.swift */; };
 		4A5856D32850BAA200659013 /* PlaceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5856D22850BAA200659013 /* PlaceListView.swift */; };
+		4A59A4B72897B199005A5C50 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4A59A4B62897B199005A5C50 /* FirebaseAnalytics */; };
+		4A59A4B92897B199005A5C50 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 4A59A4B82897B199005A5C50 /* FirebaseMessaging */; };
+		4A59A4BC2897B507005A5C50 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A59A4BB2897B507005A5C50 /* GoogleService-Info.plist */; };
 		4A7906242848403400B2830A /* CardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7906232848403400B2830A /* CardContentView.swift */; };
 		4A7906272848BD6F00B2830A /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7906262848BD6F00B2830A /* ColorExtension.swift */; };
 		4A7B5C3B28895B5700ED02E5 /* OTSBAggroM.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4A7B5C3A28895B5700ED02E5 /* OTSBAggroM.otf */; };
@@ -310,6 +312,9 @@
 		4ABDFDF828869307004DF6AF /* ResultCardScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDFDF728869307004DF6AF /* ResultCardScrollView.swift */; };
 		4AC5BE62281FE58C006CA43F /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5BE61281FE58C006CA43F /* MainMapView.swift */; };
 		4AC5BE64281FE598006CA43F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5BE63281FE598006CA43F /* MainView.swift */; };
+		4AD8F37F2897AF5A00D7AA45 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4AD8F37E2897AF5A00D7AA45 /* Alamofire */; };
+		4AD8F3822897AFAA00D7AA45 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 4AD8F3812897AFAA00D7AA45 /* GoogleMobileAds */; };
+		4AD8F3852897AFDC00D7AA45 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 4AD8F3842897AFDC00D7AA45 /* Lottie */; };
 		4AE400B3288FCDF200DEEF83 /* AdmobRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE400B2288FCDF200DEEF83 /* AdmobRepository.swift */; };
 		4AE400B7288FF0A900DEEF83 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AE400B6288FF0A900DEEF83 /* splash.json */; };
 		4AE400BF28913BCD00DEEF83 /* LocationStateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE400BE28913BCD00DEEF83 /* LocationStateType.swift */; };
@@ -336,7 +341,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		13C6646410AC450429410C6B /* Pods_Gollabab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gollabab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A08C24F2852020000123531 /* ListContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContentView.swift; sourceTree = "<group>"; };
 		4A136374283F8BC20070EA54 /* PlaceCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCardView.swift; sourceTree = "<group>"; };
 		4A136376283F93270070EA54 /* MyLocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLocationModel.swift; sourceTree = "<group>"; };
@@ -346,6 +350,8 @@
 		4A346CBA2836462300C574A5 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
 		4A346CBC2836463100C574A5 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		4A5856D22850BAA200659013 /* PlaceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListView.swift; sourceTree = "<group>"; };
+		4A59A4BA2897B33C005A5C50 /* Gollabab.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gollabab.entitlements; sourceTree = "<group>"; };
+		4A59A4BB2897B507005A5C50 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4A75A79E2833BBA1003F5F70 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		4A7906232848403400B2830A /* CardContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContentView.swift; sourceTree = "<group>"; };
 		4A7906262848BD6F00B2830A /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
@@ -673,8 +679,6 @@
 		82C93536281AD618009791EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		82C93538281AD61D009791EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82C9353B281AD61D009791EA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		93826C8C41FCCC782953B127 /* Pods-Gollabab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gollabab.release.xcconfig"; path = "Target Support Files/Pods-Gollabab/Pods-Gollabab.release.xcconfig"; sourceTree = "<group>"; };
-		FEC907976183EECA0A2B56DE /* Pods-Gollabab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gollabab.debug.xcconfig"; path = "Target Support Files/Pods-Gollabab/Pods-Gollabab.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -684,13 +688,17 @@
 			files = (
 				4AAEBF49283263C000AA3E65 /* libsqlite3.tbd in Frameworks */,
 				4AAEBF47283263B800AA3E65 /* libxml2.tbd in Frameworks */,
+				4A59A4B72897B199005A5C50 /* FirebaseAnalytics in Frameworks */,
 				4AAEBF45283263AB00AA3E65 /* libc++.tbd in Frameworks */,
 				4AAEBF432832639C00AA3E65 /* QuartzCore.framework in Frameworks */,
 				4AAEBF412832639500AA3E65 /* CoreLocation.framework in Frameworks */,
+				4AD8F3822897AFAA00D7AA45 /* GoogleMobileAds in Frameworks */,
+				4AD8F37F2897AF5A00D7AA45 /* Alamofire in Frameworks */,
+				4A59A4B92897B199005A5C50 /* FirebaseMessaging in Frameworks */,
 				4AAEBF3F2832638C00AA3E65 /* SystemConfiguration.framework in Frameworks */,
 				4AAEBF3D2832638200AA3E65 /* OpenGLES.framework in Frameworks */,
 				4AAEBE4A2832635500AA3E65 /* DaumMap.framework in Frameworks */,
-				05BC2BC4E9051A20F97564F0 /* Pods_Gollabab.framework in Frameworks */,
+				4AD8F3852897AFDC00D7AA45 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,7 +716,6 @@
 				4AAEBF3E2832638C00AA3E65 /* SystemConfiguration.framework */,
 				4AAEBF3C2832638200AA3E65 /* OpenGLES.framework */,
 				4AAEBD0A2832635500AA3E65 /* IOS_DaumMap_SDK_1.4.0 */,
-				13C6646410AC450429410C6B /* Pods_Gollabab.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1209,7 +1216,6 @@
 			children = (
 				82C93533281AD618009791EA /* Gollabab */,
 				82C93532281AD618009791EA /* Products */,
-				A03E4EAD86D5072ED2E4F81B /* Pods */,
 				2CC9E25289E4511B4ED09AD2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -1225,6 +1231,7 @@
 		82C93533281AD618009791EA /* Gollabab */ = {
 			isa = PBXGroup;
 			children = (
+				4A59A4BA2897B33C005A5C50 /* Gollabab.entitlements */,
 				4A7906252848BD6800B2830A /* Utils */,
 				4A75A79C2833BB64003F5F70 /* KakaoMap */,
 				4A346CB6283644EB00C574A5 /* Repository */,
@@ -1236,6 +1243,7 @@
 				82C93536281AD618009791EA /* ContentView.swift */,
 				82C93538281AD61D009791EA /* Assets.xcassets */,
 				4AC5BE65281FEE07006CA43F /* Info.plist */,
+				4A59A4BB2897B507005A5C50 /* GoogleService-Info.plist */,
 				82C9353A281AD61D009791EA /* Preview Content */,
 			);
 			path = Gollabab;
@@ -1249,15 +1257,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		A03E4EAD86D5072ED2E4F81B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				FEC907976183EECA0A2B56DE /* Pods-Gollabab.debug.xcconfig */,
-				93826C8C41FCCC782953B127 /* Pods-Gollabab.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1265,17 +1264,22 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 82C9353F281AD61D009791EA /* Build configuration list for PBXNativeTarget "Gollabab" */;
 			buildPhases = (
-				E2C4015B47A8D5148EFB9A2F /* [CP] Check Pods Manifest.lock */,
 				82C9352D281AD618009791EA /* Sources */,
 				82C9352E281AD618009791EA /* Frameworks */,
 				82C9352F281AD618009791EA /* Resources */,
-				4582C6474DF5A7BE5706BA53 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Gollabab;
+			packageProductDependencies = (
+				4AD8F37E2897AF5A00D7AA45 /* Alamofire */,
+				4AD8F3812897AFAA00D7AA45 /* GoogleMobileAds */,
+				4AD8F3842897AFDC00D7AA45 /* Lottie */,
+				4A59A4B62897B199005A5C50 /* FirebaseAnalytics */,
+				4A59A4B82897B199005A5C50 /* FirebaseMessaging */,
+			);
 			productName = Gollabab;
 			productReference = 82C93531281AD618009791EA /* Gollabab.app */;
 			productType = "com.apple.product-type.application";
@@ -1304,6 +1308,12 @@
 				Base,
 			);
 			mainGroup = 82C93528281AD618009791EA;
+			packageReferences = (
+				4AD8F37D2897AF5A00D7AA45 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				4AD8F3802897AFAA00D7AA45 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				4AD8F3832897AFDC00D7AA45 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				4A59A4B52897B199005A5C50 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 82C93532281AD618009791EA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1581,6 +1591,7 @@
 				4AAEBEB62832635500AA3E65 /* all_8.js in Resources */,
 				4AAEBF012832635500AA3E65 /* all_7.html in Resources */,
 				4AAEBEA52832635500AA3E65 /* all_d.js in Resources */,
+				4A59A4BC2897B507005A5C50 /* GoogleService-Info.plist in Resources */,
 				4AAEBEF72832635500AA3E65 /* functions_0.js in Resources */,
 				4AAEBE7D2832635500AA3E65 /* tab_s.png in Resources */,
 				4AAEBE2E2832635500AA3E65 /* DaumMap.embeddedframework.zip in Resources */,
@@ -1600,48 +1611,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		4582C6474DF5A7BE5706BA53 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Gollabab/Pods-Gollabab-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Gollabab/Pods-Gollabab-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gollabab/Pods-Gollabab-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E2C4015B47A8D5148EFB9A2F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Gollabab-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		82C9352D281AD618009791EA /* Sources */ = {
@@ -1809,11 +1778,11 @@
 		};
 		82C93540281AD61D009791EA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FEC907976183EECA0A2B56DE /* Pods-Gollabab.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_ENTITLEMENTS = Gollabab/Gollabab.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"Gollabab/Preview Content\"";
@@ -1853,11 +1822,11 @@
 		};
 		82C93541281AD61D009791EA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93826C8C41FCCC782953B127 /* Pods-Gollabab.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_ENTITLEMENTS = Gollabab/Gollabab.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"Gollabab/Preview Content\"";
@@ -1917,6 +1886,69 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4A59A4B52897B199005A5C50 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		4AD8F37D2897AF5A00D7AA45 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		4AD8F3802897AFAA00D7AA45 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		4AD8F3832897AFDC00D7AA45 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4A59A4B62897B199005A5C50 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A59A4B52897B199005A5C50 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		4A59A4B82897B199005A5C50 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A59A4B52897B199005A5C50 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		4AD8F37E2897AF5A00D7AA45 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AD8F37D2897AF5A00D7AA45 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		4AD8F3812897AFAA00D7AA45 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AD8F3802897AFAA00D7AA45 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+		4AD8F3842897AFDC00D7AA45 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AD8F3832897AFDC00D7AA45 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 82C93529281AD618009791EA /* Project object */;
 }

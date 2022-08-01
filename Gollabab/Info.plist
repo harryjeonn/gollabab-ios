@@ -167,5 +167,10 @@
 		<string>EliceDigitalBaeumOTF_Bold.otf</string>
 		<string>EliceDigitalBaeumOTF_Regular.otf</string>
 	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+	</array>
 </dict>
 </plist>

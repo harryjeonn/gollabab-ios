@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1096435888708-v63m85l2qt0o0gqfnhgvkovl189otd1g.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1096435888708-v63m85l2qt0o0gqfnhgvkovl189otd1g</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB5UCZRFoTM-U2vbGS8VO0lSE-ikRnFbzI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1096435888708</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.hox.GollaBab</string>
+	<key>PROJECT_ID</key>
+	<string>gollabab-ed4bc</string>
+	<key>STORAGE_BUCKET</key>
+	<string>gollabab-ed4bc.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1096435888708:ios:98602f9d871244dac04211</string>
+</dict>
+</plist>
