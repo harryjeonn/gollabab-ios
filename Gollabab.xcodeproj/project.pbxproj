@@ -18,6 +18,7 @@
 		4A5856D32850BAA200659013 /* PlaceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5856D22850BAA200659013 /* PlaceListView.swift */; };
 		4A59A4B72897B199005A5C50 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4A59A4B62897B199005A5C50 /* FirebaseAnalytics */; };
 		4A59A4B92897B199005A5C50 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 4A59A4B82897B199005A5C50 /* FirebaseMessaging */; };
+		4A59A4BC2897B507005A5C50 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A59A4BB2897B507005A5C50 /* GoogleService-Info.plist */; };
 		4A7906242848403400B2830A /* CardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7906232848403400B2830A /* CardContentView.swift */; };
 		4A7906272848BD6F00B2830A /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7906262848BD6F00B2830A /* ColorExtension.swift */; };
 		4A7B5C3B28895B5700ED02E5 /* OTSBAggroM.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4A7B5C3A28895B5700ED02E5 /* OTSBAggroM.otf */; };
@@ -349,6 +350,8 @@
 		4A346CBA2836462300C574A5 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
 		4A346CBC2836463100C574A5 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		4A5856D22850BAA200659013 /* PlaceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListView.swift; sourceTree = "<group>"; };
+		4A59A4BA2897B33C005A5C50 /* Gollabab.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Gollabab.entitlements; sourceTree = "<group>"; };
+		4A59A4BB2897B507005A5C50 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4A75A79E2833BBA1003F5F70 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		4A7906232848403400B2830A /* CardContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardContentView.swift; sourceTree = "<group>"; };
 		4A7906262848BD6F00B2830A /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
@@ -1228,6 +1231,7 @@
 		82C93533281AD618009791EA /* Gollabab */ = {
 			isa = PBXGroup;
 			children = (
+				4A59A4BA2897B33C005A5C50 /* Gollabab.entitlements */,
 				4A7906252848BD6800B2830A /* Utils */,
 				4A75A79C2833BB64003F5F70 /* KakaoMap */,
 				4A346CB6283644EB00C574A5 /* Repository */,
@@ -1239,6 +1243,7 @@
 				82C93536281AD618009791EA /* ContentView.swift */,
 				82C93538281AD61D009791EA /* Assets.xcassets */,
 				4AC5BE65281FEE07006CA43F /* Info.plist */,
+				4A59A4BB2897B507005A5C50 /* GoogleService-Info.plist */,
 				82C9353A281AD61D009791EA /* Preview Content */,
 			);
 			path = Gollabab;
@@ -1586,6 +1591,7 @@
 				4AAEBEB62832635500AA3E65 /* all_8.js in Resources */,
 				4AAEBF012832635500AA3E65 /* all_7.html in Resources */,
 				4AAEBEA52832635500AA3E65 /* all_d.js in Resources */,
+				4A59A4BC2897B507005A5C50 /* GoogleService-Info.plist in Resources */,
 				4AAEBEF72832635500AA3E65 /* functions_0.js in Resources */,
 				4AAEBE7D2832635500AA3E65 /* tab_s.png in Resources */,
 				4AAEBE2E2832635500AA3E65 /* DaumMap.embeddedframework.zip in Resources */,
@@ -1776,6 +1782,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_ENTITLEMENTS = Gollabab/Gollabab.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"Gollabab/Preview Content\"";
@@ -1819,6 +1826,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_ENTITLEMENTS = Gollabab/Gollabab.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"Gollabab/Preview Content\"";
