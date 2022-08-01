@@ -24,6 +24,9 @@ class UserDefaultsRepository {
     
     func loadSearchKeyword() -> [String] {
         if let recentKeyword = userDefaults.array(forKey: "recentKeyword") as? [String] {
+            if recentKeyword.count > 30 {
+                return Array(recentKeyword[0..<30])
+            }
             return recentKeyword
         } else {
             return []
