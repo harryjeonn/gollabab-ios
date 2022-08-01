@@ -16,6 +16,8 @@
 		4A346CBB2836462300C574A5 /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A346CBA2836462300C574A5 /* MainService.swift */; };
 		4A346CBD2836463100C574A5 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A346CBC2836463100C574A5 /* MainViewModel.swift */; };
 		4A5856D32850BAA200659013 /* PlaceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5856D22850BAA200659013 /* PlaceListView.swift */; };
+		4A59A4B72897B199005A5C50 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4A59A4B62897B199005A5C50 /* FirebaseAnalytics */; };
+		4A59A4B92897B199005A5C50 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 4A59A4B82897B199005A5C50 /* FirebaseMessaging */; };
 		4A7906242848403400B2830A /* CardContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7906232848403400B2830A /* CardContentView.swift */; };
 		4A7906272848BD6F00B2830A /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7906262848BD6F00B2830A /* ColorExtension.swift */; };
 		4A7B5C3B28895B5700ED02E5 /* OTSBAggroM.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4A7B5C3A28895B5700ED02E5 /* OTSBAggroM.otf */; };
@@ -683,11 +685,13 @@
 			files = (
 				4AAEBF49283263C000AA3E65 /* libsqlite3.tbd in Frameworks */,
 				4AAEBF47283263B800AA3E65 /* libxml2.tbd in Frameworks */,
+				4A59A4B72897B199005A5C50 /* FirebaseAnalytics in Frameworks */,
 				4AAEBF45283263AB00AA3E65 /* libc++.tbd in Frameworks */,
 				4AAEBF432832639C00AA3E65 /* QuartzCore.framework in Frameworks */,
 				4AAEBF412832639500AA3E65 /* CoreLocation.framework in Frameworks */,
 				4AD8F3822897AFAA00D7AA45 /* GoogleMobileAds in Frameworks */,
 				4AD8F37F2897AF5A00D7AA45 /* Alamofire in Frameworks */,
+				4A59A4B92897B199005A5C50 /* FirebaseMessaging in Frameworks */,
 				4AAEBF3F2832638C00AA3E65 /* SystemConfiguration.framework in Frameworks */,
 				4AAEBF3D2832638200AA3E65 /* OpenGLES.framework in Frameworks */,
 				4AAEBE4A2832635500AA3E65 /* DaumMap.framework in Frameworks */,
@@ -1268,6 +1272,8 @@
 				4AD8F37E2897AF5A00D7AA45 /* Alamofire */,
 				4AD8F3812897AFAA00D7AA45 /* GoogleMobileAds */,
 				4AD8F3842897AFDC00D7AA45 /* Lottie */,
+				4A59A4B62897B199005A5C50 /* FirebaseAnalytics */,
+				4A59A4B82897B199005A5C50 /* FirebaseMessaging */,
 			);
 			productName = Gollabab;
 			productReference = 82C93531281AD618009791EA /* Gollabab.app */;
@@ -1301,6 +1307,7 @@
 				4AD8F37D2897AF5A00D7AA45 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				4AD8F3802897AFAA00D7AA45 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 				4AD8F3832897AFDC00D7AA45 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				4A59A4B52897B199005A5C50 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 82C93532281AD618009791EA /* Products */;
 			projectDirPath = "";
@@ -1873,6 +1880,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4A59A4B52897B199005A5C50 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 		4AD8F37D2897AF5A00D7AA45 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -1900,6 +1915,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4A59A4B62897B199005A5C50 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A59A4B52897B199005A5C50 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		4A59A4B82897B199005A5C50 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A59A4B52897B199005A5C50 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
 		4AD8F37E2897AF5A00D7AA45 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4AD8F37D2897AF5A00D7AA45 /* XCRemoteSwiftPackageReference "Alamofire" */;
