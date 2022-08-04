@@ -11,7 +11,9 @@ struct ContentView: View {
     @StateObject private var viewModel: MainViewModel = MainViewModel()
     
     init() {
+        UITabBar.appearance().scrollEdgeAppearance = .init()
         UITabBar.appearance().backgroundColor = .white
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "EliceDigitalBaeumOTF", size: 11)!], for: .normal)
     }
     
     var body: some View {
@@ -22,7 +24,8 @@ struct ContentView: View {
                     TabView(selection: $viewModel.selectionTab) {
                         MainView(viewModel: viewModel)
                             .tabItem {
-                                viewModel.selectionTab == 0 ? Image("home_fill") : Image("home_outline")
+                                viewModel.selectionTab == 0 ? Image("tab_map_active") : Image("tab_map")
+                                Text("지도")
                             }
                             .tag(0)
                             .navigationTitle("")
@@ -30,7 +33,8 @@ struct ContentView: View {
                         
                         RandomView(viewModel: viewModel)
                             .tabItem {
-                                viewModel.selectionTab == 1 ? Image("shuffle_2_fill") : Image("shuffle_2_outline")
+                                viewModel.selectionTab == 1 ? Image("tab_random_active") : Image("tab_random")
+                                Text("랜덤")
                             }
                             .tag(1)
                             .navigationTitle("")
@@ -38,12 +42,14 @@ struct ContentView: View {
                         
                         GameView()
                             .tabItem {
-                                viewModel.selectionTab == 2 ? Image("smiling_face_fill") : Image("smiling_face_outline")
+                                viewModel.selectionTab == 2 ? Image("tab_game_active") : Image("tab_game")
+                                Text("게임")
                             }
                             .tag(2)
                             .navigationTitle("")
                             .navigationBarHidden(true)
                     }
+                    .accentColor(.primaryRed)
                     .onAppear {
                         viewModel.checkAdsCount()
                     }

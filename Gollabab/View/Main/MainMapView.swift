@@ -19,8 +19,12 @@ struct MainMapView: UIViewRepresentable {
         subscribePoiItems(view)
         subscribeMyLocation(view)
         subscribeSelectedPoiItem(view)
+        viewModel.getMapPoint()
         
         view.delegate = context.coordinator
+        
+        // 앱 실행 시 랜덤 탭이 기본 탭으로 보이게 하기 위함
+        viewModel.selectionTab = 1
         
         return view
     }
