@@ -12,6 +12,7 @@ struct ContentView: View {
     
     init() {
         UITabBar.appearance().backgroundColor = .white
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "EliceDigitalBaeumOTF", size: 11)!], for: .normal)
     }
     
     var body: some View {
@@ -24,7 +25,6 @@ struct ContentView: View {
                             .tabItem {
                                 viewModel.selectionTab == 0 ? Image("tab_map_active") : Image("tab_map")
                                 Text("지도")
-                                    .font(.eliceCaptionSmall())
                             }
                             .tag(0)
                             .navigationTitle("")
@@ -34,7 +34,6 @@ struct ContentView: View {
                             .tabItem {
                                 viewModel.selectionTab == 1 ? Image("tab_random_active") : Image("tab_random")
                                 Text("랜덤")
-                                    .font(.eliceCaptionSmall())
                             }
                             .tag(1)
                             .navigationTitle("")
@@ -44,7 +43,6 @@ struct ContentView: View {
                             .tabItem {
                                 viewModel.selectionTab == 2 ? Image("tab_game_active") : Image("tab_game")
                                 Text("게임")
-                                    .font(.eliceCaptionSmall())
                             }
                             .tag(2)
                             .navigationTitle("")
