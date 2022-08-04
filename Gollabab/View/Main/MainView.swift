@@ -79,9 +79,6 @@ struct MainView: View {
                         PlaceCardView(viewModel: viewModel, index: $currentIndex)
                             .background(Color.white.opacity(0.001))
                             .padding(.bottom, 24)
-                        
-                        AdmobView()
-                            .frame(width: UIScreen.main.bounds.width, height: 50)
                     }
                 }
             }
