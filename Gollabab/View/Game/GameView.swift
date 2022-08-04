@@ -8,16 +8,64 @@
 import SwiftUI
 
 struct GameView: View {
+    @StateObject private var viewModel: GameViewModel = GameViewModel()
+    
     var body: some View {
         VStack(spacing: 0) {
-            Text("🕹열심히 개발중🕹")
-                .font(.eliceBold(size: 32))
-                .foregroundColor(.white)
-                .padding(.bottom, 11)
+            Text("밥값은 누가 낼래?")
+                .foregroundColor(.primaryBeige)
+                .font(.eliceBold(size: 30))
+                .padding(.bottom, 12)
+                .padding(.top, 75)
             
-            Text("재밌는 게임으로 돌아온다밥")
-                .font(.eliceP3())
+            Text("꽝 개수를 골라밥")
                 .foregroundColor(.secondaryPink)
+                .font(.eliceP3())
+            
+            Spacer()
+            
+            HStack(spacing: 63) {
+                Button {
+                    viewModel.minusBombCount()
+                } label: {
+                    Text("-")
+                        .font(.eliceBold(size: 50))
+                        .foregroundColor(.white)
+                }
+
+                
+                Text("\(viewModel.bombCount)")
+                    .font(.eliceBold(size: 50))
+                    .foregroundColor(.secondaryRed)
+                
+                Button {
+                    viewModel.plusBombCount()
+                } label: {
+                    Text("+")
+                        .font(.eliceBold(size: 50))
+                        .foregroundColor(.white)
+                }
+            }
+            
+            Spacer()
+            
+            Button {
+                viewModel.startGame()
+            } label: {
+                Text("시작!")
+                    .font(.eliceP1())
+                    .foregroundColor(.white)
+                    .frame(minWidth: .zero, maxWidth: .infinity)
+                    .frame(height: 48)
+                    .background(Color.secondaryRed)
+                    .cornerRadius(100)
+                    .padding(EdgeInsets(top: 24, leading: 27, bottom: 0, trailing: 27))
+            }
+            .padding(.bottom, 93)
+
+            NavigationLink(destination: ChooseCardView(viewModel: viewModel), isActive: $viewModel.isGame) {
+                Text("")
+            }
         }
         .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)
         .background(Color.text300)
