@@ -11,6 +11,7 @@ struct ContentView: View {
     @StateObject private var viewModel: MainViewModel = MainViewModel()
     
     init() {
+        UITabBar.appearance().scrollEdgeAppearance = .init()
         UITabBar.appearance().backgroundColor = .white
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "EliceDigitalBaeumOTF", size: 11)!], for: .normal)
     }
