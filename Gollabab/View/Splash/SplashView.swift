@@ -13,7 +13,7 @@ struct SplashView: View {
     
     var body: some View {
         VStack {
-            SplashAnimationView(filename: "splash")
+            LottieAnimationView(filename: "splash")
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width)
                 .padding(.bottom, UIScreen.main.bounds.height * 0.25)
         }

@@ -49,4 +49,29 @@ enum CategoryType: String, CaseIterable {
             return "icon_other"
         }
     }
+    
+    func lottieName() -> String {
+        switch self {
+        case .chinese:
+            return "card_chinese"
+        case .japanese:
+            return "card_japanese"
+        case .western:
+            return "card_western"
+        case .chicken:
+            return "card_chicken"
+        case .casual:
+            return "card_casual"
+        case .fastfood:
+            return "card_fastfood"
+        case .asian:
+            return "card_asian"
+        case .cafe:
+            return "card_cafe"
+        case .snack:
+            return "card_snack"
+        default:
+            return "card_korean"
+        }
+    }
 }

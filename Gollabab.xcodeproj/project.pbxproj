@@ -25,7 +25,7 @@
 		4A7B5C3E288A21ED00ED02E5 /* AdmobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7B5C3D288A21ED00ED02E5 /* AdmobView.swift */; };
 		4A7B5C40288A312200ED02E5 /* AdmobType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7B5C3F288A312200ED02E5 /* AdmobType.swift */; };
 		4AACA9D4288E1D71003F000F /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AACA9D3288E1D71003F000F /* SplashView.swift */; };
-		4AACA9DA288FB42F003F000F /* SplashAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AACA9D9288FB42F003F000F /* SplashAnimationView.swift */; };
+		4AACA9DA288FB42F003F000F /* LottieAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AACA9D9288FB42F003F000F /* LottieAnimationView.swift */; };
 		4AAEBE2B2832635500AA3E65 /* net.daum.MobileMap.docset in Resources */ = {isa = PBXBuildFile; fileRef = 4AAEBD0C2832635500AA3E65 /* net.daum.MobileMap.docset */; };
 		4AAEBE2C2832635500AA3E65 /* setupDocsetDocument.rb in Resources */ = {isa = PBXBuildFile; fileRef = 4AAEBD0D2832635500AA3E65 /* setupDocsetDocument.rb */; };
 		4AAEBE2D2832635500AA3E65 /* OpenSourceNotice.md in Resources */ = {isa = PBXBuildFile; fileRef = 4AAEBD0E2832635500AA3E65 /* OpenSourceNotice.md */; };
@@ -333,6 +333,16 @@
 		4AF706EE2876BECE00C83304 /* ChooseCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF706ED2876BECE00C83304 /* ChooseCategoryView.swift */; };
 		4AF706F2287802BB00C83304 /* RandomAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF706F1287802BB00C83304 /* RandomAnimationView.swift */; };
 		822751F2288D47BA00BB9F24 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822751F1288D47BA00BB9F24 /* GameView.swift */; };
+		82510410289E8C6F001B6259 /* card_snack.json in Resources */ = {isa = PBXBuildFile; fileRef = 82510406289E8C6F001B6259 /* card_snack.json */; };
+		82510411289E8C6F001B6259 /* card_chicken.json in Resources */ = {isa = PBXBuildFile; fileRef = 82510407289E8C6F001B6259 /* card_chicken.json */; };
+		82510412289E8C6F001B6259 /* card_japanese.json in Resources */ = {isa = PBXBuildFile; fileRef = 82510408289E8C6F001B6259 /* card_japanese.json */; };
+		82510413289E8C6F001B6259 /* card_chinese.json in Resources */ = {isa = PBXBuildFile; fileRef = 82510409289E8C6F001B6259 /* card_chinese.json */; };
+		82510414289E8C6F001B6259 /* card_korean.json in Resources */ = {isa = PBXBuildFile; fileRef = 8251040A289E8C6F001B6259 /* card_korean.json */; };
+		82510415289E8C6F001B6259 /* card_casual.json in Resources */ = {isa = PBXBuildFile; fileRef = 8251040B289E8C6F001B6259 /* card_casual.json */; };
+		82510416289E8C6F001B6259 /* card_western.json in Resources */ = {isa = PBXBuildFile; fileRef = 8251040C289E8C6F001B6259 /* card_western.json */; };
+		82510417289E8C6F001B6259 /* card_fastfood.json in Resources */ = {isa = PBXBuildFile; fileRef = 8251040D289E8C6F001B6259 /* card_fastfood.json */; };
+		82510418289E8C6F001B6259 /* card_asian.json in Resources */ = {isa = PBXBuildFile; fileRef = 8251040E289E8C6F001B6259 /* card_asian.json */; };
+		82510419289E8C6F001B6259 /* card_cafe.json in Resources */ = {isa = PBXBuildFile; fileRef = 8251040F289E8C6F001B6259 /* card_cafe.json */; };
 		825365DE2883DD4500801CB0 /* ResultCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 825365DD2883DD4500801CB0 /* ResultCardView.swift */; };
 		82C93535281AD618009791EA /* GollababApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C93534281AD618009791EA /* GollababApp.swift */; };
 		82C93537281AD618009791EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C93536281AD618009791EA /* ContentView.swift */; };
@@ -359,7 +369,7 @@
 		4A7B5C3D288A21ED00ED02E5 /* AdmobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobView.swift; sourceTree = "<group>"; };
 		4A7B5C3F288A312200ED02E5 /* AdmobType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobType.swift; sourceTree = "<group>"; };
 		4AACA9D3288E1D71003F000F /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
-		4AACA9D9288FB42F003F000F /* SplashAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashAnimationView.swift; sourceTree = "<group>"; };
+		4AACA9D9288FB42F003F000F /* LottieAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieAnimationView.swift; sourceTree = "<group>"; };
 		4AAEBD0C2832635500AA3E65 /* net.daum.MobileMap.docset */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = net.daum.MobileMap.docset; sourceTree = "<group>"; };
 		4AAEBD0D2832635500AA3E65 /* setupDocsetDocument.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = setupDocsetDocument.rb; sourceTree = "<group>"; };
 		4AAEBD0E2832635500AA3E65 /* OpenSourceNotice.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = OpenSourceNotice.md; sourceTree = "<group>"; };
@@ -673,6 +683,16 @@
 		4AF706ED2876BECE00C83304 /* ChooseCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCategoryView.swift; sourceTree = "<group>"; };
 		4AF706F1287802BB00C83304 /* RandomAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomAnimationView.swift; sourceTree = "<group>"; };
 		822751F1288D47BA00BB9F24 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		82510406289E8C6F001B6259 /* card_snack.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = card_snack.json; sourceTree = "<group>"; };
+		82510407289E8C6F001B6259 /* card_chicken.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = card_chicken.json; sourceTree = "<group>"; };
+		82510408289E8C6F001B6259 /* card_japanese.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = card_japanese.json; sourceTree = "<group>"; };
+		82510409289E8C6F001B6259 /* card_chinese.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = card_chinese.json; sourceTree = "<group>"; };
+		8251040A289E8C6F001B6259 /* card_korean.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = card_korean.json; sourceTree = "<group>"; };
+		8251040B289E8C6F001B6259 /* card_casual.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = card_casual.json; sourceTree = "<group>"; };
+		8251040C289E8C6F001B6259 /* card_western.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = card_western.json; sourceTree = "<group>"; };
+		8251040D289E8C6F001B6259 /* card_fastfood.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = card_fastfood.json; sourceTree = "<group>"; };
+		8251040E289E8C6F001B6259 /* card_asian.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = card_asian.json; sourceTree = "<group>"; };
+		8251040F289E8C6F001B6259 /* card_cafe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = card_cafe.json; sourceTree = "<group>"; };
 		825365DD2883DD4500801CB0 /* ResultCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCardView.swift; sourceTree = "<group>"; };
 		82C93531281AD618009791EA /* Gollabab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gollabab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82C93534281AD618009791EA /* GollababApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GollababApp.swift; sourceTree = "<group>"; };
@@ -758,6 +778,7 @@
 		4A7906252848BD6800B2830A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				82AA10C6289E8831001B13AA /* Lottie */,
 				4AE41A0A2859EEEC009130A6 /* Font */,
 				4A7906262848BD6F00B2830A /* ColorExtension.swift */,
 				4AE41A0F2859EF90009130A6 /* FontExtension.swift */,
@@ -772,6 +793,7 @@
 				4AF706E3286DB1D000C83304 /* EmptyView.swift */,
 				4A7B5C3D288A21ED00ED02E5 /* AdmobView.swift */,
 				4AE400C028913CCA00DEEF83 /* PermissionView.swift */,
+				4AACA9D9288FB42F003F000F /* LottieAnimationView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -779,9 +801,7 @@
 		4AACA9D7288FB3E1003F000F /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				4AE400B6288FF0A900DEEF83 /* splash.json */,
 				4AACA9D3288E1D71003F000F /* SplashView.swift */,
-				4AACA9D9288FB42F003F000F /* SplashAnimationView.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -1211,6 +1231,24 @@
 			path = Game;
 			sourceTree = "<group>";
 		};
+		82AA10C6289E8831001B13AA /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				4AE400B6288FF0A900DEEF83 /* splash.json */,
+				8251040E289E8C6F001B6259 /* card_asian.json */,
+				8251040F289E8C6F001B6259 /* card_cafe.json */,
+				8251040B289E8C6F001B6259 /* card_casual.json */,
+				82510407289E8C6F001B6259 /* card_chicken.json */,
+				82510409289E8C6F001B6259 /* card_chinese.json */,
+				8251040D289E8C6F001B6259 /* card_fastfood.json */,
+				82510408289E8C6F001B6259 /* card_japanese.json */,
+				8251040A289E8C6F001B6259 /* card_korean.json */,
+				82510406289E8C6F001B6259 /* card_snack.json */,
+				8251040C289E8C6F001B6259 /* card_western.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
 		82C93528281AD618009791EA = {
 			isa = PBXGroup;
 			children = (
@@ -1336,6 +1374,7 @@
 				4AAEBED12832635500AA3E65 /* defines_0.js in Resources */,
 				4AAEBED32832635500AA3E65 /* functions_2.html in Resources */,
 				4AAEBED52832635500AA3E65 /* functions_3.html in Resources */,
+				82510419289E8C6F001B6259 /* card_cafe.json in Resources */,
 				4AAEBE712832635500AA3E65 /* bc_s.png in Resources */,
 				4AAEBEF22832635500AA3E65 /* functions_8.html in Resources */,
 				4AAEBEDE2832635500AA3E65 /* typedefs_0.js in Resources */,
@@ -1343,6 +1382,7 @@
 				4AAEBE902832635500AA3E65 /* properties_3.html in Resources */,
 				4AAEBE3E2832635500AA3E65 /* info_box.png in Resources */,
 				4AAEBF2A2832635500AA3E65 /* struct_m_t_map_bounds.html in Resources */,
+				82510411289E8C6F001B6259 /* card_chicken.json in Resources */,
 				4AAEBE862832635500AA3E65 /* _m_t_map_camera_update_8h.html in Resources */,
 				4AAEBE792832635500AA3E65 /* protocol_m_t_map_reverse_geo_coder_delegate_01-p.js in Resources */,
 				4AAEBEA72832635500AA3E65 /* all_7.js in Resources */,
@@ -1387,6 +1427,7 @@
 				4AAEBEBF2832635500AA3E65 /* all_12.js in Resources */,
 				4AAEBE3F2832635500AA3E65 /* point_sprite.png in Resources */,
 				4AAEBF232832635500AA3E65 /* resize.js in Resources */,
+				82510418289E8C6F001B6259 /* card_asian.json in Resources */,
 				4AAEBEEA2832635500AA3E65 /* search_l.png in Resources */,
 				4AAEBEFA2832635500AA3E65 /* pages_0.html in Resources */,
 				4AAEBE2B2832635500AA3E65 /* net.daum.MobileMap.docset in Resources */,
@@ -1412,6 +1453,7 @@
 				4AAEBECB2832635500AA3E65 /* variables_0.html in Resources */,
 				4AAEBEA12832635500AA3E65 /* functions_a.js in Resources */,
 				4AAEBF032832635500AA3E65 /* functions_c.js in Resources */,
+				82510414289E8C6F001B6259 /* card_korean.json in Resources */,
 				4AAEBEE12832635500AA3E65 /* properties_3.js in Resources */,
 				4AAEBEEE2832635500AA3E65 /* all_4.js in Resources */,
 				4AAEBE682832635500AA3E65 /* annotated.html in Resources */,
@@ -1420,6 +1462,7 @@
 				4AAEBF2C2832635500AA3E65 /* files_dup.js in Resources */,
 				4AAEBF002832635500AA3E65 /* functions_5.html in Resources */,
 				4AAEBE962832635500AA3E65 /* functions_a.html in Resources */,
+				82510415289E8C6F001B6259 /* card_casual.json in Resources */,
 				4AAEBECD2832635500AA3E65 /* functions_e.html in Resources */,
 				4AAEBF092832635500AA3E65 /* navtree.js in Resources */,
 				4AAEBE572832635500AA3E65 /* dir_e176454b22f670c69197578a11d04323.html in Resources */,
@@ -1489,6 +1532,7 @@
 				4AAEBF1E2832635500AA3E65 /* protocol_m_t_map_reverse_geo_coder_delegate_01-p-members.html in Resources */,
 				4AAEBEF62832635500AA3E65 /* functions_9.html in Resources */,
 				4AAEBF162832635500AA3E65 /* interface_m_t_map_p_o_i_item.js in Resources */,
+				82510416289E8C6F001B6259 /* card_western.json in Resources */,
 				4AAEBEAD2832635500AA3E65 /* functions_7.html in Resources */,
 				4AAEBE6D2832635500AA3E65 /* hierarchy.html in Resources */,
 				4AAEBEA82832635500AA3E65 /* properties_2.html in Resources */,
@@ -1507,6 +1551,7 @@
 				4AAEBEBB2832635500AA3E65 /* properties_0.js in Resources */,
 				4AAEBE322832635500AA3E65 /* map_pinup.png in Resources */,
 				4AAEBE332832635500AA3E65 /* detail_button.png in Resources */,
+				82510412289E8C6F001B6259 /* card_japanese.json in Resources */,
 				4AAEBF262832635500AA3E65 /* globals_defs.html in Resources */,
 				4AAEBEF12832635500AA3E65 /* all_c.js in Resources */,
 				4AAEBEDD2832635500AA3E65 /* all_f.html in Resources */,
@@ -1542,6 +1587,7 @@
 				4AAEBF382832635500AA3E65 /* _m_t_map_polyline_8h.html in Resources */,
 				4AAEBE2D2832635500AA3E65 /* OpenSourceNotice.md in Resources */,
 				4AAEBED92832635500AA3E65 /* files_0.js in Resources */,
+				82510417289E8C6F001B6259 /* card_fastfood.json in Resources */,
 				4AAEBECA2832635500AA3E65 /* all_11.js in Resources */,
 				4AAEBE842832635500AA3E65 /* functions_func.html in Resources */,
 				4AAEBEEF2832635500AA3E65 /* all_a.html in Resources */,
@@ -1552,6 +1598,7 @@
 				4AAEBE552832635500AA3E65 /* doxygen.css in Resources */,
 				4AAEBE6F2832635500AA3E65 /* _m_t_map_location_marker_item_8h_source.html in Resources */,
 				4AAEBE412832635500AA3E65 /* info_box_tail.png in Resources */,
+				82510410289E8C6F001B6259 /* card_snack.json in Resources */,
 				4AAEBE672832635500AA3E65 /* _m_t_map_p_o_i_item_8h.js in Resources */,
 				4AAEBE9A2832635500AA3E65 /* typedefs_0.html in Resources */,
 				4AAEBE932832635500AA3E65 /* search_r.png in Resources */,
@@ -1606,6 +1653,7 @@
 				4AAEBE812832635500AA3E65 /* _m_t_map_camera_update_8h_source.html in Resources */,
 				4AAEBE632832635500AA3E65 /* struct_m_t_map_image_offset.html in Resources */,
 				4AAEBE3D2832635500AA3E65 /* map_pin_red.png in Resources */,
+				82510413289E8C6F001B6259 /* card_chinese.json in Resources */,
 				4AAEBEFD2832635500AA3E65 /* nomatches.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1622,7 +1670,7 @@
 				4AF706E2286C4AA400C83304 /* UIApplicationExtension.swift in Sources */,
 				4AE400C128913CCA00DEEF83 /* PermissionView.swift in Sources */,
 				825365DE2883DD4500801CB0 /* ResultCardView.swift in Sources */,
-				4AACA9DA288FB42F003F000F /* SplashAnimationView.swift in Sources */,
+				4AACA9DA288FB42F003F000F /* LottieAnimationView.swift in Sources */,
 				4AE400B3288FCDF200DEEF83 /* AdmobRepository.swift in Sources */,
 				4A7B5C3E288A21ED00ED02E5 /* AdmobView.swift in Sources */,
 				4AC5BE62281FE58C006CA43F /* MainMapView.swift in Sources */,
