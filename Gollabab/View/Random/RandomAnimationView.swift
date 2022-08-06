@@ -33,29 +33,14 @@ struct RandomAnimationView: View {
                     .foregroundColor(.secondaryPink)
                     .padding(.bottom, 48)
                 
-                GeometryReader { proxy in
-                    let width = proxy.size.width - (proxy.size.width / 2)
-                    
-                    HStack(spacing: -40) {
-                        ForEach(0..<50, id: \.self) { _ in
-                            Image("card_shuffle")
-                                .resizable()
-                                .frame(width: 178, height: 267)
-                        }
-                    }
-                    .padding(EdgeInsets(top: 0, leading: 21, bottom: 0, trailing: 21))
-                    .offset(x: CGFloat(index) * -width)
-                    .onReceive(viewModel.$moveIndex, perform: { output in
-                        withAnimation(.easeInOut(duration: 2)) {
-                            index = output
-                        }
-                        
-                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(2300)) {
+                LottieAnimationView(filename: CategoryType.allCases.randomElement()?.lottieName() ?? "card_korean")
+                    .frame(width: UIScreen.main.bounds.width + 200, height: UIScreen.main.bounds.height / 3)
+                    .padding(EdgeInsets(top: 0, leading: 18, bottom: 0, trailing: 18))
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(3000)) {
                             isShowResult = true
                         }
-                    })
-                }
-                .frame(height: 267)
+                    }
                 
                 Button {
                     isShowResult = true

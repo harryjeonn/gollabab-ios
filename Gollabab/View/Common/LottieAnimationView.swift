@@ -1,5 +1,5 @@
 //
-//  SplashAnimationView.swift
+//  LottieAnimationView.swift
 //  Gollabab
 //
 //  Created by Harry on 2022/07/26.
@@ -9,7 +9,7 @@ import SwiftUI
 import Lottie
 import UIKit
 
-struct SplashAnimationView: UIViewRepresentable {
+struct LottieAnimationView: UIViewRepresentable {
     
     var filename: String
     
@@ -34,7 +34,7 @@ struct SplashAnimationView: UIViewRepresentable {
         return view
     }
     
-    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<SplashAnimationView>) {
+    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<LottieAnimationView>) {
     }
     
 }
