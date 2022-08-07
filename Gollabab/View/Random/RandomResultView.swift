@@ -11,6 +11,7 @@ struct RandomResultView: View {
     @ObservedObject var viewModel: MainViewModel
     @State var currentIndex: Int = 0
     @State var isShowToast: Bool = false
+    @State var isRetry: Bool = false
     
     var body: some View {
         ZStack {
@@ -28,7 +29,7 @@ struct RandomResultView: View {
             }
             
             VStack(spacing: 0) {
-                ResultCardScrollView(viewModel: viewModel, currentIndex: $currentIndex)
+                ResultCardScrollView(viewModel: viewModel, currentIndex: $currentIndex, isRetry: $isRetry)
                     .padding(.top, 70)
                     .padding(.bottom, 95)
                 
@@ -48,7 +49,13 @@ struct RandomResultView: View {
                     .padding(.leading, 27)
                     
                     Button {
-                        isShowToast = !viewModel.retryGetRandomPlaces()
+                        if viewModel.retryGetRandomPlaces() {
+                            withAnimation {
+                                isRetry = true
+                            }
+                        } else {
+                            isShowToast = true
+                        }
                     } label: {
                         Text("다시 골라밥")
                             .font(.eliceP1())

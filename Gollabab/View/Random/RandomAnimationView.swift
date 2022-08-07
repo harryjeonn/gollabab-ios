@@ -55,9 +55,6 @@ struct RandomAnimationView: View {
             }
             .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)
             .background(Color.text300)
-            .onAppear {
-                viewModel.startAnimation()
-            }
         }
         .navigationTitle("")
         .navigationBarHidden(true)
