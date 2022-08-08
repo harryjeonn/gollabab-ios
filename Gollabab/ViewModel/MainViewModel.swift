@@ -369,10 +369,6 @@ class MainViewModel: ObservableObject {
         return true
     }
     
-    func startAnimation() {
-        moveIndex = 30
-    }
-    
     // MARK: - Random Result View
     func getMidIndex() -> Int {
         guard randomResult.count != 0 else { return 0 }
