@@ -27,8 +27,9 @@ struct ResultCardScrollView: View {
             HStack(spacing: 0) {
                 ForEach(Array(viewModel.randomResult.enumerated()), id: \.0) { idx, place in
                     ZStack {
-                        Image("card_shuffle")
+                        Image("card_retry")
                             .resizable()
+                            .frame(width: cardWidth)
                             .scaleEffect(idx == currentIndex ? 1.0 : 0.8)
                             .rotation3DEffect(Angle.degrees(isRetry ? 0 : 180), axis: (0,1,0))
                             .zIndex(isRetry ? 1 : 0)
