@@ -49,12 +49,18 @@ struct RandomResultView: View {
                     .padding(.leading, 27)
                     
                     Button {
-                        if viewModel.retryGetRandomPlaces() {
-                            withAnimation {
-                                isRetry = true
+                        withAnimation {
+                            isRetry = true
+                        }
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
+                            if viewModel.retryGetRandomPlaces() == false {
+                                isShowToast = true
+                                
+                                withAnimation {
+                                    isRetry = false
+                                }
                             }
-                        } else {
-                            isShowToast = true
                         }
                     } label: {
                         Text("다시 골라밥")
