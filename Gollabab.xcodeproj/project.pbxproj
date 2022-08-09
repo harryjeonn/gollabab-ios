@@ -312,9 +312,13 @@
 		4ABDFDF828869307004DF6AF /* ResultCardScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABDFDF728869307004DF6AF /* ResultCardScrollView.swift */; };
 		4AC5BE62281FE58C006CA43F /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5BE61281FE58C006CA43F /* MainMapView.swift */; };
 		4AC5BE64281FE598006CA43F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC5BE63281FE598006CA43F /* MainView.swift */; };
+		4ACDC0BD289C9C2300DC5F02 /* CardBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACDC0BC289C9C2300DC5F02 /* CardBackView.swift */; };
+		4ACDC0BF289C9C9900DC5F02 /* CardFrontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACDC0BE289C9C9900DC5F02 /* CardFrontView.swift */; };
 		4AD8F37F2897AF5A00D7AA45 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4AD8F37E2897AF5A00D7AA45 /* Alamofire */; };
 		4AD8F3822897AFAA00D7AA45 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 4AD8F3812897AFAA00D7AA45 /* GoogleMobileAds */; };
 		4AD8F3852897AFDC00D7AA45 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 4AD8F3842897AFDC00D7AA45 /* Lottie */; };
+		4ADF479F289B9CB000E3ABCC /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF479E289B9CB000E3ABCC /* GameViewModel.swift */; };
+		4ADF47A1289B9F9D00E3ABCC /* ChooseCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF47A0289B9F9D00E3ABCC /* ChooseCardView.swift */; };
 		4AE400B3288FCDF200DEEF83 /* AdmobRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE400B2288FCDF200DEEF83 /* AdmobRepository.swift */; };
 		4AE400B7288FF0A900DEEF83 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = 4AE400B6288FF0A900DEEF83 /* splash.json */; };
 		4AE400BF28913BCD00DEEF83 /* LocationStateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE400BE28913BCD00DEEF83 /* LocationStateType.swift */; };
@@ -665,6 +669,10 @@
 		4AC5BE61281FE58C006CA43F /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
 		4AC5BE63281FE598006CA43F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4AC5BE65281FEE07006CA43F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4ACDC0BC289C9C2300DC5F02 /* CardBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBackView.swift; sourceTree = "<group>"; };
+		4ACDC0BE289C9C9900DC5F02 /* CardFrontView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFrontView.swift; sourceTree = "<group>"; };
+		4ADF479E289B9CB000E3ABCC /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		4ADF47A0289B9F9D00E3ABCC /* ChooseCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCardView.swift; sourceTree = "<group>"; };
 		4AE400B2288FCDF200DEEF83 /* AdmobRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobRepository.swift; sourceTree = "<group>"; };
 		4AE400B6288FF0A900DEEF83 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
 		4AE400BE28913BCD00DEEF83 /* LocationStateType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStateType.swift; sourceTree = "<group>"; };
@@ -1154,6 +1162,7 @@
 			isa = PBXGroup;
 			children = (
 				4A346CBC2836463100C574A5 /* MainViewModel.swift */,
+				4ADF479E289B9CB000E3ABCC /* GameViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1227,6 +1236,9 @@
 			isa = PBXGroup;
 			children = (
 				822751F1288D47BA00BB9F24 /* GameView.swift */,
+				4ADF47A0289B9F9D00E3ABCC /* ChooseCardView.swift */,
+				4ACDC0BE289C9C9900DC5F02 /* CardFrontView.swift */,
+				4ACDC0BC289C9C2300DC5F02 /* CardBackView.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -1679,20 +1691,24 @@
 				4AF706E4286DB1D000C83304 /* EmptyView.swift in Sources */,
 				4AF706EE2876BECE00C83304 /* ChooseCategoryView.swift in Sources */,
 				4A08C2502852020000123531 /* ListContentView.swift in Sources */,
+				4ADF47A1289B9F9D00E3ABCC /* ChooseCardView.swift in Sources */,
 				4A7B5C40288A312200ED02E5 /* AdmobType.swift in Sources */,
 				4A136379283F94160070EA54 /* LocationRepository.swift in Sources */,
 				4A136377283F93270070EA54 /* MyLocationModel.swift in Sources */,
 				4AF706D8286B0E9900C83304 /* CategoryView.swift in Sources */,
+				4ACDC0BD289C9C2300DC5F02 /* CardBackView.swift in Sources */,
 				4AB100CF28814DC100A4A9C8 /* RandomResultView.swift in Sources */,
 				4A7906242848403400B2830A /* CardContentView.swift in Sources */,
 				4AACA9D4288E1D71003F000F /* SplashView.swift in Sources */,
 				4A346CB8283644FD00C574A5 /* KakaoRepository.swift in Sources */,
+				4ACDC0BF289C9C9900DC5F02 /* CardFrontView.swift in Sources */,
 				4AF706D6286B0C5A00C83304 /* CategoryModel.swift in Sources */,
 				4AE400BF28913BCD00DEEF83 /* LocationStateType.swift in Sources */,
 				4AB100D128814E1B00A4A9C8 /* CustomBackButton.swift in Sources */,
 				4AB39DD7284B49E30014DE41 /* SafariView.swift in Sources */,
 				4AC5BE64281FE598006CA43F /* MainView.swift in Sources */,
 				4A346CB52836407000C574A5 /* KakaoResponse.swift in Sources */,
+				4ADF479F289B9CB000E3ABCC /* GameViewModel.swift in Sources */,
 				4A136375283F8BC20070EA54 /* PlaceCardView.swift in Sources */,
 				82C93537281AD618009791EA /* ContentView.swift in Sources */,
 				82C93535281AD618009791EA /* GollababApp.swift in Sources */,

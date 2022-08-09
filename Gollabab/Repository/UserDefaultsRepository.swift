@@ -8,7 +8,10 @@
 import Foundation
 
 class UserDefaultsRepository {
+    static let shared = UserDefaultsRepository()
+    
     private let userDefaults = UserDefaults.standard
+    private let admobRepo = AdmobRepository()
     
     func saveSearchKeyword(_ keyword: String) {
         deleteSearchKeyword(keyword)
@@ -47,5 +50,24 @@ class UserDefaultsRepository {
     
     func deleteAllKeyword() {
         userDefaults.set([], forKey: "recentKeyword")
+    }
+    
+    func plusAdsCount() {
+        var count = loadAdsCount()
+        count += 1
+        
+        UserDefaults.standard.set(count, forKey: "adsCount")
+    }
+    
+    func loadAdsCount() -> Int {
+        return UserDefaults.standard.integer(forKey: "adsCount")
+    }
+    
+    func checkAdsCount() {
+        let count = loadAdsCount()
+        if count % 10 == 0 && count > 0 {
+            admobRepo.showAd()
+            plusAdsCount()
+        }
     }
 }
