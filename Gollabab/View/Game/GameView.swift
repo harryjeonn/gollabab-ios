@@ -12,17 +12,17 @@ struct GameView: View {
     
     var body: some View {
         VStack(spacing: 0) {
+            Spacer()
+            
             Text("밥값은 누가 낼래?")
                 .foregroundColor(.primaryBeige)
-                .font(.eliceBold(size: 30))
+                .font(.eliceBold(size: 32))
                 .padding(.bottom, 12)
-                .padding(.top, 75)
             
             Text("꽝 개수를 골라밥")
                 .foregroundColor(.secondaryPink)
                 .font(.eliceP3())
-            
-            Spacer()
+                .padding(.bottom, 101)
             
             HStack(spacing: 63) {
                 Button {
