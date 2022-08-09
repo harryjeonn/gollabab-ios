@@ -50,7 +50,7 @@ struct ContentView: View {
                     }
                     .accentColor(.primaryRed)
                     .onAppear {
-                        viewModel.checkAdsCount()
+                        UserDefaultsRepository.shared.checkAdsCount()
                     }
                 }
                 

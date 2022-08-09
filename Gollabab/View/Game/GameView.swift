@@ -51,6 +51,7 @@ struct GameView: View {
             
             Button {
                 viewModel.startGame()
+                UserDefaultsRepository.shared.plusAdsCount()
             } label: {
                 Text("시작!")
                     .font(.eliceP1())
