@@ -102,6 +102,11 @@ struct MainView: View {
                 SafariView(url: viewModel.getURL(viewModel.places[viewModel.touchedIndex].placeUrl))
                     .edgesIgnoringSafeArea(.all)
             })
+            .onAppear {
+                if viewModel.previousIsRandom {
+                    viewModel.slideCard(viewModel.cardCurrentIndex)
+                }
+            }
         }
     }
 }

@@ -114,6 +114,7 @@ class MainViewModel: ObservableObject {
         createPoiItems()
         dismissRecentSearchView()
         keyword = ""
+        previousIsRandom = false
         self.latestCategory = latestCategory
     }
     
@@ -137,6 +138,7 @@ class MainViewModel: ObservableObject {
                 self?.places = value
                 self?.createPoiItems()
                 self?.saveSearchKeyword()
+                self?.previousIsRandom = false
             })
             .store(in: &cancelBag)
     }
