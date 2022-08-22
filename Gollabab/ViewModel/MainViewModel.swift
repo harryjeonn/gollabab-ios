@@ -28,6 +28,7 @@ class MainViewModel: ObservableObject {
     @Published var isCardSelectedState: Bool = true
     @Published var isCategorySelectedState: Bool = true
     @Published var isActiveMyLocation: Bool = true
+    @Published var isShowCurrentMapResearch: Bool = false
     
     @Published var isSelectedAll: Bool = false
     @Published var isRandomEmpty: Bool = false
@@ -50,6 +51,8 @@ class MainViewModel: ObservableObject {
     var randomPlaces: [PlaceModel] = []
     var randomResult: [PlaceModel] = []
     
+    var latestCategory: CategoryType?
+    
     // MARK: - 권한체크
     func checkPermisson() {
         service.checkPermission()
@@ -57,7 +60,7 @@ class MainViewModel: ObservableObject {
                 if locationState == .allow {
                     self?.service.storeLocation()
                     self?.fetchPlace(.all)
-                    self?.getMapPoint()
+                    self?.moveToMyLocation()
                 }
                 
                 self?.isPermission = locationState
@@ -69,6 +72,7 @@ class MainViewModel: ObservableObject {
     func fetchPlace(_ type: CategoryType) {
         cardCurrentIndex = 0
         isCategorySelectedState = true
+        isShowCurrentMapResearch = false
         
         type == .all ? fetchAll() : fetchCategory(type)
     }
@@ -78,9 +82,7 @@ class MainViewModel: ObservableObject {
             .sink(receiveCompletion: { print("fetchPlace completion: \($0)") },
                   receiveValue: { [weak self] value in
                 self?.places = value
-                self?.createPoiItems()
-                self?.dismissRecentSearchView()
-                self?.keyword = ""
+                self?.processAfterFetchCategory(type)
             })
             .store(in: &cancelBag)
     }
@@ -101,12 +103,17 @@ class MainViewModel: ObservableObject {
                             temp.append(place)
                         }
                         self?.randomPlace(temp)
-                        self?.createPoiItems()
-                        self?.dismissRecentSearchView()
-                        self?.keyword = ""
+                        self?.processAfterFetchCategory(.all)
                     })
                     .store(in: &cancelBag)
             }
+    }
+    
+    func processAfterFetchCategory(_ latestCategory: CategoryType) {
+        createPoiItems()
+        dismissRecentSearchView()
+        keyword = ""
+        self.latestCategory = latestCategory
     }
     
     func randomPlace(_ orgPlace: [PlaceModel]) {
@@ -121,6 +128,8 @@ class MainViewModel: ObservableObject {
     func searchPlace() {
         cardCurrentIndex = 0
         isCategorySelectedState = false
+        isShowCurrentMapResearch = false
+        
         service.searchPlace(keyword)
             .sink(receiveCompletion: { print("searchPlace completion: \($0)") },
                   receiveValue: { [weak self] value in
@@ -129,6 +138,14 @@ class MainViewModel: ObservableObject {
                 self?.saveSearchKeyword()
             })
             .store(in: &cancelBag)
+    }
+    
+    func fetchCurrentMapPoint() {
+        isCategorySelectedState ? fetchPlace(latestCategory ?? .all) : searchPlace()
+    }
+    
+    func toggleIsFirst() {
+        service.isFirst.toggle()
     }
     
     // MARK: - 지도
@@ -140,10 +157,16 @@ class MainViewModel: ObservableObject {
         service.updateLocation(location)
     }
     
-    func getMapPoint() {
+    func updateMapPoint(_ currentMapPoint: MTMapPoint) {
+        service.currentMapLat = "\(currentMapPoint.mapPointGeo().latitude)"
+        service.currentMapLon = "\(currentMapPoint.mapPointGeo().longitude)"
+    }
+    
+    func moveToMyLocation() {
         let myLocation = service.getLocation()
         let geoCoord = MTMapPointGeo(latitude: myLocation.lat!, longitude: myLocation.lon!)
         isActiveMyLocation = true
+        
         mtMapPoint.send(MTMapPoint(geoCoord: geoCoord))
     }
     

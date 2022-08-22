@@ -50,6 +50,21 @@ struct MainView: View {
                 .padding(.top, 52)
                 .background(Color.white)
                 
+                if viewModel.isShowCurrentMapResearch && viewModel.previousIsRandom == false {
+                    Button {
+                        viewModel.fetchCurrentMapPoint()
+                    } label: {
+                        Text("여기서 찾아밥")
+                            .font(.eliceCaption())
+                            .foregroundColor(.primaryBeige)
+                            .padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
+                            .background(Color.black)
+                            .cornerRadius(10)
+                            .shadow(color: .cardShadowColor, radius: 3, x: 0, y: 2)
+                    }
+                    .padding(.top, 12)
+                }
+                
                 if viewModel.isEditing {
                     RecentSearchView(viewModel: viewModel)
                         .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)
@@ -72,7 +87,7 @@ struct MainView: View {
                                 .padding(.trailing, 24)
                                 .shadow(color: .cardShadowColor, radius: 3, x: 1, y: 1)
                                 .onTapGesture {
-                                    viewModel.getMapPoint()
+                                    viewModel.moveToMyLocation()
                                 }
                         }
                         
@@ -87,12 +102,6 @@ struct MainView: View {
                 SafariView(url: viewModel.getURL(viewModel.places[viewModel.touchedIndex].placeUrl))
                     .edgesIgnoringSafeArea(.all)
             })
-            .onAppear {
-                if viewModel.previousIsRandom {
-                    viewModel.slideCard(viewModel.cardCurrentIndex)
-                    viewModel.previousIsRandom = false
-                }
-            }
         }
     }
 }
