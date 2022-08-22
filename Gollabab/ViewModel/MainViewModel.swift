@@ -7,6 +7,7 @@
 
 import Combine
 import SwiftUI
+import CoreLocation
 
 class MainViewModel: ObservableObject {
     private let service = MainService()
@@ -237,6 +238,22 @@ class MainViewModel: ObservableObject {
         } else {
             return URL(string: "https://www.daum.net")!
         }
+    }
+    
+    func getDistance(lat: String, lon: String) -> String {
+        guard let placeLat = Double(lat),
+              let placeLon = Double(lon),
+              let myLat = service.getLocation().lat,
+              let myLon = service.getLocation().lon else { return "-" }
+        
+        let toLocation = CLLocation(latitude: placeLat, longitude: placeLon)
+        let fromLocation = CLLocation(latitude: myLat, longitude: myLon)
+        
+        return beautifyDistance(fromLocation.distance(from: toLocation))
+    }
+    
+    func beautifyDistance(_ distance: Double) -> String {
+        return distance > 1000 ? "\(String(format: "%.1f", distance / 1000))km" : "\(String(format: "%.0f", round(distance)))m"
     }
     
     func callToPlace(_ phone: String) {
