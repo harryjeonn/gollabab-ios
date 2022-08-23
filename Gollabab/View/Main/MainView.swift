@@ -64,13 +64,19 @@ struct MainView: View {
                             Button {
                                 viewModel.fetchCurrentMapPoint()
                             } label: {
-                                Text("여기서 찾아밥")
-                                    .font(.eliceCaption())
-                                    .foregroundColor(.primaryBeige)
-                                    .padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
-                                    .background(Color.black)
-                                    .cornerRadius(10)
-                                    .shadow(color: .cardShadowColor, radius: 3, x: 0, y: 2)
+                                HStack {
+                                    Image("refresh_outline")
+                                        .resizable()
+                                        .frame(width: 16, height: 16)
+                                    
+                                    Text("이 지역 재검색")
+                                        .font(.eliceCaption())
+                                        .foregroundColor(.primaryRed)
+                                }
+                                .padding(EdgeInsets(top: 10, leading: 8, bottom: 10, trailing: 8))
+                                .background(Color.white)
+                                .cornerRadius(30)
+                                .shadow(color: .cardShadowColor, radius: 3, x: 0, y: 2)
                             }
                             .padding(.top, 12)
                         }
