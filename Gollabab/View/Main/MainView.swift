@@ -60,6 +60,27 @@ struct MainView: View {
                             .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)
                             .background(Color.white)
                     } else {
+                        if viewModel.isShowCurrentMapResearch && viewModel.previousIsRandom == false {
+                            Button {
+                                viewModel.fetchCurrentMapPoint()
+                            } label: {
+                                HStack {
+                                    Image("refresh_outline")
+                                        .resizable()
+                                        .frame(width: 16, height: 16)
+                                    
+                                    Text("이 지역 재검색")
+                                        .font(.eliceCaption())
+                                        .foregroundColor(.primaryRed)
+                                }
+                                .padding(EdgeInsets(top: 10, leading: 8, bottom: 10, trailing: 8))
+                                .background(Color.white)
+                                .cornerRadius(30)
+                                .shadow(color: .cardShadowColor, radius: 3, x: 0, y: 2)
+                            }
+                            .padding(.top, 12)
+                        }
+                        
                         Spacer()
                         HStack {
                             Spacer()
@@ -72,7 +93,7 @@ struct MainView: View {
                                 .padding(.trailing, 24)
                                 .shadow(color: .cardShadowColor, radius: 3, x: 1, y: 1)
                                 .onTapGesture {
-                                    viewModel.getMapPoint()
+                                    viewModel.moveToMyLocation()
                                 }
                         }
                         
@@ -90,7 +111,6 @@ struct MainView: View {
             .onAppear {
                 if viewModel.previousIsRandom {
                     viewModel.slideCard(viewModel.cardCurrentIndex)
-                    viewModel.previousIsRandom = false
                 }
             }
         }

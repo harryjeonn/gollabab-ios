@@ -61,7 +61,7 @@ struct ResultCardView: View {
                             .resizable()
                             .frame(width: 14, height: 14)
                         
-                        Text("\(place.distance)m")
+                        Text(viewModel.getDistance(lat: place.latY, lon: place.lonX))
                             .font(.eliceCaption())
                             .foregroundColor(.gray500)
                             .padding(.leading, 4)

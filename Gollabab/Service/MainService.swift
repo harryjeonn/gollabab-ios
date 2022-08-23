@@ -12,6 +12,10 @@ class MainService {
     private let kakaoRepository = KakaoRepository()
     private let locationRepository = LocationRepository()
     
+    var isFirst: Bool = true
+    var currentMapLat: String = ""
+    var currentMapLon: String = ""
+    
     func fetchPlace(_ type: CategoryType) -> AnyPublisher<[PlaceModel], Error> {
         let param = type == .all ? "FD6" : type.rawValue
         let searchType: SearchType = type == .all ? .category : .keyword
@@ -24,15 +28,17 @@ class MainService {
     }
     
     func fetch(param: String, type: SearchType) -> AnyPublisher<[PlaceModel], Error> {
-        return kakaoRepository.fetchPlace(mandatoryParam: param, lat: "\(locationRepository.getLocation().lat!)", lon: "\(locationRepository.getLocation().lon!)", type: type)
+        let lat: String = isFirst ? "\(locationRepository.getLocation().lat!)" : currentMapLat
+        let lon: String = isFirst ? "\(locationRepository.getLocation().lon!)" : currentMapLon
+        
+        return kakaoRepository.fetchPlace(mandatoryParam: param, lat: lat, lon: lon, type: type)
             .map { $0.documents }
             .map { $0.sorted(by: { self.stringToInt($0.distance) < self.stringToInt($1.distance) }) }
             .eraseToAnyPublisher()
     }
     
     func stringToInt(_ distance: String) -> Int {
-        guard let int = Int(distance) else { return 0 }
-        return int
+        return Int(distance) ?? 0
     }
     
     func setupLocation() {

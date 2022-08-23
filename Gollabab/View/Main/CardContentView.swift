@@ -46,7 +46,7 @@ struct CardContentView: View {
                     .resizable()
                     .frame(width: 14, height: 14)
                 
-                Text("\(placeModel.distance)m")
+                Text(viewModel.getDistance(lat: placeModel.latY, lon: placeModel.lonX))
                     .foregroundColor(viewModel.isSelectedCard(index) ? .gray700 : .gray500)
                     .font(.eliceCaption())
                     .padding(.leading, 4)

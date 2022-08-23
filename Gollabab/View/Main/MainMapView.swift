@@ -19,12 +19,13 @@ struct MainMapView: UIViewRepresentable {
         subscribePoiItems(view)
         subscribeMyLocation(view)
         subscribeSelectedPoiItem(view)
-        viewModel.getMapPoint()
+        viewModel.moveToMyLocation()
         
         view.delegate = context.coordinator
         
         // 앱 실행 시 랜덤 탭이 기본 탭으로 보이게 하기 위함
         viewModel.selectionTab = 1
+        viewModel.toggleIsFirst()
         
         return view
     }
@@ -73,7 +74,10 @@ struct MainMapView: UIViewRepresentable {
     
     func subscribeMyLocation(_ view: MTMapView) {
         viewModel.mtMapPoint
-            .sink(receiveValue: { view.setMapCenter($0, animated: true) })
+            .sink(receiveValue: { point in
+                view.setMapCenter(point, animated: true)
+                viewModel.updateMapPoint(point)
+            })
             .store(in: &viewModel.cancelBag)
     }
     
@@ -110,6 +114,7 @@ struct MainMapView: UIViewRepresentable {
             viewModel.selectedPoiItem = poiItem
             
             mapView.setMapCenter(poiItem.mapPoint, animated: true)
+            viewModel.updateMapPoint(mapView.mapCenterPoint)
             return false
         }
         
@@ -122,6 +127,8 @@ struct MainMapView: UIViewRepresentable {
         // 지도 중심 좌표 변경 됐을 때
         func mapView(_ mapView: MTMapView!, centerPointMovedTo mapCenterPoint: MTMapPoint!) {
             viewModel.isActiveMyLocation = false
+            viewModel.isShowCurrentMapResearch = true
+            viewModel.updateMapPoint(mapCenterPoint)
         }
         
         // 현 위치 변경 됐을 때

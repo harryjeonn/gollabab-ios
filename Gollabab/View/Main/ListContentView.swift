@@ -37,7 +37,7 @@ struct ListContentView: View {
                     .resizable()
                     .frame(width: 14, height: 14)
                 
-                Text("\(placeModel.distance)m")
+                Text(viewModel.getDistance(lat: placeModel.latY, lon: placeModel.lonX))
                     .font(.eliceCaption())
                     .foregroundColor(.gray500)
                     .padding(.leading, 4)
