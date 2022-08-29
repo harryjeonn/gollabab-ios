@@ -22,7 +22,7 @@ extension Color {
     }
     
     
-    static let text200 = Color(hex: "282828")
+    static let backgroundBlackColor = Color(hex: "111111")
     static let text300 = Color(hex: "282828")
     
     static let primaryBeige = Color(hex: "FDF6E5")

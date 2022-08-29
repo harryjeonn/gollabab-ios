@@ -69,7 +69,7 @@ struct GameView: View {
             }
         }
         .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)
-        .background(Color.text300)
+        .background(Color.backgroundBlackColor)
     }
 }
 

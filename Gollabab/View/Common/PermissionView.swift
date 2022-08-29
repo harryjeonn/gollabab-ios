@@ -17,7 +17,7 @@ struct PermissionView: View {
             
             Text("근처 식당을 찾으려면\n접근 권한이 필요하다밥 ☺️")
                 .multilineTextAlignment(.center)
-                .foregroundColor(.text200)
+                .foregroundColor(.text300)
                 .font(.eliceP3())
                 .padding(.top, 20)
             

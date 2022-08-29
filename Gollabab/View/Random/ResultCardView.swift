@@ -43,7 +43,7 @@ struct ResultCardView: View {
                     HStack(spacing: 0) {
                         Text("\(place.placeName)")
                             .font(.eliceP1())
-                            .foregroundColor(.text200)
+                            .foregroundColor(.text300)
                         
                         Image("chevron_right_outline")
                             .resizable()

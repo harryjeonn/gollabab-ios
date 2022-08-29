@@ -21,7 +21,7 @@ struct RecentSearchView: View {
                 Spacer().frame(width: 22)
                 
                 Text("최근 검색어")
-                    .foregroundColor(.text200)
+                    .foregroundColor(.text300)
                     .font(.eliceP2())
                 
                 Spacer()
@@ -42,7 +42,7 @@ struct RecentSearchView: View {
                     VStack {
                         Text(keyword)
                             .font(.eliceP3())
-                            .foregroundColor(.text200)
+                            .foregroundColor(.text300)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(EdgeInsets(top: 15, leading: 22, bottom: 15, trailing: 0))
                         

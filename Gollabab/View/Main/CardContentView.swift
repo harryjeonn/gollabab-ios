@@ -25,7 +25,7 @@ struct CardContentView: View {
                 VStack(alignment: .leading, spacing: 4) {
                     Text(placeModel.placeName)
                         .font(.eliceP2())
-                        .foregroundColor(viewModel.isSelectedCard(index) ? .primaryBeige : .text200)
+                        .foregroundColor(viewModel.isSelectedCard(index) ? .primaryBeige : .text300)
                         .lineLimit(1)
                         .padding(.leading, 8)
                     
