@@ -12,7 +12,7 @@ struct EmptyView: View {
     
     var body: some View {
         Text(title)
-            .foregroundColor(.text200)
+            .foregroundColor(.text300)
             .font(.eliceP2Regular())
             .frame(width: UIScreen.main.bounds.width * 0.7, height: UIScreen.main.bounds.height * 0.13)
             .background(Color.white)

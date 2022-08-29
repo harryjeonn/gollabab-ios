@@ -49,7 +49,7 @@ struct RandomView: View {
                     }
             }
             .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)
-            .background(Color.text300)
+            .background(Color.backgroundBlackColor)
             .onAppear {
                 viewModel.isNavigationActive = false
             }

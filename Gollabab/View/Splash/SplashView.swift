@@ -18,7 +18,7 @@ struct SplashView: View {
                 .padding(.bottom, UIScreen.main.bounds.height * 0.25)
         }
         .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)
-        .background(Color.primaryBeige)
+        .background(Color.backgroundBlackColor)
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(2000)) {
                 viewModel.checkPermisson()

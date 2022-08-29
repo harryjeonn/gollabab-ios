@@ -61,7 +61,7 @@ struct ChooseCardView: View {
             .disabled(!viewModel.isAllSelectedBomb())
         }
         .frame(minWidth: .zero, maxWidth: .infinity, minHeight: .zero, maxHeight: .infinity)
-        .background(Color.text300)
+        .background(Color.backgroundBlackColor)
         .navigationBarHidden(true)
         .navigationTitle("")
     }
