@@ -10,7 +10,7 @@ import SwiftUI
 struct ChooseCategoryView: View {
     @ObservedObject var viewModel: MainViewModel
     
-    let category: [CategoryType] = [.korean, .chinese, .casual, .western, .japanese, .fastfood, .asian, .chicken, .cafe, .snack, .all]
+    let category: [CategoryType] = [.korean, .chinese, .casual, .western, .japanese, .fastfood, .asian, .chicken, .cafe, .snack, .drink, .all]
     let columns = [GridItem(.adaptive(minimum: (UIScreen.main.bounds.width - 42 - 20) / 3))]
     
     var body: some View {

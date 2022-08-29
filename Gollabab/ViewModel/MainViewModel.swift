@@ -95,6 +95,7 @@ class MainViewModel: ObservableObject {
             .filter { $0 != .all }
             .filter { $0 != .snack }
             .filter { $0 != .cafe }
+            .filter { $0 != .drink }
             .filter { $0 != .other }
             .forEach { category in
                 service.fetchPlace(category)
